@@ -1,0 +1,12 @@
+python buildStock.py -f convert2StockListJson -i 'D:/Hibay/产品相关/酒店/iHotel/botService/doc/RequirementDoc/guestList.csv' -o stockList.json
+
+python buildStock.py -f convert2BotJsonWithSynHom -i 'D:/Hibay/产品相关/酒店/iHotel/botService/doc/RequirementDoc/guestList.csv' -o slot_itemsOnly.json
+
+
+python buildIntent4Bot.py -t generateAllSlotTypes -i 'D:/Hibay/产品相关/酒店/iHotel/botService/doc/RequirementDoc/SentencePatten.xlsx' -o slot_woItems.json
+
+
+python buildIntent4Bot.py -t 'generateTargetIntent' -i 'D:/Hibay/产品相关/酒店/iHotel/botService/doc/RequirementDoc/SentencePatten.xlsx' -o intent_all.json
+
+python buildIntent4Bot.py -t 'generateBot' -i 'hotelbotautogen' -o hotelbotautogen.json
+

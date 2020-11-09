@@ -1,0 +1,4740 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "hotelbot",
+    "version": "2",
+    "intents": [
+      {
+        "name": "noOtherNeeds",
+        "version": "16",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "No I'm good Thank  you",
+          "No I  don't need anything else  Thank you",
+          "No that's all I  need Thank you",
+          "nothing else",
+          "That's  it.   Thank you.",
+          "That's  all I need.",
+          "all good",
+          "Nope"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Happy to help!"
+            }
+          ]
+        }
+      },
+      {
+        "name": "confirmNoWoQuantity",
+        "version": "33",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{confirmno} I need  {itemNeedQuantity}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "confirmNo",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "confirmno"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "confirmno"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedQuantity",
+            "slotTypeVersion": "28",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "sorry would you please repeat what you just requested?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "itemNeedQuantity"
+          }
+        ],
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+          "messageVersion": "1.0"
+        }
+      },
+      {
+        "name": "requestCallBack",
+        "version": "6",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "I like to arrange a {serviceNeedCallBack} service",
+          "{serviceNeedCallBack}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "serviceNeedCallBack",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "e.g. What city?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "serviceNeedCallBack"
+          }
+        ]
+      },
+      {
+        "name": "requestItemQuantity",
+        "version": "93",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{WE} {need} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{WE} {need} {someone} {send} {quantityList} {itemNeedQuantity}",
+          "{WE} {need} {someone} {send} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{WE} {need} {get} {quantityList} {itemNeedQuantity}",
+          "{WE} {need} {get} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{WE} {need} {quantityList} {itemNeedQuantity} for room {roomnumber}",
+          "{WE} {need} {someone} {send} {quantityList} {itemNeedQuantity} for room {roomnumber}",
+          "{WE} {need} {get} {quantityList} {itemNeedQuantity} for room {roomnumber}",
+          "{canYou} {let} {someone} {send} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{canYou} {let} {someone} {send} {quantityList} {itemNeedQuantity}",
+          "{canYou} {send} {me} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{canYou} {send} {me}  {quantityList} {itemNeedQuantity}",
+          "{canYou} {send} {me}  {quantityList} {itemNeedQuantity} to room {roomnumber}",
+          "{canYou} {let} {someone} {send} {quantityList} {itemNeedQuantity}  to room {roomnumber}",
+          "{mayI} {get} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{mayI} {get} {quantityList} {itemNeedQuantity}",
+          "{mayI} {let} {someone} {send} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{mayI} {let} {someone} {send} {quantityList} {itemNeedQuantity}",
+          "{mayI} {get} {quantityList} {itemNeedQuantity} for room {roomnumber}",
+          "{mayI} {let} {someone} {send} {quantityList} {itemNeedQuantity} to room {roomnumber}",
+          "{canYou} {replace} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{canYou} {replace}  {itemNeedQuantity}",
+          "{canYou} {dosomething} for {quantityList} {itemNeedQuantity}",
+          "{canYou} {let} {someone} know that {WE} {need} {quantityList} {itemNeedQuantity}",
+          "{how} {mayI} {get} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{how} {mayI} {get} {quantityList} {itemNeedQuantity}",
+          "{WE} {wonder} {whattodo} but I {need} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{WE} {wonder} {whattodo} but I {need} {quantityList} {itemNeedQuantity}",
+          "{WE} {wonder} {whattodo}  {get} {quantityList} {itemNeedQuantity}",
+          "{WE} {wonder} {someone} can {send} {me} {quantityList} {itemNeedQuantity}  {toWhere}",
+          "{WE} {wonder} {someone} can {send} {me} {quantityList} {itemNeedQuantity}",
+          "{WE} {wonder} where {itemNeedQuantity} is located",
+          "{WE} {cannot} {find} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{WE} {cannot} {find} {quantityList} {itemNeedQuantity}",
+          "{WE} would appreciate if {someone} can {replace} {itemNeedQuantity}",
+          "{WE} would appreciate if {someone} {replace} {itemNeedQuantity} with {clean} ones",
+          "{WE} would appreciate if {someone} can {send} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{WE} would appreciate if {someone} can {send} {quantityList} {itemNeedQuantity}",
+          "{WE} would appreciate {quantityList} {itemNeedQuantity}",
+          "{WE} would appreciate to {get} {quantityList} {itemNeedQuantity}",
+          "{letyouknow} {WE} {need} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{letyouknow} {WE} {need} {quantityList} {itemNeedQuantity}",
+          "{WE} have no clean {itemNeedQuantity} {toWhere}",
+          "{WE} have no clean {itemNeedQuantity}",
+          "{WE} have no clean {itemNeedQuantity} {canYou} {send} {me} {clean}",
+          "{WE} have no clean {itemNeedQuantity} would appreciate if {someone} {send} {clean} ones",
+          "{WE} {lack} {itemNeedQuantity} {toWhere}",
+          "{WE} {lack} {itemNeedQuantity}",
+          "{WE} {lack} {itemNeedQuantity} {canYou} {send} {quantityList} {itemNeedQuantitySnd} {toWhere}",
+          "{WE} {lack} {itemNeedQuantity} {canYou} {send} {quantityList} {itemNeedQuantitySnd}",
+          "{WE} {lack} {itemNeedQuantity} please make sure it gets {replace}",
+          "{WE} need {quantityList} {itemNeedQuantity} {canYou} {send} {itemNeedQuantitySnd}",
+          "{my} {itemNeedQuantity} are {dirty}",
+          "{my} {itemNeedQuantity} are {dirty} {canYou} {send} {me} {quantityList} {clean} ones",
+          "{whattodo} to {get} {quantityList} {itemNeedQuantity}",
+          "Who can help with {replace} {itemNeedQuantity}",
+          "Do {someone} {provide} {itemNeedQuantity}",
+          "{itemNeedQuantity}",
+          "{quantityList} {itemNeedQuantity}",
+          "{WE} {need} {itemNeedQuantity}",
+          "{itemNeedQuantity} please",
+          "{WE} {need}  {quantityList} {itemNeedQuantity}",
+          "{itemNeedType}",
+          "I need {itemNeedType}",
+          "{WE} {need} {quantityList} {itemNeedType}",
+          "{WE} {need} {quantityList} {itemNeedType} {toWhere}",
+          "{WE} {need} {someone} {send} {quantityList} {itemNeedType}",
+          "{WE} {need} {someone} {send} {quantityList} {itemNeedType} {toWhere}",
+          "{WE} {need} {get} {quantityList} {itemNeedType}",
+          "{WE} {need} {get} {quantityList} {itemNeedType} {toWhere}",
+          "{WE} {need} {quantityList} {itemNeedType} for room {roomnumber}",
+          "{WE} {need} {someone} {send} {quantityList} {itemNeedType} for room {roomnumber}",
+          "{WE} {need} {get} {quantityList} {itemNeedType} for room {roomnumber}",
+          "{canYou} {let} {someone} {send} {quantityList} {itemNeedType} {toWhere}",
+          "{canYou} {let} {someone} {send} {quantityList} {itemNeedType}",
+          "{canYou} {send} {me} {quantityList} {itemNeedType} {toWhere}",
+          "{canYou} {send} {me}  {quantityList} {itemNeedType}",
+          "{canYou} {send} {me}  {quantityList} {itemNeedType} to room {roomnumber}",
+          "{canYou} {let} {someone} {send} {quantityList} {itemNeedType}  to room {roomnumber}",
+          "{mayI} {get} {quantityList} {itemNeedType} {toWhere}",
+          "{mayI} {get} {quantityList} {itemNeedType}",
+          "{mayI} {let} {someone} {send} {quantityList} {itemNeedType} {toWhere}",
+          "{mayI} {let} {someone} {send} {quantityList} {itemNeedType}",
+          "{mayI} {get} {quantityList} {itemNeedType} for room {roomnumber}",
+          "{mayI} {let} {someone} {send} {quantityList} {itemNeedType} to room {roomnumber}",
+          "{canYou} {replace} {quantityList} {itemNeedType} {toWhere}",
+          "{canYou} {replace}  {itemNeedType}",
+          "{canYou} {dosomething} for {quantityList} {itemNeedType}",
+          "{canYou} {let} {someone} know that {WE} {need} {quantityList} {itemNeedType}",
+          "{how} {mayI} {get} {quantityList} {itemNeedType} {toWhere}",
+          "{how} {mayI} {get} {quantityList} {itemNeedType}",
+          "{WE} {wonder} {whattodo} but I {need} {quantityList} {itemNeedType} {toWhere}",
+          "{WE} {wonder} {whattodo} but I {need} {quantityList} {itemNeedType}",
+          "{WE} {wonder} {whattodo}  {get} {quantityList} {itemNeedType}",
+          "{WE} {wonder} {someone} can {send} {me} {quantityList} {itemNeedType} {toWhere}",
+          "{WE} {wonder} {someone} can {send} {me} {quantityList} {itemNeedType}",
+          "{WE} {wonder} where {itemNeedType} is located",
+          "{WE} {cannot} {find} {quantityList} {itemNeedType} {toWhere}",
+          "{WE} {cannot} {find} {quantityList} {itemNeedType}",
+          "{WE} would appreciate if {someone} can {replace} {itemNeedType}",
+          "{WE} would appreciate if {someone} {replace} {itemNeedType} with {clean} ones",
+          "{WE} would appreciate if {someone} can {send} {quantityList} {itemNeedType} {toWhere}",
+          "{WE} would appreciate if {someone} can {send} {quantityList} {itemNeedType}",
+          "{WE} would appreciate {quantityList} {itemNeedType}",
+          "{WE} would appreciate to {get} {quantityList} {itemNeedType}",
+          "{letyouknow} {WE} {need} {quantityList} {itemNeedType} {toWhere}",
+          "{letyouknow} {WE} {need} {quantityList} {itemNeedType}",
+          "{WE} have no clean {itemNeedType} {toWhere} can you send some",
+          "{WE} have no clean {itemNeedType}",
+          "{WE} have no clean {itemNeedType} {canYou} {send} {me} {clean}",
+          "{WE} have no clean {itemNeedType} would appreciate if {someone} {send} {clean} ones",
+          "{WE} {lack} {itemNeedType} {toWhere}",
+          "{WE} {lack} {itemNeedType}",
+          "{WE} {lack} {itemNeedType} please make sure it gets {replace}",
+          "{my} {itemNeedType} are {dirty}",
+          "{my} {itemNeedType} are {dirty} can you send us some clean ones",
+          "{whattodo} to {get} {quantityList} {itemNeedType}",
+          "Who can help with {replace} {itemNeedType}",
+          "Do {someone} {provide} {itemNeedType}",
+          "{quantityList} {itemNeedType}",
+          "I wonder if housekeeping can {send} me {itemNeedType}",
+          "I like to have {quantityList} {itemNeedType} to be sent to room {roomnumber}",
+          "{WE} {wonder} where is the {itemNeedType}",
+          "does the hotel provide some  {itemNeedType}",
+          "We would love it if {someone} would exchange the {itemNeedType} from room {roomnumber}",
+          "We are out of {itemNeedType} and need it to be replenished",
+          "{WE} would like to {let} {someone} {send} {quantityList} {itemNeedType}",
+          "{WE} want to if you can {send} me {itemNeedType}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "cannot",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "cannot"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 20,
+            "name": "cannot"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "canYou",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "can you"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 5,
+            "name": "canYou"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "clean",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "clean"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 23,
+            "name": "clean"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "dirty",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "dirty"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 22,
+            "name": "dirty"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "dosomething",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "dosomething"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 27,
+            "name": "dosomething"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "find",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "find"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 19,
+            "name": "find"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "get",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "get"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 26,
+            "name": "get"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "how",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "how"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 21,
+            "name": "how"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedQuantity",
+            "slotTypeVersion": "28",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "OK,What kind of {itemNeedType} would you like?"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}",
+              "maxAttempts": 2
+            },
+            "priority": 3,
+            "name": "itemNeedQuantity"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedQuantity",
+            "slotTypeVersion": "28",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "itemNeedQuantitySnd"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 32,
+            "name": "itemNeedQuantitySnd"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedType",
+            "slotTypeVersion": "13",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "welcome! what could I assist for you?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "itemNeedType"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "lack",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "lack"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 30,
+            "name": "lack"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "let",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "let"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 28,
+            "name": "let"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "letyouknow",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "let you know"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 25,
+            "name": "letyouknow"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "MayI",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "may i"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 10,
+            "name": "mayI"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "me",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "me"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 29,
+            "name": "me"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "my",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "my"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 24,
+            "name": "my"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "need",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "need"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 14,
+            "name": "need"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "provide",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "provide"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 34,
+            "name": "provide"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "quantityList",
+            "slotTypeVersion": "5",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "OK, how many do you need?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 4,
+            "name": "quantityList"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "replace",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "replace"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 31,
+            "name": "replace"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.NUMBER",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "roomnumber"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 33,
+            "name": "roomnumber"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "send",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "send"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 6,
+            "name": "send"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "someone",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "someone"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 11,
+            "name": "someone"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "toWhere",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "to where"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 8,
+            "name": "toWhere"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "we",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "we"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 15,
+            "name": "WE"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "whatToDo",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "what to do"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 18,
+            "name": "whattodo"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "wonder",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "wonder"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 17,
+            "name": "wonder"
+          }
+        ],
+        "followUpPrompt": {
+          "prompt": {
+            "messages": [
+              {
+                "groupNumber": 1,
+                "contentType": "PlainText",
+                "content": "OK, we will bring you {quantityList} {itemNeedQuantity} to your room. Anything else I can help you with?"
+              }
+            ],
+            "maxAttempts": 3
+          },
+          "rejectionStatement": {
+            "messages": [
+              {
+                "groupNumber": 1,
+                "contentType": "PlainText",
+                "content": "Ok happy to help"
+              }
+            ]
+          }
+        },
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+          "messageVersion": "1.0"
+        }
+      },
+      {
+        "name": "requestInformation",
+        "version": "7",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "What is {informationService}",
+          "{informationService}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "informationService",
+            "slotTypeVersion": "4",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "e.g. What city?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "informationService"
+          }
+        ]
+      },
+      {
+        "name": "transferTo",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "I  want to talk to a human",
+          "Connect  me to a person",
+          "Transfer  me to Front Desk"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Please allow me to transfer your request to  Guest Service agent.Could you please hold for a minute? Thank you"
+            }
+          ]
+        }
+      },
+      {
+        "name": "requestRepairItems",
+        "version": "8",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "{itemNeedRepair} is not working. Can you please send someone to look at it",
+          "{itemNeedRepair}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedRepair",
+            "slotTypeVersion": "4",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "e.g. What city?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "itemNeedRepair"
+          }
+        ]
+      },
+      {
+        "name": "thanks",
+        "version": "5",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "{thank}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "thanks",
+            "slotTypeVersion": "5",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "thanks"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "thank"
+          }
+        ],
+        "followUpPrompt": {
+          "prompt": {
+            "messages": [
+              {
+                "groupNumber": 1,
+                "contentType": "PlainText",
+                "content": "you are welcome. enjoy rest of your stay!"
+              }
+            ],
+            "maxAttempts": 3
+          },
+          "rejectionStatement": {
+            "messages": [
+              {
+                "groupNumber": 1,
+                "contentType": "PlainText",
+                "content": "ok happy to help"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "confirmYes",
+        "version": "10",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{confirmyessentence}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "confirmyessentence",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "sorry would you please confirm again?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "confirmyessentence"
+          }
+        ]
+      },
+      {
+        "name": "confirmNoNeedQuantityClarify",
+        "version": "15",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{confirmno} I need {quantityListSpec}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "confirmNo",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "confirmno"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "confirmno"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "quantityList",
+            "slotTypeVersion": "5",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "how many would you like?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "quantityListSpec"
+          }
+        ]
+      },
+      {
+        "name": "confirmNoOnly",
+        "version": "8",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{confirmno}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "confirmNo",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "confirmno"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "confirmno"
+          }
+        ]
+      },
+      {
+        "name": "byebye",
+        "version": "5",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{bye}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "bye",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "bye"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "bye"
+          }
+        ],
+        "followUpPrompt": {
+          "prompt": {
+            "messages": [
+              {
+                "groupNumber": 1,
+                "contentType": "PlainText",
+                "content": "byebye, have a great day"
+              }
+            ],
+            "maxAttempts": 3
+          },
+          "rejectionStatement": {
+            "messages": [
+              {
+                "groupNumber": 1,
+                "contentType": "PlainText",
+                "content": "OK, happly to help"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "requestMessageDeliver",
+        "version": "7",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "We want to {serviceNeedMessage}",
+          "{serviceNeedMessage}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "serviceNeedMessage",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "e.g. What city?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "serviceNeedMessage"
+          }
+        ]
+      },
+      {
+        "name": "changeIntent",
+        "version": "9",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "never mind I need {quantityList} {itemNeedType}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedType",
+            "slotTypeVersion": "13",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "say again?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "itemNeedType"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "quantityList",
+            "slotTypeVersion": "5",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "quantityList"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "quantityList"
+          }
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "ok what else I can help you with today?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "confirmNoNeedQuantity",
+        "version": "35",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{confirmno} I need {quantityListSpec} {itemNeedQuantity}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "confirmNo",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "confirmno"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "confirmno"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedQuantity",
+            "slotTypeVersion": "28",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "sorry would you please repeat what item do  you like?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "itemNeedQuantity"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "quantityList",
+            "slotTypeVersion": "5",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "how many would you like?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 3,
+            "name": "quantityListSpec"
+          }
+        ],
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+          "messageVersion": "1.0"
+        }
+      },
+      {
+        "name": "fallback",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [],
+        "slots": [],
+        "parentIntentSignature": "AMAZON.FallbackIntent",
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "this fallback"
+            }
+          ]
+        }
+      }
+    ],
+    "slotTypes": [
+      {
+        "name": "MayI",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "could we"
+          },
+          {
+            "value": "would I please"
+          },
+          {
+            "value": "May I please"
+          },
+          {
+            "value": "May i"
+          },
+          {
+            "value": "can maid"
+          },
+          {
+            "value": "can I please"
+          },
+          {
+            "value": "can we"
+          },
+          {
+            "value": "would i"
+          },
+          {
+            "value": "will maid"
+          },
+          {
+            "value": "do we"
+          },
+          {
+            "value": "can i"
+          },
+          {
+            "value": "could maid"
+          },
+          {
+            "value": "do i"
+          },
+          {
+            "value": "could i"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "serviceNeedMessage",
+        "version": "3",
+        "enumerationValues": [
+          {
+            "value": "Turndown service",
+            "synonyms": [
+              "turned in",
+              " turned on",
+              " torn down",
+              " turned down",
+              " turn brown",
+              " turn crown",
+              " turn drown",
+              " turn frown",
+              " down",
+              " town",
+              " turn noun"
+            ]
+          },
+          {
+            "value": "Valet Laundry Service",
+            "synonyms": [
+              "Steaming service",
+              " Wash",
+              " Clean clothes",
+              " Laundry Service",
+              " Dry Cleaning",
+              " laundry",
+              "vachel lindsay",
+              " violante",
+              " alejandro",
+              " villalpando",
+              " calliandra"
+            ]
+          },
+          {
+            "value": "Dirty item pick up",
+            "synonyms": [
+              "old item pick up",
+              " used item pick up",
+              " stained item pick up",
+              " spoiled item pick up",
+              "thrty item",
+              " doherty itme",
+              " dougherty item",
+              " doughty item",
+              " dottie item",
+              " ditty item",
+              " dotty item",
+              " dirtier item",
+              " draughty",
+              " data item",
+              " dreamtime",
+              " dreamteam",
+              " dry ton",
+              " drayton "
+            ]
+          },
+          {
+            "value": "WIFI password",
+            "synonyms": [
+              "Internet access password"
+            ]
+          },
+          {
+            "value": "Bell Cart",
+            "synonyms": [
+              "Baggage carts ",
+              "bags cart",
+              " uggage cart",
+              " suitcase cart",
+              " gear cart",
+              " trunk cart",
+              " case cart",
+              " tote bag",
+              " suit bag",
+              " satchel cart"
+            ]
+          },
+          {
+            "value": "Service the room",
+            "synonyms": [
+              "Cleaning service",
+              " Clean the room",
+              " change the room",
+              " room cleaning",
+              " servicing the room"
+            ]
+          },
+          {
+            "value": "Wake up Call",
+            "synonyms": [
+              "Early-morning call",
+              " Alarm setup",
+              " wake up message",
+              " bugle call",
+              " morning alert call",
+              "walkable",
+              " wieghable",
+              " make a pile",
+              " wicopy",
+              " nikopol"
+            ]
+          },
+          {
+            "value": "Baggage Porter",
+            "synonyms": [
+              "Bellhop",
+              " concierge",
+              " carrier",
+              " baggage carrier",
+              " doorperson",
+              " Carry baggages",
+              " help with bags",
+              " help with lugggage",
+              " assistance with bags",
+              " assistance with luggage",
+              "luggage",
+              " baggage",
+              " suitcase",
+              " gear",
+              " trunk",
+              " case",
+              " tote bag",
+              " suit bag",
+              " satchel",
+              " porter service",
+              " porter",
+              "bitdgeport",
+              " backport",
+              " beach party",
+              " supporter",
+              " sally port",
+              " gagging order"
+            ]
+          },
+          {
+            "value": "Previous request",
+            "synonyms": [
+              "Prior request",
+              " earlier request",
+              " prior call",
+              " earlier call",
+              " previous call"
+            ]
+          },
+          {
+            "value": "WIFI connection",
+            "synonyms": [
+              "Internet access"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "replace",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "pick up"
+          },
+          {
+            "value": "refill"
+          },
+          {
+            "value": "change"
+          },
+          {
+            "value": "replace"
+          },
+          {
+            "value": "restock"
+          },
+          {
+            "value": "refresh"
+          },
+          {
+            "value": "exchange"
+          },
+          {
+            "value": "replenish"
+          },
+          {
+            "value": "take away"
+          },
+          {
+            "value": "remove"
+          },
+          {
+            "value": "switch"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "dosomething",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "connect me with the right person"
+          },
+          {
+            "value": "put me through the correct department"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "letyouknow",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "to let you know"
+          },
+          {
+            "value": "want to let you know"
+          },
+          {
+            "value": "just want to let you know"
+          },
+          {
+            "value": "just let you know"
+          },
+          {
+            "value": "just to let you know"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "we",
+        "version": "3",
+        "enumerationValues": [
+          {
+            "value": "My son"
+          },
+          {
+            "value": "My husband"
+          },
+          {
+            "value": "My friend"
+          },
+          {
+            "value": "the room"
+          },
+          {
+            "value": "I"
+          },
+          {
+            "value": "My mother"
+          },
+          {
+            "value": "we"
+          },
+          {
+            "value": "My roommate"
+          },
+          {
+            "value": "she"
+          },
+          {
+            "value": "My wife"
+          },
+          {
+            "value": "our room"
+          },
+          {
+            "value": "my room"
+          },
+          {
+            "value": "My father"
+          },
+          {
+            "value": "he"
+          },
+          {
+            "value": "My daughter"
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "whatToDo",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "how to do"
+          },
+          {
+            "value": "what is the policy"
+          },
+          {
+            "value": "who to reach out"
+          },
+          {
+            "value": "who to ask for"
+          },
+          {
+            "value": "who is the correct department"
+          },
+          {
+            "value": "what is the process"
+          },
+          {
+            "value": "who to call for"
+          },
+          {
+            "value": "what is the procedure"
+          },
+          {
+            "value": "whatis  the routine"
+          },
+          {
+            "value": "what to do"
+          },
+          {
+            "value": "who is the right person"
+          },
+          {
+            "value": "what to look for"
+          },
+          {
+            "value": "what is correct channel"
+          },
+          {
+            "value": "what is the proper way"
+          },
+          {
+            "value": "how can i"
+          },
+          {
+            "value": "what is the method"
+          },
+          {
+            "value": "who to contact"
+          },
+          {
+            "value": "what is the step"
+          },
+          {
+            "value": "what is the correct practice"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "thanks",
+        "version": "5",
+        "enumerationValues": [
+          {
+            "value": "thanks"
+          },
+          {
+            "value": "thank you very much"
+          },
+          {
+            "value": "thank you"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "how",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "how"
+          },
+          {
+            "value": "what"
+          },
+          {
+            "value": "where"
+          },
+          {
+            "value": "who"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "itemNeedRepair",
+        "version": "4",
+        "enumerationValues": [
+          {
+            "value": "Coffee machine",
+            "synonyms": [
+              "Kettle",
+              " coffee maker",
+              " caffeine machine",
+              " cappucciona machine",
+              " expresso machine",
+              " brew machine",
+              " cafe machine",
+              " mocha machine",
+              " coffee appliance coffee maker",
+              " coffee  engine",
+              "copy machine",
+              " cash machine",
+              " coin machine",
+              " coffeeman",
+              " confirmation",
+              " conformation",
+              " cremation",
+              " collimation",
+              " coffee mug",
+              " cofunction"
+            ]
+          },
+          {
+            "value": "Make up mirror",
+            "synonyms": [
+              "Mirror",
+              " reflector",
+              " looking glass"
+            ]
+          },
+          {
+            "value": "Chair",
+            "synonyms": [
+              "Desk Chair",
+              " workspace chair",
+              " secretary chair"
+            ]
+          },
+          {
+            "value": "Microwave",
+            "synonyms": [
+              "food warmer",
+              "microwave",
+              " macrame",
+              " microarray",
+              " micro switch",
+              " microware",
+              " makeaway",
+              " mikey way",
+              " microgroove"
+            ]
+          },
+          {
+            "value": "Plug",
+            "synonyms": [
+              "Electric plug",
+              " electric connection",
+              "plaque",
+              " pluck",
+              " ploeg",
+              " plog",
+              " pug",
+              " plugged",
+              " plac"
+            ]
+          },
+          {
+            "value": "Toilet",
+            "synonyms": [
+              "Water leaking"
+            ]
+          },
+          {
+            "value": "Iron",
+            "synonyms": [
+              "ironing appliance",
+              " clothes iron",
+              " steam iron",
+              " flat iron",
+              " smoothing iron or iron box."
+            ]
+          },
+          {
+            "value": "Clock",
+            "synonyms": [
+              "time device",
+              " timekeeping device",
+              " timepiece",
+              " timer",
+              " alarm",
+              " timemarker",
+              " digital watch",
+              " timekeeper",
+              " Radio"
+            ]
+          },
+          {
+            "value": "Luggage Rack",
+            "synonyms": [
+              "shoe rack",
+              "  bag",
+              " suitcase",
+              " baggage",
+              " trunk",
+              " case",
+              " gear",
+              " carry-on",
+              " tote",
+              "Shoe rack"
+            ]
+          },
+          {
+            "value": "Light bulb",
+            "synonyms": [
+              "light tube",
+              "wet bulb",
+              " hot bulb",
+              " liable",
+              " litle",
+              " albe;",
+              " light up"
+            ]
+          },
+          {
+            "value": "Bathroom door",
+            "synonyms": [
+              "Toilet door",
+              " sliding door",
+              "barrymore",
+              " barn door",
+              " borrador",
+              " batten door",
+              " beam rider"
+            ]
+          },
+          {
+            "value": "Closet door",
+            "synonyms": [
+              "Sliding Door",
+              " wardrobe door",
+              " clothes room",
+              " storage door ",
+              "closet auger",
+              " closed door",
+              " cazador",
+              " closet",
+              " closets",
+              " closeted",
+              " close the door",
+              " cost dear",
+              " lays at door"
+            ]
+          },
+          {
+            "value": "Faucet",
+            "synonyms": [
+              "Sink",
+              " Water leaking",
+              " water running",
+              " leakage"
+            ]
+          },
+          {
+            "value": "Desk",
+            "synonyms": [
+              "workspace",
+              " secretary",
+              " work counter"
+            ]
+          },
+          {
+            "value": "Shower",
+            "synonyms": [
+              "Shower head",
+              " Shower Sprinkler"
+            ]
+          },
+          {
+            "value": "Lamp",
+            "synonyms": [
+              "Desk Lamp",
+              " workspace lamp",
+              " secretary lamp",
+              "desk lantern",
+              " workspace lantern",
+              " secretray lantern",
+              "desk  light",
+              " workspace light",
+              " secretray light",
+              "lampe",
+              " lump",
+              " limp",
+              " lap",
+              " lamb",
+              " lamps",
+              " clamp",
+              " lam",
+              " lapp",
+              " lappe"
+            ]
+          },
+          {
+            "value": "Hair Dryer",
+            "synonyms": [
+              "Blow Dryer",
+              " hair blower"
+            ]
+          },
+          {
+            "value": "TV ",
+            "synonyms": [
+              "Television",
+              " telly",
+              " tube",
+              " TV box",
+              "Tovey",
+              " tevye",
+              " divid",
+              " stevie",
+              " tvs",
+              " truvy",
+              " atv",
+              " tivo",
+              " tfe",
+              " tufa",
+              "televising",
+              " telogen",
+              " daylogh vision",
+              " tunnelvision",
+              " division",
+              " elevation",
+              " cell division"
+            ]
+          },
+          {
+            "value": "Night stand lamp",
+            "synonyms": [
+              "night light",
+              " bed table lamp",
+              " bedstand lamp",
+              " night table lamp"
+            ]
+          },
+          {
+            "value": "Window",
+            "synonyms": [
+              "windy",
+              " one day",
+              " wendy",
+              " widow",
+              " wind",
+              " winds",
+              " wanda",
+              " windowed",
+              " winnow",
+              " winde",
+              " wend",
+              " one two",
+              " hindu",
+              " wende"
+            ]
+          },
+          {
+            "value": "Bed",
+            "synonyms": [
+              "mattress",
+              " chaise",
+              " sleeping platform",
+              " cot",
+              " divan",
+              " trundle"
+            ]
+          },
+          {
+            "value": "Towel bar",
+            "synonyms": [
+              "towel pole",
+              " towel stake",
+              " towel rail",
+              " wall bar",
+              " towel hanger",
+              " towel hanging bar",
+              " hanging bar"
+            ]
+          },
+          {
+            "value": "Ice machine",
+            "synonyms": [
+              "ice motor",
+              " ice engine",
+              " ice appliance"
+            ]
+          },
+          {
+            "value": "Heater",
+            "synonyms": [
+              "warmer",
+              " radiator",
+              "hotter",
+              " hitter",
+              " hater",
+              " hautuer",
+              " hatter",
+              " hutter",
+              " hayter",
+              " headre",
+              " heat",
+              " heaters",
+              " hodder",
+              " haider",
+              " heider"
+            ]
+          },
+          {
+            "value": "Night stand",
+            "synonyms": [
+              "bed table",
+              " bedstand",
+              " night table"
+            ]
+          },
+          {
+            "value": "Shower door",
+            "synonyms": [
+              "Shower glass"
+            ]
+          },
+          {
+            "value": "Retractable Clothes drying line",
+            "synonyms": [
+              "Drying line",
+              " clothes line",
+              " clothes hanging line",
+              " hanging line"
+            ]
+          },
+          {
+            "value": "TV remote ",
+            "synonyms": [
+              "Remote Control",
+              " clicker",
+              " push-button control",
+              " remote",
+              " telly control",
+              "terremot",
+              " tiaret",
+              " tv room",
+              " remote controller",
+              " remote controlled",
+              " rent control",
+              " riot control"
+            ]
+          },
+          {
+            "value": "Wall hook",
+            "synonyms": [
+              "wall peg",
+              " wall",
+              " hanger",
+              " wall holder",
+              " wall calsp"
+            ]
+          },
+          {
+            "value": "Door",
+            "synonyms": [
+              "Main room door",
+              " room door",
+              " entrance",
+              " entryway",
+              " front gate",
+              " exit",
+              "dore",
+              " dor",
+              " dorr",
+              " doerr",
+              " dar",
+              " dower",
+              " dour",
+              " dhar",
+              " daher",
+              " dauer",
+              " daar",
+              " dare",
+              " dire",
+              " dyer",
+              " doer",
+              " dewar",
+              " dur",
+              " duer",
+              " deare",
+              " dear"
+            ]
+          },
+          {
+            "value": "Air conditioner",
+            "synonyms": [
+              "AC",
+              " HVAC",
+              " hot-cold",
+              " heater",
+              " cooler",
+              " climate control",
+              " central air",
+              " clima",
+              " climatization",
+              " thermostat",
+              "hair conditioner",
+              " air conditioned",
+              " power conditioner",
+              " air conduction",
+              " eye condition",
+              " weather"
+            ]
+          },
+          {
+            "value": "Light switch",
+            "synonyms": [
+              "Electric switch",
+              " light plate",
+              "white witch",
+              " light weight",
+              " light touch",
+              " lights on",
+              " light wave",
+              " limit switch"
+            ]
+          },
+          {
+            "value": "Ironing Board",
+            "synonyms": [
+              "pressing board"
+            ]
+          },
+          {
+            "value": "Bathtub",
+            "synonyms": [
+              "Bath",
+              " shower tub",
+              " shower",
+              "backed up",
+              " beat up",
+              " bathrobe",
+              " basta",
+              " beefed up",
+              " booked up",
+              " bust up",
+              " bucked up"
+            ]
+          },
+          {
+            "value": "Water Leak",
+            "synonyms": [
+              "Water leaking",
+              " water running",
+              " leakage"
+            ]
+          },
+          {
+            "value": "Mirror",
+            "synonyms": [
+              "reflector",
+              " looking glass"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "canYou",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "will you please"
+          },
+          {
+            "value": "can you"
+          },
+          {
+            "value": "can you kindly"
+          },
+          {
+            "value": "could someone"
+          },
+          {
+            "value": "please"
+          },
+          {
+            "value": "would someone kindly"
+          },
+          {
+            "value": "could you kindly"
+          },
+          {
+            "value": "could you"
+          },
+          {
+            "value": "kindly"
+          },
+          {
+            "value": "can you please"
+          },
+          {
+            "value": "could you please"
+          },
+          {
+            "value": "would you please"
+          },
+          {
+            "value": "will you"
+          },
+          {
+            "value": "would you kindly"
+          },
+          {
+            "value": "could maid"
+          },
+          {
+            "value": "will you kindly"
+          },
+          {
+            "value": "do you"
+          },
+          {
+            "value": "would you"
+          },
+          {
+            "value": "could someone kindly"
+          },
+          {
+            "value": "can someone kindly"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "find",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "see"
+          },
+          {
+            "value": "locate"
+          },
+          {
+            "value": "find"
+          },
+          {
+            "value": "have"
+          },
+          {
+            "value": "pinpoint"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "get",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "obtain"
+          },
+          {
+            "value": "get help with"
+          },
+          {
+            "value": "receive"
+          },
+          {
+            "value": "inquire"
+          },
+          {
+            "value": "request"
+          },
+          {
+            "value": "inquire about"
+          },
+          {
+            "value": "assist with"
+          },
+          {
+            "value": "replace"
+          },
+          {
+            "value": "require"
+          },
+          {
+            "value": "get help for"
+          },
+          {
+            "value": "acquire"
+          },
+          {
+            "value": "fetch"
+          },
+          {
+            "value": "get"
+          },
+          {
+            "value": "have"
+          },
+          {
+            "value": "provide assistance with"
+          },
+          {
+            "value": "help with"
+          },
+          {
+            "value": "need to talk to"
+          },
+          {
+            "value": "order"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "me",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "our room"
+          },
+          {
+            "value": "my room"
+          },
+          {
+            "value": "me"
+          },
+          {
+            "value": "the room"
+          },
+          {
+            "value": "us"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "let",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "get"
+          },
+          {
+            "value": "have"
+          },
+          {
+            "value": "let"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "toWhere",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "to be sent to our room"
+          },
+          {
+            "value": " to be picked up"
+          },
+          {
+            "value": "to the room"
+          },
+          {
+            "value": "to me"
+          },
+          {
+            "value": "for us"
+          },
+          {
+            "value": "in our room"
+          },
+          {
+            "value": " to be taken away"
+          },
+          {
+            "value": "for me"
+          },
+          {
+            "value": "to our room"
+          },
+          {
+            "value": "to be refreshed"
+          },
+          {
+            "value": " to be grabbed"
+          },
+          {
+            "value": "to be dropped off"
+          },
+          {
+            "value": " to be gathered"
+          },
+          {
+            "value": "for my room"
+          },
+          {
+            "value": "please"
+          },
+          {
+            "value": " to be collected"
+          },
+          {
+            "value": "in my room"
+          },
+          {
+            "value": "to be sent up to our room"
+          },
+          {
+            "value": "for the room"
+          },
+          {
+            "value": "left"
+          },
+          {
+            "value": "to be dropped off in our room"
+          },
+          {
+            "value": "for our room"
+          },
+          {
+            "value": "to my room"
+          },
+          {
+            "value": "to be replaced"
+          },
+          {
+            "value": "to be sent"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "wonder",
+        "version": "3",
+        "enumerationValues": [
+          {
+            "value": "are not sure"
+          },
+          {
+            "value": "not sure"
+          },
+          {
+            "value": "don't know"
+          },
+          {
+            "value": "want to know"
+          },
+          {
+            "value": "wonder if"
+          },
+          {
+            "value": "do not know"
+          },
+          {
+            "value": "wondering if"
+          },
+          {
+            "value": "am not sure"
+          },
+          {
+            "value": "asking for"
+          },
+          {
+            "value": "ask for"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "dirty",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "dirty"
+          },
+          {
+            "value": "stained"
+          },
+          {
+            "value": "old"
+          },
+          {
+            "value": "used"
+          },
+          {
+            "value": "spoiled"
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "need",
+        "version": "3",
+        "enumerationValues": [
+          {
+            "value": "love",
+            "synonyms": [
+              "love to"
+            ]
+          },
+          {
+            "value": "desire",
+            "synonyms": [
+              "desire to"
+            ]
+          },
+          {
+            "value": "are asking for"
+          },
+          {
+            "value": "prefer",
+            "synonyms": [
+              "prefer to"
+            ]
+          },
+          {
+            "value": "need",
+            "synonyms": [
+              "need to",
+              "needs"
+            ]
+          },
+          {
+            "value": "like",
+            "synonyms": [
+              "like to"
+            ]
+          },
+          {
+            "value": "want",
+            "synonyms": [
+              "want to"
+            ]
+          },
+          {
+            "value": "am asking for"
+          },
+          {
+            "value": "are calling to"
+          },
+          {
+            "value": "ask for"
+          },
+          {
+            "value": "are calling for"
+          },
+          {
+            "value": "wish",
+            "synonyms": [
+              "wish to"
+            ]
+          },
+          {
+            "value": "am calling for"
+          },
+          {
+            "value": "am calling to"
+          },
+          {
+            "value": "would like",
+            "synonyms": [
+              "would like to"
+            ]
+          },
+          {
+            "value": "in need of"
+          },
+          {
+            "value": "ask",
+            "synonyms": [
+              "ask to"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "quantityList",
+        "version": "5",
+        "enumerationValues": [
+          {
+            "value": "nine"
+          },
+          {
+            "value": "some"
+          },
+          {
+            "value": "a couple",
+            "synonyms": [
+              "a couple of",
+              "couple"
+            ]
+          },
+          {
+            "value": "a set",
+            "synonyms": [
+              "a set of",
+              "set of"
+            ]
+          },
+          {
+            "value": "a pair",
+            "synonyms": [
+              "a pair of",
+              "pair"
+            ]
+          },
+          {
+            "value": "numerous"
+          },
+          {
+            "value": "all of them"
+          },
+          {
+            "value": "another"
+          },
+          {
+            "value": "additional"
+          },
+          {
+            "value": "several"
+          },
+          {
+            "value": "seven"
+          },
+          {
+            "value": "an additional"
+          },
+          {
+            "value": "two",
+            "synonyms": [
+              "to"
+            ]
+          },
+          {
+            "value": "three"
+          },
+          {
+            "value": "eight"
+          },
+          {
+            "value": "either"
+          },
+          {
+            "value": "dual"
+          },
+          {
+            "value": "four"
+          },
+          {
+            "value": "extra"
+          },
+          {
+            "value": "number of",
+            "synonyms": [
+              "loads of",
+              "a load of"
+            ]
+          },
+          {
+            "value": "a duo"
+          },
+          {
+            "value": "ten"
+          },
+          {
+            "value": "five"
+          },
+          {
+            "value": " the whole set"
+          },
+          {
+            "value": "all",
+            "synonyms": [
+              "all of"
+            ]
+          },
+          {
+            "value": "a"
+          },
+          {
+            "value": "six"
+          },
+          {
+            "value": "more"
+          },
+          {
+            "value": "one"
+          },
+          {
+            "value": "multiple"
+          },
+          {
+            "value": "many"
+          },
+          {
+            "value": "any"
+          },
+          {
+            "value": "an"
+          },
+          {
+            "value": "each"
+          },
+          {
+            "value": "a handful",
+            "synonyms": [
+              "a handful of"
+            ]
+          },
+          {
+            "value": "a load of"
+          },
+          {
+            "value": "a dozen",
+            "synonyms": [
+              "a dozen",
+              "dozens"
+            ]
+          },
+          {
+            "value": "a lot",
+            "synonyms": [
+              "lot of",
+              "lots of"
+            ]
+          },
+          {
+            "value": "a few",
+            "synonyms": [
+              "a few of",
+              "a few more"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "itemNeedQuantity",
+        "version": "28",
+        "enumerationValues": [
+          {
+            "value": "Coffee machine",
+            "synonyms": [
+              "Kettle",
+              " coffee maker",
+              " caffeine machine",
+              " cappucciona machine",
+              " expresso machine",
+              " brew machine",
+              " cafe machine",
+              " mocha machine",
+              " coffee appliance           coffee maker",
+              " coffee  engine",
+              "copy machine",
+              " cash machine",
+              " coin machine",
+              " coffeeman",
+              " confirmation",
+              " conformation",
+              " cremation",
+              " collimation",
+              " coffee mug",
+              " cofunction"
+            ]
+          },
+          {
+            "value": "Mobile USB Hub",
+            "synonyms": [
+              "Mobile USB charger station ",
+              "mobilization",
+              " mobilizing",
+              " mobile library",
+              " malabsorption",
+              " metal spraying",
+              " demobilisation",
+              " social station",
+              " sparcstation",
+              " cybernetician"
+            ]
+          },
+          {
+            "value": "Bottled water",
+            "synonyms": [
+              "Flask",
+              " water jug",
+              " water thermos",
+              "bottled washer",
+              " bottled-out",
+              " battledore",
+              " barley water"
+            ]
+          },
+          {
+            "value": "Conditioner",
+            "synonyms": [
+              "Hair Conditioner",
+              " detangler",
+              " hair lotion",
+              " hair rinse",
+              " hair treatment",
+              " hair mask",
+              " hair care lotion",
+              " hair cream",
+              "conditioned",
+              " conditional",
+              " conditioning. Conduction",
+              " contrition"
+            ]
+          },
+          {
+            "value": "Mineral water",
+            "synonyms": [
+              "spring water",
+              " carbonated water",
+              " tonic water",
+              "minetral tar",
+              " mineralizer",
+              " mineral rights",
+              " mineral wool",
+              " mineraloid",
+              " moneralist",
+              " monolater"
+            ]
+          },
+          {
+            "value": "Matchbox",
+            "synonyms": [
+              "match",
+              " mathbook",
+              "mailbox",
+              " matchbook",
+              " mattox",
+              " hatbox",
+              " myboss",
+              " macaques",
+              " cashbox",
+              " mattocks"
+            ]
+          },
+          {
+            "value": "Soap",
+            "synonyms": [
+              "Hand soap",
+              " wash soap",
+              " soap for washing",
+              "soup",
+              " sap",
+              " supp",
+              " sip",
+              " sep",
+              " sup",
+              " cip",
+              " sop",
+              " seep",
+              " hands up",
+              " hand up",
+              " handsaw",
+              " canned supo",
+              " handset",
+              " hard soap"
+            ]
+          },
+          {
+            "value": "Clock",
+            "synonyms": [
+              "time device",
+              " timekeeping device",
+              " timepiece",
+              " timer",
+              " alarm",
+              " timemarker",
+              " digital watch",
+              " timekeeper",
+              " Radio"
+            ]
+          },
+          {
+            "value": "Cream packet",
+            "synonyms": [
+              "Light cream",
+              " coffee creamer ",
+              " milk powder",
+              "crumpet",
+              " crampit",
+              " compact",
+              " crampet",
+              " cream nut"
+            ]
+          },
+          {
+            "value": "Mouthwash",
+            "synonyms": [
+              "mouth mint",
+              " mouth cleaner",
+              "my wish"
+            ]
+          },
+          {
+            "value": "Laundry bag",
+            "synonyms": [
+              "valet bag",
+              " laundry bag",
+              " dirty clothes bag",
+              " Hamper bag",
+              " wash bag",
+              "laundry",
+              " ladybug",
+              " louderback",
+              " laundries",
+              " litterbag",
+              " ladder back",
+              " underback"
+            ]
+          },
+          {
+            "value": "Plastic cup",
+            "synonyms": [
+              "Water cups",
+              " couple water cups",
+              " couple plastic cups",
+              " plastic tumbler",
+              " plastic glass",
+              "plastic wrap",
+              " plastic",
+              " plasty cup",
+              " elastic",
+              " plastique"
+            ]
+          },
+          {
+            "value": "Umbrella",
+            "synonyms": [
+              "Sunshade",
+              " sun guard",
+              " rain guard",
+              "embroiled",
+              " umbra",
+              " embroil",
+              " amarilla",
+              " abella",
+              " ambala",
+              " amber ale",
+              " emboli",
+              " abril"
+            ]
+          },
+          {
+            "value": "Sugar packet",
+            "synonyms": [
+              "sweetener",
+              " fructose",
+              " saccharin",
+              " sucrose",
+              "sugar act",
+              " sugarcoat",
+              " sugar pucker"
+            ]
+          },
+          {
+            "value": "Make up remover wipe",
+            "synonyms": [
+              "face cleaner wipe",
+              " face wipes",
+              " makeup wirpe",
+              " make up cleaner ",
+              "mockup",
+              " muck up",
+              " makes up",
+              " wake up",
+              " mecca"
+            ]
+          },
+          {
+            "value": "Waste Basket",
+            "synonyms": [
+              "Garbage can",
+              " trash can",
+              " dustbin",
+              " garbage pail",
+              " wastebin",
+              " trash basket",
+              " dumpster can",
+              " wastepaper basket",
+              "casket",
+              " wyare biscuit",
+              " easter basket",
+              " gift basket",
+              " sea biscuit",
+              " setback",
+              " sea stacks ",
+              " trashcan",
+              " tarascan",
+              " tracking",
+              " trashing",
+              " tragen",
+              " traction",
+              " traffic in"
+            ]
+          },
+          {
+            "value": "Bed Spread",
+            "synonyms": [
+              "Bed Cover",
+              " comforter",
+              "bespread",
+              " broadpsread",
+              " bowsprit",
+              " bedspring",
+              " bedstead",
+              " bedside",
+              " bull spread",
+              " bear spread"
+            ]
+          },
+          {
+            "value": "Ipod Docking station",
+            "synonyms": [
+              "Tablet docking station",
+              " filling station",
+              " work station",
+              " docking",
+              "docking station",
+              " sparcstation",
+              " suppeditation",
+              " stocking stitch",
+              " slocking stone",
+              " secundation "
+            ]
+          },
+          {
+            "value": "Electric converter",
+            "synonyms": [
+              "Travel adapters",
+              " plug adaptors",
+              "electric converter",
+              " rotary converter",
+              " data converter"
+            ]
+          },
+          {
+            "value": "Baby Crib",
+            "synonyms": [
+              "crib",
+              " baby bed",
+              " basinet",
+              "cradle",
+              " manger",
+              " bin",
+              " baby trundle bed",
+              " baby cot",
+              "bayberries",
+              " beakers",
+              " abbygro"
+            ]
+          },
+          {
+            "value": "Pillow case",
+            "synonyms": [
+              "pillow cover",
+              " pillow slip",
+              "pillow lace",
+              " bellicose",
+              " helicase",
+              " below cost",
+              " pilates"
+            ]
+          },
+          {
+            "value": "Bath towel",
+            "synonyms": [
+              "Large guest towel",
+              " bath sheet",
+              " large bath cloth",
+              " body towels",
+              "bath tower",
+              " bath tao",
+              "back towel",
+              "best our",
+              "bath toa",
+              "fast tower",
+              "fast towel",
+              "fast tao",
+              "path towel",
+              " path tower",
+              " path tao"
+            ]
+          },
+          {
+            "value": "Bath Slipper",
+            "synonyms": [
+              "Slippers",
+              " bath shoes",
+              " bath footwear",
+              "beth slipper",
+              " bathe slipper",
+              " path slipper",
+              " beth sleeper",
+              " bathe sleeper",
+              " bathe sleeper",
+              " path sleeper"
+            ]
+          },
+          {
+            "value": "USB Charger",
+            "synonyms": [
+              "charger",
+              " power source",
+              " surcharger",
+              " USB battery",
+              " USB plug",
+              " USB power",
+              " USB power source",
+              "upcharge",
+              " sparger",
+              " umbarger",
+              " uncharge",
+              " sparge",
+              " starcher",
+              " scorcher",
+              " sarge"
+            ]
+          },
+          {
+            "value": "Pants hanger",
+            "synonyms": [
+              "Pants hanger",
+              " slacks hanger",
+              " knickers hanger",
+              " pantalon hangers",
+              " britches hanger",
+              "Wire hanger",
+              " towering",
+              " tetramer",
+              " tottering",
+              " tarring",
+              " tearing",
+              " tremor",
+              " touring"
+            ]
+          },
+          {
+            "value": "Ashtray",
+            "synonyms": [
+              "smoke tray",
+              " cigarette tray",
+              " cigar tray",
+              "ash tree",
+              " ashrae",
+              " astro",
+              " astra",
+              " asherah",
+              " ash trees",
+              " ash gray",
+              " ash grey",
+              " astray",
+              " ice tray"
+            ]
+          },
+          {
+            "value": "Towel",
+            "synonyms": [
+              "cloth",
+              " linens",
+              " washcloth",
+              " terry cloth",
+              "dowel",
+              " howel",
+              " dial",
+              " trial",
+              " powell",
+              " vowel",
+              " total",
+              " tulle",
+              " to heel tulle",
+              " tul",
+              " toweled",
+              " towle",
+              " toweled",
+              " howell",
+              " dual",
+              " duel",
+              " dio",
+              " doel",
+              " toggle",
+              " topple",
+              " tol",
+              " tower",
+              " taal",
+              " tool",
+              " toil",
+              " tile",
+              "tao",
+              "town",
+              " power",
+              " flower",
+              "talk",
+              "tile",
+              "time",
+              "tell"
+            ]
+          },
+          {
+            "value": "Gargle glass",
+            "synonyms": [
+              "Gargle cup",
+              " spit cup",
+              " swish cup",
+              " mouthwash cup",
+              " gargle glass",
+              " spit glass",
+              " mouthwash glass",
+              " swish glass",
+              "gargles",
+              " gargled",
+              " gargol",
+              " gargil",
+              " grey cup",
+              " moustache cup",
+              " mustache cup",
+              " misworhsip"
+            ]
+          },
+          {
+            "value": "Lotion",
+            "synonyms": [
+              "Hand lotion",
+              " body Lotion",
+              " cream",
+              " ointment",
+              " moisturizer",
+              " creme",
+              " body application",
+              " body grease",
+              " balsam",
+              " vaseline",
+              " pomade",
+              " cold cream",
+              " cosmetic creme",
+              "lesions",
+              " legions",
+              " laotians",
+              " lashings"
+            ]
+          },
+          {
+            "value": "Dental Kit",
+            "synonyms": [
+              "dental floss",
+              " dental string",
+              " teeth cleaning string",
+              "dental cast",
+              " dental care",
+              " dental cap",
+              " identikit",
+              " dental crest",
+              " dental gold",
+              " datakit",
+              " dentulous",
+              " dental filling",
+              " dentoiferous",
+              " doble fleece"
+            ]
+          },
+          {
+            "value": "Bath Mat",
+            "synonyms": [
+              "bath rugs",
+              " bathroom runner",
+              " bathroom towel",
+              "biomass",
+              " bayonets",
+              " bonnets",
+              " bathos",
+              " bath house",
+              " banat",
+              " bennetts",
+              " bon mots",
+              " bats"
+            ]
+          },
+          {
+            "value": "Ironing Board",
+            "synonyms": [
+              "pressing board"
+            ]
+          },
+          {
+            "value": "BedSheet",
+            "synonyms": [
+              "countour sheet",
+              "broadsheet",
+              " head shots",
+              " bad debts",
+              " bad shot",
+              " broadsheet"
+            ]
+          },
+          {
+            "value": "Wheelchair",
+            "synonyms": [
+              "chair with wheels",
+              "wiltshire",
+              " wing chair",
+              " welcher",
+              " welches",
+              " we care",
+              " wheeler ",
+              " wall chart"
+            ]
+          },
+          {
+            "value": "Glasses",
+            "synonyms": [
+              "water glass",
+              " drinking glass",
+              "classes",
+              " glosses",
+              " gases",
+              " glazes",
+              " glasshouse",
+              " glacis"
+            ]
+          },
+          {
+            "value": "Face towel",
+            "synonyms": [
+              "wash cloth",
+              " facecloth",
+              " tea towel",
+              " hand mitt",
+              " washrag",
+              " compress cloth",
+              "festivals",
+              " fossils",
+              " fistulas",
+              " festal",
+              " fistulae",
+              " vestals",
+              "fish tower",
+              " fish towel",
+              "  face tower",
+              "face tao",
+              " face hour"
+            ]
+          },
+          {
+            "value": "Coffee pod",
+            "synonyms": [
+              "caffeine pods",
+              " cappucciona pods",
+              " expresso pods",
+              " mocha pods",
+              "coffee bar",
+              " copepod",
+              " copied",
+              " cough up",
+              " keypad"
+            ]
+          },
+          {
+            "value": "Make up mirror",
+            "synonyms": [
+              "Mirror",
+              " reflector",
+              " looking glass"
+            ]
+          },
+          {
+            "value": "Coffee packet",
+            "synonyms": [
+              "caffeine packet",
+              " coffee powder",
+              " cappucciona packet",
+              " expresso packet",
+              " mocha packet",
+              "coffee pot",
+              " coffee bag",
+              " coffey packet",
+              " coffea packet",
+              " cafe packet",
+              " kofi packet"
+            ]
+          },
+          {
+            "value": "Hand towel",
+            "synonyms": [
+              "Hand cloth",
+              " hand towel",
+              " small towel",
+              " small cloth",
+              "hand tower",
+              "hand tao",
+              "an tower",
+              "an towel",
+              "an tao",
+              "him towel",
+              "him tower"
+            ]
+          },
+          {
+            "value": "Sewing Kit",
+            "synonyms": [
+              "darning kit",
+              " seaming kit",
+              " needle kit",
+              " patching kit",
+              " tailoring kit",
+              " Sewing material",
+              "Sewing assortment",
+              "Sewing pack",
+              "Sewing tools",
+              "Sewing bag",
+              "Sewing supplies",
+              "stick it",
+              " sing it",
+              " soyinka",
+              " sicut",
+              " suck it",
+              " sangat"
+            ]
+          },
+          {
+            "value": "Iron",
+            "synonyms": [
+              "ironing appliance",
+              " clothes iron",
+              " steam iron",
+              " flat iron",
+              " smoothing iron ",
+              " iron box"
+            ]
+          },
+          {
+            "value": "Luggage Rack",
+            "synonyms": [
+              "shoe rack",
+              " bag",
+              " suitcase",
+              " baggage",
+              " trunk",
+              " case",
+              " gear",
+              " carry-on",
+              " tote",
+              "Shoe rack"
+            ]
+          },
+          {
+            "value": "Satin hanger",
+            "synonyms": [
+              "Cloth hanger",
+              " Ladies hanger",
+              " delicates hanger",
+              "saddening",
+              " stunning",
+              " satiny",
+              " steamhammer",
+              " sit in on",
+              " staining",
+              " satin",
+              " seasoning",
+              " stoning"
+            ]
+          },
+          {
+            "value": "Blanket",
+            "synonyms": [
+              "Throw",
+              " bed cover",
+              " coverlette",
+              " fleece",
+              " wrapper",
+              " bed covering",
+              " afghan",
+              "blackouts",
+              " black hats",
+              " blancs",
+              " blanchet",
+              " banquets",
+              " blankness",
+              " blanked",
+              " blanketing",
+              " palnets",
+              " bluecoats",
+              " blancs"
+            ]
+          },
+          {
+            "value": "Nail polish remover  pad",
+            "synonyms": [
+              "nail polish cleaner wipe",
+              " nail color remover",
+              " nail color cleaner",
+              " nail gloss cleaner",
+              " nail gloss remover",
+              " aseton ",
+              "apple polishing",
+              " wabash river",
+              " spanish river"
+            ]
+          },
+          {
+            "value": "Hanger",
+            "synonyms": [
+              "Cloth hanger",
+              " Clothes hanger",
+              " coat hanger",
+              "hangar",
+              " hammer",
+              " hamer",
+              " hamir",
+              " wanger",
+              " hang",
+              " howmer",
+              " hangs",
+              " hangars",
+              " hanker",
+              " heimer"
+            ]
+          },
+          {
+            "value": "Non-Allergenic pillow",
+            "synonyms": [
+              "Anti-allergy bedding",
+              "monogenic pillow",
+              " monogynic pillow",
+              " monologic pillow",
+              " monoclinic pillow",
+              " non alergenic pillow",
+              " non angiogenic pillow",
+              " non amylogenic pillow",
+              " non anogenic pillow",
+              " non oncogenic pillow"
+            ]
+          },
+          {
+            "value": "Coffee cup",
+            "synonyms": [
+              "Coffee mugs",
+              " coffee jugs",
+              "kafka",
+              " coffee shop",
+              " cough up",
+              " coughing up",
+              " coffee cake"
+            ]
+          },
+          {
+            "value": "Q-tips",
+            "synonyms": [
+              "Cotton swabs",
+              "cletus",
+              " cut up",
+              " caught up",
+              " coitus",
+              " kitab",
+              " quietus",
+              " sit ups",
+              " cutis",
+              " cooked up",
+              "  coutances",
+              " cottonseeds",
+              " cottonwoods",
+              " cotton rose",
+              " guidances"
+            ]
+          },
+          {
+            "value": "Hair Dryer",
+            "synonyms": [
+              "Blow Dryer",
+              " hair blower"
+            ]
+          },
+          {
+            "value": "Kleenex",
+            "synonyms": [
+              "Tissue box",
+              "clinics",
+              " climax",
+              " cleanness",
+              " clonus",
+              " clinic",
+              " clonic",
+              " klinik",
+              " cleanest",
+              " clinique",
+              " cleanups ",
+              "  test paper",
+              " tissue layer",
+              " dispauper",
+              " despair",
+              " sipar",
+              " dispope",
+              " state paper",
+              " silk paper"
+            ]
+          },
+          {
+            "value": "Toothbrush",
+            "synonyms": [
+              "tooth cleaner",
+              " teeth cleaner",
+              "tuberous",
+              " toobright",
+              " tooh root",
+              " tooh bud"
+            ]
+          },
+          {
+            "value": "Ice bucket",
+            "synonyms": [
+              "Ice container",
+              " ice canister",
+              " ice pail",
+              "eye socket",
+              " icebox",
+              " aspect",
+              " eye sockets"
+            ]
+          },
+          {
+            "value": "Toothpaste",
+            "synonyms": [
+              "tooth cleaner",
+              "tempest",
+              " typist",
+              " to that",
+              " to put",
+              " toohpicks",
+              " deepest",
+              " debased",
+              " taste",
+              " toughest",
+              " to face",
+              " to beat",
+              " toothed",
+              " topmost"
+            ]
+          },
+          {
+            "value": "Toiletries",
+            "synonyms": [
+              "Grooming supplies",
+              " beauty supplies",
+              " grooming products",
+              " beauty products",
+              " bath products",
+              " bath supplies",
+              "tulipe trees",
+              " toliet rolls",
+              " toilet roll",
+              " toilet train",
+              " tallow trees",
+              " Toilets",
+              " two trees"
+            ]
+          },
+          {
+            "value": "Do Not Disturb Sign",
+            "synonyms": [
+              "Do not disturb prospectus",
+              " Do not disturb flyer",
+              " Do not disturb hanger",
+              " Do not disturb door sign",
+              " Door knob hanger",
+              " Do not bother sign",
+              "do not  disturb",
+              " donatists",
+              " undisturbing",
+              " undisturbed",
+              " sinistrin "
+            ]
+          },
+          {
+            "value": "Shower Cap",
+            "synonyms": [
+              "shower bonnet",
+              " skullcap",
+              " hair cover",
+              "sharkey",
+              " shore up",
+              " shake up",
+              " shack up",
+              " sharp",
+              " shark",
+              " sharks",
+              " sharpe"
+            ]
+          },
+          {
+            "value": "Shampoo",
+            "synonyms": [
+              "Hair Shampoo",
+              " hair soap",
+              " hairwash",
+              " hair cleaner",
+              " hair bath soap",
+              " hair care soap",
+              "shamba",
+              " cahmpy",
+              " shamu",
+              " champagne",
+              " shammai"
+            ]
+          },
+          {
+            "value": "Phone charger",
+            "synonyms": [
+              "extra charger for phone",
+              " phone cord",
+              " phone power surge",
+              " phone cable",
+              "full charge",
+              " finisher",
+              " fincher",
+              " fancher",
+              " phone card",
+              " phone charge",
+              " phonier",
+              " uncharge"
+            ]
+          },
+          {
+            "value": "Shower Gel",
+            "synonyms": [
+              "Body wash",
+              " body gel",
+              " shower soap",
+              " showering gel",
+              " bubble bath gel",
+              " body gel soap",
+              " body lotion soap",
+              " body cleanser",
+              "cheryl",
+              " sheryl",
+              " sharjah",
+              " hair gel",
+              " sural",
+              " sherrill",
+              " showering"
+            ]
+          },
+          {
+            "value": "CD/DVD Player",
+            "synonyms": [
+              "audio/video system",
+              " tape player",
+              " protable player",
+              " portable audio system",
+              " portable video system",
+              " tapeplayer",
+              " record player",
+              " media player",
+              " cd player",
+              " dvd player",
+              "seeded player",
+              " city planner",
+              " sitar player",
+              " sword player",
+              " steeply",
+              " cd video",
+              " soccer player"
+            ]
+          },
+          {
+            "value": "Rollaway bed",
+            "synonyms": [
+              "cot",
+              " extra bed",
+              " another bed",
+              " folding bed",
+              " trundle bed",
+              " murphy bed",
+              " truckle bed",
+              "areawys",
+              " hollywoods"
+            ]
+          },
+          {
+            "value": "Laundry price list",
+            "synonyms": [
+              "valet roster",
+              " Laundry roster",
+              " laundry prospectus",
+              " laundry flyer",
+              " laundry tally",
+              " dry cleaning roster",
+              " laundry slip",
+              "ladunfry basket",
+              " contrabassst",
+              " leaundresses",
+              " underpriced",
+              " centralist           landry price list",
+              " laundered price list",
+              " lunder price list",
+              " londres price list",
+              " lindsay price list",
+              " lender price list"
+            ]
+          },
+          {
+            "value": "Room Service menu",
+            "synonyms": [
+              "In-room dining menu",
+              " in-room dining service",
+              " room service roster",
+              " room service prospectus",
+              " room service flyer",
+              "room service food list",
+              " room service",
+              " exserrvice man",
+              " serviceman",
+              " sumamente  "
+            ]
+          },
+          {
+            "value": "Hot water",
+            "synonyms": [
+              "Hot water for tea",
+              " Tea water",
+              " Tea pot",
+              " Hot water pot",
+              "headwater",
+              " whitewater",
+              " high water",
+              " hot wire",
+              " light water",
+              " hold water",
+              " hot butter"
+            ]
+          },
+          {
+            "value": "Cotton balls",
+            "synonyms": [
+              "cotton buds",
+              " cotton",
+              "cotton belt",
+              " cannon balls",
+              " curtain walls",
+              " cotton buds",
+              " golden balls",
+              " cardinals",
+              " cotton wools",
+              " crumbles",
+              " curtain falls"
+            ]
+          },
+          {
+            "value": "Disposable razor",
+            "synonyms": [
+              "shaver",
+              " disposable blade",
+              " shaving instrument",
+              " shaving blade",
+              " disposable shaver blades",
+              "disposables",
+              " dispraisable",
+              " depolarizer",
+              " double layer",
+              " supposable",
+              " depolrise"
+            ]
+          },
+          {
+            "value": "Extension cord",
+            "synonyms": [
+              "extension string",
+              " connection cord",
+              " extension cable",
+              "extension course",
+              " extension board",
+              " expansion card",
+              " extension lead",
+              " expansionary"
+            ]
+          },
+          {
+            "value": "Shoe Shine Kit",
+            "synonyms": [
+              "polish shine kit",
+              " sheen kit",
+              " sparkle kit ",
+              "shoeshine",
+              " shawsshank",
+              " chopin kate",
+              " line cut"
+            ]
+          },
+          {
+            "value": "Toilet Paper",
+            "synonyms": [
+              "Toilet roll",
+              " toilet tissue",
+              "ballot paper",
+              " test paper",
+              " toliet powder",
+              " teletype",
+              " toilet water",
+              " toilet soap ",
+              " toned paper",
+              " telotype",
+              " touch paper"
+            ]
+          },
+          {
+            "value": "Tea Bag",
+            "synonyms": [
+              "Tea pouch ",
+              " pekoe bag",
+              "debug",
+              "deepak",
+              "tibia"
+            ]
+          },
+          {
+            "value": "Bathrobe",
+            "synonyms": [
+              "bath gown",
+              " bath housecoat",
+              " bath smock",
+              " bath wrapper",
+              " bath scrubs",
+              " bath garment",
+              " bath caftan",
+              " bath jacket",
+              " lounging robe",
+              " terrycloth",
+              "barrows",
+              " bathers",
+              " bathtubs",
+              " burroughs"
+            ]
+          },
+          {
+            "value": "Dress hanger",
+            "synonyms": [
+              "Apparel hanger",
+              " ensemble hanger",
+              " attire hanger wardrobe hanger",
+              " gown hanger",
+              "dress ore",
+              " dressing",
+              " dress hat",
+              " drum scanner",
+              " dressier",
+              " drop hammer",
+              " disenamore",
+              " destiner",
+              " dress maker"
+            ]
+          },
+          {
+            "value": "Set of Toiletries",
+            "synonyms": [
+              "Guest Cosmetic Kit",
+              " Set of grooming supplies",
+              " Set  of beauty supplies",
+              " Set  of grooming products",
+              " Set  of beauty products",
+              " Set of bath products",
+              " Set of bath supplies",
+              "statolatry",
+              " civilities",
+              " solitaries",
+              " solidarities"
+            ]
+          },
+          {
+            "value": "Nail file",
+            "synonyms": [
+              "nail board",
+              " emery board ",
+              "nail fold",
+              " nullifies",
+              " night falls",
+              " null cells",
+              " hail fellow",
+              " novels",
+              " nails",
+              " naples"
+            ]
+          },
+          {
+            "value": "Pillow",
+            "synonyms": [
+              "bed cushion",
+              " headrest",
+              " bed bolster",
+              "billow",
+              " below",
+              " willow",
+              " window",
+              " pillow",
+              " felow",
+              " follow"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "clean",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "new"
+          },
+          {
+            "value": "another"
+          },
+          {
+            "value": "clean"
+          },
+          {
+            "value": "fresh"
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "my",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "the"
+          },
+          {
+            "value": "all of our"
+          },
+          {
+            "value": "my"
+          },
+          {
+            "value": "our",
+            "synonyms": [
+              "all"
+            ]
+          },
+          {
+            "value": "all of"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "itemNeedType",
+        "version": "13",
+        "enumerationValues": [
+          {
+            "value": "bed",
+            "synonyms": [
+              "bed, bad",
+              ",beds, bads"
+            ]
+          },
+          {
+            "value": "clean towels",
+            "synonyms": [
+              "new towels",
+              "fresh towels",
+              "clean taos",
+              "new taos",
+              "fresh taos",
+              "clean towers",
+              "new towers",
+              "fresh towers",
+              "clean house",
+              "new house",
+              "fresh house",
+              "claim towers",
+              "fresh power"
+            ]
+          },
+          {
+            "value": "towelette"
+          },
+          {
+            "value": "lotion",
+            "synonyms": [
+              "Hand lotion",
+              "body Lotion",
+              "cream",
+              "ointment",
+              "moisturizer",
+              "creme",
+              "body application",
+              "body grease",
+              "balsam",
+              "vaseline",
+              "pomade",
+              "cold cream",
+              "cosmetic creme"
+            ]
+          },
+          {
+            "value": "water"
+          },
+          {
+            "value": "dirty towel",
+            "synonyms": [
+              "old towel",
+              "dirty tower",
+              "old tower"
+            ]
+          },
+          {
+            "value": "gel"
+          },
+          {
+            "value": "clean towel",
+            "synonyms": [
+              "fresh towel",
+              "new towel",
+              "fresh tower",
+              "new tower",
+              "clean tower"
+            ]
+          },
+          {
+            "value": "towel",
+            "synonyms": [
+              "tower",
+              "tao",
+              "flower",
+              "town",
+              "power",
+              "powell",
+              "towle",
+              "toas",
+              "talk",
+              "tile",
+              "time"
+            ]
+          },
+          {
+            "value": "towels",
+            "synonyms": [
+              "towers",
+              "taos",
+              "flowers",
+              "policy",
+              "south",
+              "sometimes",
+              "toas",
+              "tell"
+            ]
+          },
+          {
+            "value": "pillow",
+            "synonyms": [
+              "pillows"
+            ]
+          },
+          {
+            "value": "dirty towels",
+            "synonyms": [
+              "old towels",
+              "dirty taos",
+              "old taos",
+              "dirty towers",
+              "old towers",
+              "dirty house",
+              "old house"
+            ]
+          },
+          {
+            "value": "soap",
+            "synonyms": [
+              "Hand soap"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "lack",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "am out of"
+          },
+          {
+            "value": "are out of"
+          },
+          {
+            "value": "is out of"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "bye",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "byebye"
+          },
+          {
+            "value": "have a good day"
+          },
+          {
+            "value": "have a great day"
+          },
+          {
+            "value": "bye"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "informationService",
+        "version": "4",
+        "enumerationValues": [
+          {
+            "value": "Breakfast",
+            "synonyms": [
+              "brunch",
+              " early meal",
+              " morning meal "
+            ]
+          },
+          {
+            "value": "Coffee Shop",
+            "synonyms": [
+              "Sandwich shop",
+              " cake shop",
+              " coffee place",
+              " deli"
+            ]
+          },
+          {
+            "value": "In-Room dining",
+            "synonyms": [
+              "Room Service"
+            ]
+          },
+          {
+            "value": "Ballroom",
+            "synonyms": [
+              "Music hall",
+              "auditorium",
+              " concert hall",
+              " dance hall",
+              " hall",
+              " party room "
+            ]
+          },
+          {
+            "value": "Gift Shop",
+            "synonyms": [
+              "Boutique",
+              " store",
+              " market "
+            ]
+          },
+          {
+            "value": "Fitness Center",
+            "synonyms": [
+              "Gym",
+              " Fitness room",
+              " workout room",
+              " exercise rooms"
+            ]
+          },
+          {
+            "value": "Bar Lounge",
+            "synonyms": [
+              "Drink lounge",
+              " Bar service",
+              " night club",
+              " saloon",
+              " cocktail lounge",
+              " beverage lounge",
+              " parlor",
+              " pub",
+              " taproom",
+              " watering hole",
+              " drinkery                                                                           "
+            ]
+          },
+          {
+            "value": "Restaurants",
+            "synonyms": [
+              "Dinign Room",
+              " Lunch Room",
+              " diner",
+              " lunchroom",
+              " cafeteria",
+              " outlet",
+              " joint",
+              " eating house",
+              " eating place "
+            ]
+          },
+          {
+            "value": "Lunch",
+            "synonyms": [
+              "luncheon",
+              " midday meal "
+            ]
+          },
+          {
+            "value": "Business Centre",
+            "synonyms": [
+              "work space",
+              " work area",
+              " internet room",
+              " printer room",
+              " copy room",
+              " computer room "
+            ]
+          },
+          {
+            "value": "Guest Laundry Room",
+            "synonyms": [
+              "Laundry room",
+              " laundry facilities",
+              "  laundry machines",
+              " washers",
+              " dryers",
+              " washing"
+            ]
+          },
+          {
+            "value": "Dinner",
+            "synonyms": [
+              "supper",
+              " evening meal "
+            ]
+          },
+          {
+            "value": "Room Key"
+          },
+          {
+            "value": "Room Service information",
+            "synonyms": [
+              "In-room eating",
+              " in-room food service",
+              " food delivery",
+              " drink delivery"
+            ]
+          },
+          {
+            "value": "Meeting Room",
+            "synonyms": [
+              "Gathering room",
+              " conference room",
+              " convention room",
+              " session room"
+            ]
+          },
+          {
+            "value": "Club Lounge",
+            "synonyms": [
+              "membership lounge",
+              " club room",
+              " membership room",
+              " members only room",
+              " members only lounge"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "confirmNo",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "no"
+          },
+          {
+            "value": "wait"
+          },
+          {
+            "value": "nah"
+          },
+          {
+            "value": "incorrect"
+          },
+          {
+            "value": "nope"
+          },
+          {
+            "value": "noh"
+          },
+          {
+            "value": "change it"
+          },
+          {
+            "value": "never mind"
+          },
+          {
+            "value": "change that"
+          },
+          {
+            "value": "No wait"
+          },
+          {
+            "value": "wrong"
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "provide",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "provide"
+          },
+          {
+            "value": "service"
+          },
+          {
+            "value": "provide support"
+          },
+          {
+            "value": "carry"
+          },
+          {
+            "value": "supply"
+          },
+          {
+            "value": "support"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "someone",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "room attendant"
+          },
+          {
+            "value": "someone"
+          },
+          {
+            "value": "room cleaner"
+          },
+          {
+            "value": "housekeeper"
+          },
+          {
+            "value": "maid"
+          },
+          {
+            "value": "housekeeping"
+          },
+          {
+            "value": "you"
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "serviceNeedCallBack",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "Late check out",
+            "synonyms": [
+              "Delayed check out",
+              "low ticket",
+              " litigate",
+              " light legged"
+            ]
+          },
+          {
+            "value": "Transportation Service",
+            "synonyms": [
+              "Car service",
+              " Uber service",
+              " Lyft service",
+              " airport shuttle",
+              " shuttle",
+              " car rental",
+              " taxi",
+              " limo",
+              "courier service",
+              " wire service",
+              " choral service",
+              " courses",
+              " coarseness",
+              " car seats"
+            ]
+          },
+          {
+            "value": "Valet Parking",
+            "synonyms": [
+              "Parking service",
+              "villa park",
+              " evil speaking",
+              " sparking",
+              " bulwarking",
+              " skylarking",
+              " sleepmarken"
+            ]
+          },
+          {
+            "value": "Complaints",
+            "synonyms": [
+              "Dissatisfaction",
+              " objection",
+              " criticsm",
+              " trouble",
+              " annoyance",
+              " disturbance",
+              " commotion",
+              " distraction",
+              " intrusion",
+              " rumble ",
+              " hindrance",
+              " bother",
+              " turmoil",
+              "complete",
+              " complains",
+              " comletes",
+              " compunds",
+              " compiance",
+              " complaining",
+              " completeness"
+            ]
+          },
+          {
+            "value": "Room Change",
+            "synonyms": [
+              "Room Change",
+              " different room",
+              " move to another room",
+              "roumain",
+              " some change",
+              " name change",
+              " remain",
+              " the change",
+              " rumen change"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "cannot",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "don't"
+          },
+          {
+            "value": "not able to"
+          },
+          {
+            "value": "couldn't"
+          },
+          {
+            "value": "could not"
+          },
+          {
+            "value": "can't"
+          },
+          {
+            "value": "can not"
+          },
+          {
+            "value": "do not"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "confirmyessentence",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "yes you're right"
+          },
+          {
+            "value": "yes good"
+          },
+          {
+            "value": "correct"
+          },
+          {
+            "value": "that's right"
+          },
+          {
+            "value": "yep"
+          },
+          {
+            "value": "sounds good"
+          },
+          {
+            "value": "yes"
+          },
+          {
+            "value": "you got it"
+          },
+          {
+            "value": "you are right"
+          },
+          {
+            "value": "yeah"
+          },
+          {
+            "value": "right"
+          },
+          {
+            "value": "exactly"
+          },
+          {
+            "value": "fine"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "send",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "give"
+          },
+          {
+            "value": "change"
+          },
+          {
+            "value": "bring"
+          },
+          {
+            "value": "replace"
+          },
+          {
+            "value": "deliver"
+          },
+          {
+            "value": "restock"
+          },
+          {
+            "value": "gather"
+          },
+          {
+            "value": "take"
+          },
+          {
+            "value": "refill"
+          },
+          {
+            "value": "pick up"
+          },
+          {
+            "value": "provide"
+          },
+          {
+            "value": "have"
+          },
+          {
+            "value": "exchange"
+          },
+          {
+            "value": "carry"
+          },
+          {
+            "value": "send"
+          },
+          {
+            "value": "drop off"
+          },
+          {
+            "value": "replenish"
+          },
+          {
+            "value": "take away"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      }
+    ],
+    "voiceId": "Joanna",
+    "childDirected": false,
+    "locale": "en-US",
+    "idleSessionTTLInSeconds": 60,
+    "clarificationPrompt": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "My apologies.  Would you kindly repeat your request again?"
+        }
+      ],
+      "maxAttempts": 2
+    },
+    "abortStatement": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "I am not sure. I need someone at Front Desk to assist you on this. please Hold on for a second."
+        }
+      ]
+    },
+    "detectSentiment": true,
+    "enableModelImprovements": true
+  }
+}

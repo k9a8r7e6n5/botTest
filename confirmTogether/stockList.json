@@ -1,0 +1,470 @@
+[{
+    "item": "pillow",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bedding",
+    "inRoom": "in closet"
+}, {
+    "item": "non-allergenic pillow",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bedding",
+    "inRoom": "no"
+}, {
+    "item": "pillow case",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bedding",
+    "inRoom": "no"
+}, {
+    "item": "blanket",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bedding",
+    "inRoom": "in closet"
+}, {
+    "item": "bedsheet",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bedding",
+    "inRoom": "no"
+}, {
+    "item": "rollaway bed",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "$25",
+    "roomSection": "bedding",
+    "inRoom": "no"
+}, {
+    "item": "baby crib",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "$20",
+    "roomSection": "bedding",
+    "inRoom": "no"
+}, {
+    "item": "wheelchair",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "$12",
+    "roomSection": "bedding",
+    "inRoom": "no"
+}, {
+    "item": "tea bag",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "coffee station",
+    "inRoom": "no"
+}, {
+    "item": "coffee packet",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "coffee station",
+    "inRoom": "no"
+}, {
+    "item": "coffee pod",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "coffee station",
+    "inRoom": "no"
+}, {
+    "item": "sugar packet",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "coffee station",
+    "inRoom": "no"
+}, {
+    "item": "cream packet",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "coffee station",
+    "inRoom": "no"
+}, {
+    "item": "coffee cup",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "coffee station",
+    "inRoom": "no"
+}, {
+    "item": "plastic cup",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "coffee station",
+    "inRoom": "no"
+}, {
+    "item": "ice bucket",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "coffee station",
+    "inRoom": "no"
+}, {
+    "item": "towel",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "set of towels",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "bath towel",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "set of bath towels",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "hand towel",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "set of hand towels",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "face towel",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "set of face towels",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "bath mat",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "bathrobe",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "bath slipper",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "toiletries",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "set of toiletries",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "shampoo",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "conditioner",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "shower gel",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "lotion",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "soap",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "mouthwash",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "make up remover wipe",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "nail polish remover  pads",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "nail files",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "cotton balls",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "disposable razor",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "dental floss",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "sewing kit",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "shoe shine kit",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "shower cap",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "q-tips",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "toothbrush",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "toothpaste",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "toilet paper",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "hair dryer",
+    "type": "amenity",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "under sink"
+}, {
+    "item": "make up mirror",
+    "type": "amenity/ replace",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "bathroom",
+    "inRoom": "no"
+}, {
+    "item": "iron",
+    "type": "repair",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "closet",
+    "inRoom": "in closet"
+}, {
+    "item": "ironing board",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "closet",
+    "inRoom": "in closet"
+}, {
+    "item": "hanger",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "closet",
+    "inRoom": "in closet"
+}, {
+    "item": "dress hanger",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "closet",
+    "inRoom": "in closet"
+}, {
+    "item": "satin hanger",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "closet",
+    "inRoom": "in closet"
+}, {
+    "item": "pants hanger",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "closet",
+    "inRoom": "in closet"
+}, {
+    "item": "laundry bag",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "closet",
+    "inRoom": "in closet"
+}, {
+    "item": "laundry price list",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "closet",
+    "inRoom": "in closet"
+}, {
+    "item": "room service menu",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "desk",
+    "inRoom": "no"
+}, {
+    "item": "do not disturb sign",
+    "type": "service",
+    "department": "housekeeping",
+    "cost": "no",
+    "roomSection": "door",
+    "inRoom": "no"
+}, {
+    "item": "umbrella",
+    "type": "amenity",
+    "department": "front office",
+    "cost": "no",
+    "roomSection": "room",
+    "inRoom": "no"
+}, {
+    "item": "phone charger",
+    "type": "service",
+    "department": "engineering",
+    "cost": "no",
+    "roomSection": "room",
+    "inRoom": "no"
+}, {
+    "item": "extension cord",
+    "type": "service",
+    "department": "engineering",
+    "cost": "no",
+    "roomSection": "room",
+    "inRoom": "no"
+}, {
+    "item": "electric converter",
+    "type": "service",
+    "department": "engineering",
+    "cost": "no",
+    "roomSection": "room",
+    "inRoom": "no"
+}, {
+    "item": "mineral water",
+    "type": "service",
+    "department": "room service",
+    "cost": "$8",
+    "roomSection": "service",
+    "inRoom": "no"
+}, {
+    "item": "bottle water",
+    "type": "service",
+    "department": "room service",
+    "cost": "$5",
+    "roomSection": "service",
+    "inRoom": "no"
+}, {
+    "item": "hot water",
+    "type": "service",
+    "department": "room service",
+    "cost": "no",
+    "roomSection": "service",
+    "inRoom": "no"
+}]
