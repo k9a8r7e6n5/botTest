@@ -11,6 +11,7 @@ logger.setLevel(logging.DEBUG)
 # --- Helper Functions ---
 
 stockList = json.load(open('stockList.json', 'r'))
+spMappingList = json.load(open('stockMapping.json', 'r'))
 request_set = {
     "item_type": "",
     "item_num": "",
@@ -95,10 +96,18 @@ def validate_item_type(item_type, item_type_slot, session_attributes): # need to
     logger.debug('validate_item_type item_type={}'.format(item_type))
     logger.debug('validate_item_type session_attributes={}'.format(session_attributes))
 
-    #sendmail("not a validated tyep " + item_type + " please input again")
     vld_res = isvalid_item_type(item_type)
     logger.debug('validate_item_type - vld_res: {}'.format(vld_res))
-    if item_type and (vld_res['inStock'] == True):
+    if item_type and vld_res['inStock'] == False and vld_res['details'] != "":
+        logger.debug('have none!')
+        return build_validation_result(
+            False,
+            item_type_slot,
+            'I am very sorry, unfortunately we do not have {}! '
+            'Anything else I can help you with today?'.format(item_type),
+            None
+        )
+    elif item_type and (vld_res['inStock'] == True):
         #itemNeedQuantity: rollaway beds
         if (vld_res['details']['cost'] != 'no'): # To Do
             logger.debug('extra cost!')
@@ -122,40 +131,21 @@ def validate_item_type(item_type, item_type_slot, session_attributes): # need to
                     'Extra {} are usually stored {}. Could you please check and see if they are there?'.format(item_type, vld_res['details']['inRoom']),
                     updateItemValidationSet(itemSet, None, 'inRoom')
                 )
-
             # itemNeedQuantity: bath towel
             return build_validation_result(True, None, None, None)
 
-    #itemNeedType in itemNeedQuantity: bed
-    elif item_type and (vld_res['inStock']) == False and (vld_res['details'] == 'required'):
-        logger.debug('need specific type!')
-        # need to ask for specific type
-        return build_validation_result(
-            True,
-            item_type_slot,
-            'What kind of {} would you like?'.format(item_type),
-            None
-        )
-    #itemNeedType not in itemNeedQuantity: lotion
-    elif item_type and (vld_res['inStock'] == False) and (vld_res['details'] == ""):
-        logger.debug('have none!')
-        return build_validation_result(
-            False,
-            item_type_slot,
-            'I am very sorry, unfortunately we do not have {}! '
-            'Anything else I can help you with today?'.format(item_type),
-            None
-        )
 
 def searchStockListByItem(itemName):
     itemName = itemName.lower()
+    if itemName not in spMappingList:
+        itemName = spMappingList[itemName]
     for item in stockList:
-        logger.debug('searchStockListByItem - itemStock: {} - itemName: {}'.format(item['item'], itemName))
         if item['item'] == itemName:
-            # logger.debug('Found item in stock: {}'.format(item))
-            return {"inStock": True, "details": item}
-        elif item['item'].find(itemName) >= 0: # need to ask for specific type
-            return {"inStock": False, "details": "required"}
+            logger.debug('searchStockListByItem - itemStock: {} - itemName: {}'.format(item, itemName))
+            if item['hasnone'] == "no":
+                return {"inStock": True, "details": item}
+            elif item['hasnone'] == "yes":
+                return {"inStock": False, "details": item}
     return {"inStock": False, "details": ""}
 
 def getCallID(intent_request):

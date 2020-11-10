@@ -1,0 +1,2772 @@
+{
+    "serviceNeedMessage": {
+        "name": "serviceNeedMessage",
+        "version": "latest",
+        "enumerationValues": [
+            {
+                "value": "dirty items pick up",
+                "synonyms": []
+            },
+            {
+                "value": "dirty item pick up",
+                "synonyms": [
+                    "old item pick up",
+                    "used item pick up",
+                    "stained item pick up",
+                    "spoiled item pick up",
+                    "old item pickup",
+                    "used item pickup",
+                    "stained item pickup",
+                    "spoiled item pickup",
+                    "dirty item pickup",
+                    "doherty itme",
+                    "dougherty item",
+                    "doughty item",
+                    "dottie item",
+                    "ditty item",
+                    "dotty item",
+                    "dirtier item",
+                    "draughty",
+                    "data item",
+                    "dreamtime",
+                    "dreamteam",
+                    "dry ton",
+                    "drayton"
+                ]
+            },
+            {
+                "value": "turndown service",
+                "synonyms": [
+                    "turned in",
+                    "turned on",
+                    "torn down",
+                    "turned down",
+                    "turn brown",
+                    "turn crown",
+                    "turn drown",
+                    "turn frown",
+                    "down",
+                    "town",
+                    "turn noun"
+                ]
+            },
+            {
+                "value": "previous requests",
+                "synonyms": []
+            },
+            {
+                "value": "previous request",
+                "synonyms": [
+                    "prior request",
+                    "earlier request",
+                    "prior call",
+                    "earlier call",
+                    "previous call"
+                ]
+            },
+            {
+                "value": "valet laundry services",
+                "synonyms": []
+            },
+            {
+                "value": "valet laundry service",
+                "synonyms": [
+                    "steaming service",
+                    "wash",
+                    "clean clothes",
+                    "laundry service",
+                    "dry cleaning",
+                    "laundry",
+                    "clean cloth",
+                    "valet laundry",
+                    "vachel lindsay",
+                    "violante",
+                    "alejandro",
+                    "calliandra"
+                ]
+            },
+            {
+                "value": "wifi connections",
+                "synonyms": []
+            },
+            {
+                "value": "wifi connection",
+                "synonyms": [
+                    "internet access"
+                ]
+            },
+            {
+                "value": "wifi passwords",
+                "synonyms": []
+            },
+            {
+                "value": "wifi password",
+                "synonyms": [
+                    "internet access password"
+                ]
+            },
+            {
+                "value": "wake up calls",
+                "synonyms": []
+            },
+            {
+                "value": "wake up call",
+                "synonyms": [
+                    "early-morning call",
+                    "alarm setup",
+                    "wake up message",
+                    "bugle call",
+                    "morning alert call",
+                    "early morning call",
+                    "wake up call",
+                    "walkable",
+                    "wieghable",
+                    "make a pile",
+                    "wicopy",
+                    "nikopol"
+                ]
+            },
+            {
+                "value": "baggage porters",
+                "synonyms": []
+            },
+            {
+                "value": "baggage porter",
+                "synonyms": [
+                    "bellhop",
+                    "concierge",
+                    "carrier",
+                    "baggage carrier",
+                    "doorperson",
+                    "carry baggages",
+                    "help with bags",
+                    "help with lugggage",
+                    "assistance with bags",
+                    "assistance with luggage",
+                    "luggage",
+                    "baggage",
+                    "suitcase",
+                    "gear",
+                    "trunk",
+                    "case",
+                    "tote bag",
+                    "suit bag",
+                    "satchel",
+                    "porter service",
+                    "porter",
+                    "bitdgeport",
+                    "backport",
+                    "beach party",
+                    "supporter",
+                    "sally port",
+                    "gagging order"
+                ]
+            },
+            {
+                "value": "bell carts",
+                "synonyms": []
+            },
+            {
+                "value": "bell cart",
+                "synonyms": [
+                    "baggage cart",
+                    "bag cart",
+                    "luggage cart",
+                    "suitcase cart",
+                    "gear c art",
+                    "trunk cart",
+                    "case cart",
+                    "tote bag cart",
+                    "suit bag cart",
+                    "satchel cart"
+                ]
+            }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+    },
+    "itemNeedQuantity": {
+        "name": "itemNeedQuantity",
+        "version": "latest",
+        "enumerationValues": [
+            {
+                "value": "pillows",
+                "synonyms": []
+            },
+            {
+                "value": "pillow",
+                "synonyms": [
+                    "bed cushion",
+                    "headrest",
+                    "bed bolster",
+                    "billow",
+                    "below",
+                    "willow",
+                    "felow",
+                    "follow"
+                ]
+            },
+            {
+                "value": "non allergenic pillows",
+                "synonyms": []
+            },
+            {
+                "value": "non-allergenic pillow",
+                "synonyms": [
+                    "anti-allergy bedding",
+                    "monogenic pillow",
+                    "monogynic pillow",
+                    "monologic pillow",
+                    "monoclinic pillow",
+                    "non alergenic pillow",
+                    "non angiogenic pillow",
+                    "non amylogenic pillow",
+                    "non anogenic pillow",
+                    "non oncogenic pillow"
+                ]
+            },
+            {
+                "value": "pillow cases",
+                "synonyms": []
+            },
+            {
+                "value": "pillow case",
+                "synonyms": [
+                    "pillow cover",
+                    "pillow slip",
+                    "pillow lace",
+                    "bellicose",
+                    "helicase",
+                    "below cost",
+                    "pilates"
+                ]
+            },
+            {
+                "value": "blankets",
+                "synonyms": []
+            },
+            {
+                "value": "blanket",
+                "synonyms": [
+                    "throw",
+                    "coverlet",
+                    "fleece",
+                    "wrapper",
+                    "afghan",
+                    "rapper",
+                    "blackouts",
+                    "black hats",
+                    "blancs",
+                    "blanchet",
+                    "banquets",
+                    "blankness",
+                    "blanked",
+                    "blanketing",
+                    "palnets",
+                    "bluecoats",
+                    "blancs"
+                ]
+            },
+            {
+                "value": "bed sheets",
+                "synonyms": []
+            },
+            {
+                "value": "bed sheet",
+                "synonyms": [
+                    "linen",
+                    "bed linen",
+                    "contour sheet",
+                    "broadsheet",
+                    "head shots",
+                    "bad debts",
+                    "bad shot",
+                    "broadsheet"
+                ]
+            },
+            {
+                "value": "bed spread",
+                "synonyms": [
+                    "bed cover",
+                    "comforter",
+                    "bed covering",
+                    "bespread",
+                    "broadpsread",
+                    "bowsprit",
+                    "bedspring",
+                    "bedstead",
+                    "bedside",
+                    "bull spread",
+                    "bear spread"
+                ]
+            },
+            {
+                "value": "rollaway beds",
+                "synonyms": []
+            },
+            {
+                "value": "rollaway bed",
+                "synonyms": [
+                    "cot",
+                    "extra bed",
+                    "another bed",
+                    "folding bed",
+                    "trundle bed",
+                    "murphy bed",
+                    "truckle bed",
+                    "areawys",
+                    "hollywoods"
+                ]
+            },
+            {
+                "value": "baby cribs",
+                "synonyms": []
+            },
+            {
+                "value": "baby crib",
+                "synonyms": [
+                    "crib",
+                    "baby bed",
+                    "basinet",
+                    "cradle",
+                    "manger",
+                    "bin",
+                    "baby trundle bed",
+                    "baby cot",
+                    "bayberries",
+                    "beakers",
+                    "abbygro"
+                ]
+            },
+            {
+                "value": "wheelchairs",
+                "synonyms": []
+            },
+            {
+                "value": "wheelchair",
+                "synonyms": [
+                    "chair with wheels",
+                    "wiltshire",
+                    "wing chair",
+                    "welcher",
+                    "welches",
+                    "we care",
+                    "wheeler",
+                    "wall chart"
+                ]
+            },
+            {
+                "value": "coffee machines",
+                "synonyms": []
+            },
+            {
+                "value": "coffee machine",
+                "synonyms": [
+                    "coffee kettle",
+                    "coffee maker",
+                    "caffeine machine",
+                    "cappuccino machine",
+                    "expresso machine",
+                    "brew machine",
+                    "cafe machine",
+                    "mocha machine",
+                    "coffee appliance",
+                    "coffee  engine",
+                    "copy machine",
+                    "cash machine",
+                    "coin machine",
+                    "coffeeman",
+                    "confirmation",
+                    "conformation",
+                    "cremation",
+                    "collimation",
+                    "coffee mug",
+                    "cofunction"
+                ]
+            },
+            {
+                "value": "water kettle",
+                "synonyms": [
+                    "kettle",
+                    "water boiler",
+                    "water pot",
+                    "tea kettle"
+                ]
+            },
+            {
+                "value": "tea bags",
+                "synonyms": []
+            },
+            {
+                "value": "tea bag",
+                "synonyms": [
+                    "tea pouch",
+                    "pekoe bag",
+                    "debug",
+                    "deepak",
+                    "tibia"
+                ]
+            },
+            {
+                "value": "coffee packets",
+                "synonyms": [
+                    "cappuccino packets",
+                    "expresso packets",
+                    "mocha packets",
+                    "espresso package",
+                    "espress so package"
+                ]
+            },
+            {
+                "value": "coffee packet",
+                "synonyms": [
+                    "caffeine packet",
+                    "coffee powder",
+                    "cappuccino packet",
+                    "expresso packet",
+                    "mocha packet",
+                    "coffee pot",
+                    "coffee bag",
+                    "coffey packet",
+                    "coffea packet",
+                    "cafe packet",
+                    "kofi packet"
+                ]
+            },
+            {
+                "value": "coffee pods",
+                "synonyms": [
+                    "caffeine pods",
+                    "cappuccino pods",
+                    "expresso pods",
+                    "mocha pods",
+                    "cappuccino parts",
+                    "mocha parts",
+                    "milk pods"
+                ]
+            },
+            {
+                "value": "coffee pod",
+                "synonyms": [
+                    "caffeine pod",
+                    "cappuccino pod",
+                    "expresso pod",
+                    "mocha pod",
+                    "cappuccino",
+                    "cappuccino part",
+                    "mocha part",
+                    "milk pod",
+                    "coffee bar",
+                    "copepod",
+                    "copied",
+                    "cough up",
+                    "keypad"
+                ]
+            },
+            {
+                "value": "sugar packets",
+                "synonyms": []
+            },
+            {
+                "value": "sugar packet",
+                "synonyms": [
+                    "sweetener packet",
+                    "fructose packet",
+                    "saccharin packet",
+                    "sucrose packet",
+                    "sweetener pouch",
+                    "fructose pouch",
+                    "saccharin pouch",
+                    "sucrose pouch",
+                    "surgery package",
+                    "search run pouch",
+                    "sugar act",
+                    "sugarcoat",
+                    "sugar pucker"
+                ]
+            },
+            {
+                "value": "cream packets",
+                "synonyms": []
+            },
+            {
+                "value": "cream packet",
+                "synonyms": [
+                    "light cream",
+                    "coffee creamer",
+                    "milk powder",
+                    "crumpet",
+                    "crampit",
+                    "compact",
+                    "crampet",
+                    "cream nut"
+                ]
+            },
+            {
+                "value": "cofee cups",
+                "synonyms": [
+                    "coffee mugs",
+                    "coffee jugs"
+                ]
+            },
+            {
+                "value": "coffee cup",
+                "synonyms": [
+                    "coffee mug",
+                    "coffee jug",
+                    "kafka",
+                    "cough up",
+                    "coughing up",
+                    "coffee cake"
+                ]
+            },
+            {
+                "value": "cups",
+                "synonyms": []
+            },
+            {
+                "value": "cup",
+                "synonyms": [
+                    "mug",
+                    "kaput"
+                ]
+            },
+            {
+                "value": "plastic cups",
+                "synonyms": [
+                    "water cups"
+                ]
+            },
+            {
+                "value": "plastic cup",
+                "synonyms": [
+                    "water cup",
+                    "plastic tumbler",
+                    "plastic glass",
+                    "plastic tumblr",
+                    "plastic wrap",
+                    "plastic",
+                    "plasty cup",
+                    "elastic",
+                    "plastique"
+                ]
+            },
+            {
+                "value": "glasses",
+                "synonyms": [
+                    "water glass",
+                    "drinking glass",
+                    "classes",
+                    "glosses",
+                    "gases",
+                    "glazes",
+                    "glasshouse",
+                    "glacis"
+                ]
+            },
+            {
+                "value": "ice buckets",
+                "synonyms": []
+            },
+            {
+                "value": "ice bucket",
+                "synonyms": [
+                    "ice container",
+                    "ice canister",
+                    "ice pail",
+                    "eye socket",
+                    "icebox",
+                    "aspect",
+                    "eye sockets"
+                ]
+            },
+            {
+                "value": "towels",
+                "synonyms": [
+                    "taos",
+                    "towers",
+                    "flowers",
+                    "policy",
+                    "south",
+                    "toas"
+                ]
+            },
+            {
+                "value": "towel",
+                "synonyms": [
+                    "terry cloth",
+                    "cloth",
+                    "dowel",
+                    "howel",
+                    "dial",
+                    "trial",
+                    "powell",
+                    "vowel",
+                    "total",
+                    "tulle",
+                    "to heel tulle",
+                    "tul",
+                    "toweled",
+                    "towle",
+                    "toweled",
+                    "howell",
+                    "dual",
+                    "duel",
+                    "dio",
+                    "toggle",
+                    "topple",
+                    "tol",
+                    "tower",
+                    "taal",
+                    "tool",
+                    "toil",
+                    "tile",
+                    "tao",
+                    "town",
+                    "power",
+                    "flower",
+                    "talk",
+                    "tile",
+                    "time",
+                    "tell"
+                ]
+            },
+            {
+                "value": "bath towels",
+                "synonyms": [
+                    "body towels",
+                    "bath towers",
+                    "bath taos",
+                    "back towels",
+                    "fast towers",
+                    "fast towels",
+                    "fast taos",
+                    "path towels",
+                    "path towers",
+                    "path taos",
+                    "bath house",
+                    "Bowels",
+                    "bestowals",
+                    "dowels",
+                    "bottles",
+                    "bestowers",
+                    "battles",
+                    "bottles",
+                    "beetles",
+                    "bathhouses",
+                    "beatles",
+                    "baffles"
+                ]
+            },
+            {
+                "value": "bath towel",
+                "synonyms": [
+                    "large guest towel",
+                    "bath sheet",
+                    "large bath cloth",
+                    "body towel",
+                    "bath tower",
+                    "bath tao",
+                    "back towel",
+                    "best our",
+                    "bath toa",
+                    "fast tower",
+                    "fast towel",
+                    "fast tao",
+                    "path towel",
+                    "path tower",
+                    "path tao"
+                ]
+            },
+            {
+                "value": "hand towels",
+                "synonyms": [
+                    "hand towers",
+                    "hand taos",
+                    "an towers",
+                    "an towels",
+                    "an taos",
+                    "him towels",
+                    "him towers"
+                ]
+            },
+            {
+                "value": "hand towel",
+                "synonyms": [
+                    "hand cloth",
+                    "hand towel",
+                    "small towel",
+                    "small cloth",
+                    "hand tower",
+                    "hand tao",
+                    "an tower",
+                    "an towel",
+                    "an tao",
+                    "him towel",
+                    "him tower"
+                ]
+            },
+            {
+                "value": "face towels",
+                "synonyms": [
+                    "fish towers",
+                    "fish towels",
+                    "face towers",
+                    "face taos",
+                    "face hours",
+                    "face towers",
+                    "fish house",
+                    "fish horse"
+                ]
+            },
+            {
+                "value": "face towel",
+                "synonyms": [
+                    "wash cloth",
+                    "facecloth",
+                    "tea towel",
+                    "hand mitt",
+                    "washrag",
+                    "compress cloth",
+                    "festivals",
+                    "fossils",
+                    "fistulas",
+                    "festal",
+                    "fistulae",
+                    "vestals",
+                    "fish tower",
+                    "fish towel",
+                    "face tower",
+                    "face tao",
+                    "face hour"
+                ]
+            },
+            {
+                "value": "bath mats",
+                "synonyms": [
+                    "bath rugs"
+                ]
+            },
+            {
+                "value": "bath mat",
+                "synonyms": [
+                    "bath rug",
+                    "bathroom runner",
+                    "bathroom towel",
+                    "bathroom mat",
+                    "biomass",
+                    "bayonets",
+                    "bonnets",
+                    "bathos",
+                    "bath house",
+                    "banat",
+                    "bennetts",
+                    "bon mots",
+                    "bats"
+                ]
+            },
+            {
+                "value": "bathrobes",
+                "synonyms": []
+            },
+            {
+                "value": "bathrobe",
+                "synonyms": [
+                    "bath gown",
+                    "bath housecoat",
+                    "bath smock",
+                    "bath wrapper",
+                    "bath scrubs",
+                    "bath garment",
+                    "bath caftan",
+                    "bath jacket",
+                    "lounging robe",
+                    "bath down",
+                    "bath rapper",
+                    "bath captain",
+                    "barrows",
+                    "bathers",
+                    "bathtubs",
+                    "burroughs"
+                ]
+            },
+            {
+                "value": "bath slippers",
+                "synonyms": [
+                    "slippers",
+                    "bath shoes"
+                ]
+            },
+            {
+                "value": "bath slipper",
+                "synonyms": [
+                    "slipper",
+                    "bath shoe",
+                    "bath footwear",
+                    "beth slipper",
+                    "bathe slipper",
+                    "path slipper",
+                    "beth sleeper",
+                    "bathe sleeper",
+                    "bathe sleeper",
+                    "path sleeper"
+                ]
+            },
+            {
+                "value": "toiletries",
+                "synonyms": [
+                    "grooming supplies",
+                    "beauty supplies",
+                    "grooming products",
+                    "beauty products",
+                    "bath products",
+                    "bath supplies",
+                    "tulipe trees",
+                    "toliet rolls",
+                    "toilet roll",
+                    "toilet train",
+                    "tallow trees",
+                    "Toilets",
+                    "two trees"
+                ]
+            },
+            {
+                "value": "shampoos",
+                "synonyms": []
+            },
+            {
+                "value": "shampoo",
+                "synonyms": [
+                    "hair shampoo",
+                    "hair soap",
+                    "hairwash",
+                    "hair cleaner",
+                    "hair bath soap",
+                    "hair care soap",
+                    "shamba",
+                    "cahmpy",
+                    "shamu",
+                    "champagne",
+                    "shammai"
+                ]
+            },
+            {
+                "value": "conditioners",
+                "synonyms": []
+            },
+            {
+                "value": "conditioner",
+                "synonyms": [
+                    "hair conditioner",
+                    "detangler",
+                    "hair lotion",
+                    "hair rinse",
+                    "hair treatment",
+                    "hair mask",
+                    "hair care lotion",
+                    "hair cream",
+                    "conditioned",
+                    "conditional",
+                    "conditioning. Conduction",
+                    "contrition"
+                ]
+            },
+            {
+                "value": "shower gels",
+                "synonyms": []
+            },
+            {
+                "value": "shower gel",
+                "synonyms": [
+                    "body wash",
+                    "body gel",
+                    "shower soap",
+                    "showering gel",
+                    "bubble bath gel",
+                    "body gel soap",
+                    "body lotion soap",
+                    "body cleanser",
+                    "cheryl",
+                    "sheryl",
+                    "sharjah",
+                    "hair gel",
+                    "sural",
+                    "sherrill",
+                    "showering",
+                    "body joke"
+                ]
+            },
+            {
+                "value": "lotions",
+                "synonyms": []
+            },
+            {
+                "value": "lotion",
+                "synonyms": [
+                    "hand lotion",
+                    "body lotion",
+                    "cream",
+                    "ointment",
+                    "moisturizer",
+                    "creme",
+                    "body application",
+                    "body grease",
+                    "balsam",
+                    "vaseline",
+                    "pomade",
+                    "cold cream",
+                    "cosmetic creme",
+                    "an agent",
+                    "went meant",
+                    "lesions",
+                    "legions",
+                    "laotians",
+                    "lashings"
+                ]
+            },
+            {
+                "value": "soaps",
+                "synonyms": []
+            },
+            {
+                "value": "soap",
+                "synonyms": [
+                    "hand soap",
+                    "wash soap",
+                    "soap for washing",
+                    "body soap",
+                    "face soap",
+                    "soup",
+                    "sap",
+                    "supp",
+                    "sip",
+                    "sep",
+                    "sup",
+                    "cip",
+                    "sop",
+                    "seep",
+                    "hands up",
+                    "hand up",
+                    "handsaw",
+                    "canned supo",
+                    "handset",
+                    "hard soap"
+                ]
+            },
+            {
+                "value": "mouthwashes",
+                "synonyms": []
+            },
+            {
+                "value": "mouthwash",
+                "synonyms": [
+                    "mouth mint",
+                    "mouth cleaner",
+                    "my wish"
+                ]
+            },
+            {
+                "value": "makeup remover wipes",
+                "synonyms": []
+            },
+            {
+                "value": "makeup remover wipe",
+                "synonyms": [
+                    "face cleaner wipe",
+                    "face wipes",
+                    "makeup wipe",
+                    "makeup cleaner",
+                    "makeup remover",
+                    "mockup",
+                    "muck up",
+                    "makes up",
+                    "wake up"
+                ]
+            },
+            {
+                "value": "nail polish remover  pads",
+                "synonyms": []
+            },
+            {
+                "value": "nail polish remover  pad",
+                "synonyms": [
+                    "nail polish cleaner wipe",
+                    "nail polish remover wipe",
+                    "nail color remover",
+                    "nail color cleaner",
+                    "nail gloss cleaner",
+                    "nail gloss remover",
+                    "acetone",
+                    "polish remover",
+                    "color remover",
+                    "gloss remover",
+                    "polish cleaner",
+                    "color cleaner",
+                    "gloss cleaner",
+                    "apple polishing",
+                    "wabash river",
+                    "spanish river",
+                    "male glass cleaner"
+                ]
+            },
+            {
+                "value": "nail files",
+                "synonyms": []
+            },
+            {
+                "value": "nail file",
+                "synonyms": [
+                    "nail board",
+                    "emery board",
+                    "nail bored",
+                    "nail fold",
+                    "nullifies",
+                    "night falls",
+                    "null cells",
+                    "hail fellow",
+                    "novels",
+                    "nails",
+                    "naples"
+                ]
+            },
+            {
+                "value": "cotton balls",
+                "synonyms": [
+                    "cotton buds",
+                    "cotton",
+                    "cotton belt",
+                    "cannon balls",
+                    "curtain walls",
+                    "cotton buds",
+                    "golden balls",
+                    "cardinals",
+                    "cotton wools",
+                    "crumbles",
+                    "curtain falls"
+                ]
+            },
+            {
+                "value": "disposable razors",
+                "synonyms": [
+                    "disposable shaver blades"
+                ]
+            },
+            {
+                "value": "disposable razor",
+                "synonyms": [
+                    "shaver",
+                    "disposable blade",
+                    "shaving instrument",
+                    "shaving blade",
+                    "disposable shaver blades",
+                    "shaving kit",
+                    "razor",
+                    "shaver blade",
+                    "disposables",
+                    "dispraisable",
+                    "depolarizer",
+                    "double layer",
+                    "supposable",
+                    "depolrise"
+                ]
+            },
+            {
+                "value": "dental kits",
+                "synonyms": []
+            },
+            {
+                "value": "dental kit",
+                "synonyms": [
+                    "dental floss",
+                    "dental string",
+                    "teeth cleaning string",
+                    "dental cast",
+                    "dental care",
+                    "dental cap",
+                    "identikit",
+                    "dental crest",
+                    "dental gold",
+                    "datakit",
+                    "dentulous",
+                    "dental filling",
+                    "dentoiferous",
+                    "doble fleece"
+                ]
+            },
+            {
+                "value": "sewing kits",
+                "synonyms": []
+            },
+            {
+                "value": "sewing kit",
+                "synonyms": [
+                    "sewing materials",
+                    "sewing tools",
+                    "sewing pack",
+                    "sewing supplies",
+                    "sewing stuff",
+                    "sewing things",
+                    "darning materials",
+                    "darning tools",
+                    "darning pack",
+                    "darning supplies",
+                    "darning stuff",
+                    "darning things",
+                    "seaming materials",
+                    "seaming tools",
+                    "seaming pack",
+                    "seaming supplies",
+                    "seaming stuff",
+                    "seaming things",
+                    "needle materials",
+                    "needle tools",
+                    "needle pack",
+                    "needle supplies",
+                    "needle stuff",
+                    "needle things",
+                    "patching materials",
+                    "patching tools",
+                    "patching pack",
+                    "patching supplies",
+                    "patching stuff",
+                    "patching things",
+                    "stick it",
+                    "sing it",
+                    "soyinka",
+                    "sicut",
+                    "suck it",
+                    "sangat"
+                ]
+            },
+            {
+                "value": "shoe shine kit",
+                "synonyms": [
+                    "polish shine kit",
+                    "sheen kit",
+                    "sparkle kit",
+                    "shoe polish kit",
+                    "polish kit",
+                    "polish shine material",
+                    "sheen material",
+                    "sparkle material",
+                    "shoe polish material",
+                    "polish material",
+                    "polish shine assortment",
+                    "sheen assortment",
+                    "sparkle assortment",
+                    "shoe polish assortment",
+                    "polish assortment",
+                    "polish shine pack",
+                    "sheen pack",
+                    "sparkle pack",
+                    "shoe polish pack",
+                    "polish pack",
+                    "polish shine tools",
+                    "sheen tools",
+                    "sparkle tools",
+                    "shoe polish tools",
+                    "polish tools",
+                    "polish shine bag",
+                    "sheen bag",
+                    "sparkle bag",
+                    "shoe polish bag",
+                    "polish bag",
+                    "polish shine things",
+                    "sheen things",
+                    "sparkle things",
+                    "shoe polish things",
+                    "polish things",
+                    "shoeshine",
+                    "shawsshank",
+                    "chopin kate",
+                    "line cut"
+                ]
+            },
+            {
+                "value": "shower caps",
+                "synonyms": []
+            },
+            {
+                "value": "shower cap",
+                "synonyms": [
+                    "shower bonnet",
+                    "skullcap",
+                    "hair cover",
+                    "sharkey",
+                    "shore up",
+                    "shake up",
+                    "shack up",
+                    "sharp",
+                    "shark",
+                    "sharks",
+                    "sharpe"
+                ]
+            },
+            {
+                "value": "q-tips",
+                "synonyms": [
+                    "cotton swabs",
+                    "cletus",
+                    "cut up",
+                    "caught up",
+                    "coitus",
+                    "kitab",
+                    "quietus",
+                    "sit ups",
+                    "cutis",
+                    "cooked up",
+                    "coutances",
+                    "cottonseeds",
+                    "cottonwoods",
+                    "cotton rose",
+                    "guidances"
+                ]
+            },
+            {
+                "value": "toothbrushes",
+                "synonyms": []
+            },
+            {
+                "value": "toothbrush",
+                "synonyms": [
+                    "tooth cleaner",
+                    "teeth cleaner",
+                    "tooth broom",
+                    "dental brush",
+                    "tooth comb",
+                    "tuberous",
+                    "toobright",
+                    "tooh root",
+                    "tooh bud"
+                ]
+            },
+            {
+                "value": "toothpastes",
+                "synonyms": []
+            },
+            {
+                "value": "toothpaste",
+                "synonyms": [
+                    "tooth polish",
+                    "tooth powder",
+                    "dental cream",
+                    "tempest",
+                    "typist",
+                    "to put",
+                    "toohpicks",
+                    "deepest",
+                    "debased",
+                    "taste",
+                    "toughest",
+                    "to face",
+                    "to beat",
+                    "toothed",
+                    "topmost"
+                ]
+            },
+            {
+                "value": "toilet papers",
+                "synonyms": []
+            },
+            {
+                "value": "toilet paper",
+                "synonyms": [
+                    "toilet roll",
+                    "toilet tissue",
+                    "toilet paper roll",
+                    "ballot paper",
+                    "test paper",
+                    "toliet powder",
+                    "teletype",
+                    "toilet water",
+                    "toilet soap",
+                    "toned paper",
+                    "telotype",
+                    "touch paper"
+                ]
+            },
+            {
+                "value": "kleenex",
+                "synonyms": [
+                    "tissue box",
+                    "clinics",
+                    "climax",
+                    "cleanness",
+                    "clonus",
+                    "clinic",
+                    "clonic",
+                    "klinik",
+                    "cleanest",
+                    "clinique",
+                    "cleanups",
+                    "test paper",
+                    "tissue layer",
+                    "dispauper",
+                    "despair",
+                    "sipar",
+                    "dispope",
+                    "state paper",
+                    "silk paper"
+                ]
+            },
+            {
+                "value": "waste baskets",
+                "synonyms": []
+            },
+            {
+                "value": "waste basket",
+                "synonyms": [
+                    "garbage can",
+                    "trash can",
+                    "dustbin",
+                    "garbage pail",
+                    "wastebin",
+                    "trash basket",
+                    "dumpster can",
+                    "wastepaper basket",
+                    "waste back",
+                    "casket",
+                    "wyare biscuit",
+                    "easter basket",
+                    "gift basket",
+                    "sea biscuit",
+                    "setback",
+                    "sea stacks",
+                    "trashcan",
+                    "tarascan",
+                    "tracking",
+                    "trashing",
+                    "tragen",
+                    "traction",
+                    "traffic in"
+                ]
+            },
+            {
+                "value": "gargle glasses",
+                "synonyms": []
+            },
+            {
+                "value": "gargle glass",
+                "synonyms": [
+                    "gargle cup",
+                    "spit cup",
+                    "swish cup",
+                    "mouthwash cup",
+                    "spit glass",
+                    "mouthwash glass",
+                    "swish glass",
+                    "gargles",
+                    "gargled",
+                    "gargol",
+                    "gargil",
+                    "grey cup",
+                    "moustache cup",
+                    "mustache cup",
+                    "misworhsip"
+                ]
+            },
+            {
+                "value": "ashtrays",
+                "synonyms": []
+            },
+            {
+                "value": "ashtray",
+                "synonyms": [
+                    "smoke tray",
+                    "cigarette tray",
+                    "cigar tray",
+                    "ash tree",
+                    "ashrae",
+                    "astro",
+                    "astra",
+                    "asherah",
+                    "ash trees",
+                    "ash gray",
+                    "ash grey",
+                    "astray",
+                    "ice tray"
+                ]
+            },
+            {
+                "value": "matchboxes",
+                "synonyms": []
+            },
+            {
+                "value": "matchbox",
+                "synonyms": [
+                    "match",
+                    "mathbook",
+                    "lighter",
+                    "mailbox",
+                    "matchbook",
+                    "mattox",
+                    "hatbox",
+                    "myboss",
+                    "macaques",
+                    "cashbox",
+                    "mattocks"
+                ]
+            },
+            {
+                "value": "hair dryers",
+                "synonyms": []
+            },
+            {
+                "value": "hair dryer",
+                "synonyms": [
+                    "blow dryer",
+                    "hair blower"
+                ]
+            },
+            {
+                "value": "makeup mirrors",
+                "synonyms": []
+            },
+            {
+                "value": "makeup mirror",
+                "synonyms": [
+                    "cosmetics mirror",
+                    "magnifying mirror"
+                ]
+            },
+            {
+                "value": "irons",
+                "synonyms": []
+            },
+            {
+                "value": "iron",
+                "synonyms": [
+                    "ironing appliance",
+                    "clothes iron",
+                    "steam iron",
+                    "flat iron",
+                    "smoothing iron",
+                    "iron box"
+                ]
+            },
+            {
+                "value": "ironing boards",
+                "synonyms": []
+            },
+            {
+                "value": "ironing board",
+                "synonyms": [
+                    "pressing board"
+                ]
+            },
+            {
+                "value": "hangers",
+                "synonyms": []
+            },
+            {
+                "value": "hanger",
+                "synonyms": [
+                    "clothes hanger",
+                    "coat hanger",
+                    "hangar",
+                    "hammer",
+                    "hamer",
+                    "hamir",
+                    "wanger",
+                    "hang",
+                    "howmer",
+                    "hangs",
+                    "hangars",
+                    "hanker",
+                    "heimer"
+                ]
+            },
+            {
+                "value": "dress hangers",
+                "synonyms": []
+            },
+            {
+                "value": "dress hanger",
+                "synonyms": [
+                    "apparel hanger",
+                    "ensemble hanger",
+                    "attire hanger",
+                    "wardrobe hanger",
+                    "gown hanger",
+                    "a tire hanger",
+                    "a tire singer",
+                    "dress ore",
+                    "dressing",
+                    "dress hat",
+                    "drum scanner",
+                    "dressier",
+                    "drop hammer",
+                    "disenamore",
+                    "destiner",
+                    "dress maker"
+                ]
+            },
+            {
+                "value": "satin hangers",
+                "synonyms": []
+            },
+            {
+                "value": "satin hanger",
+                "synonyms": [
+                    "cloth hanger",
+                    "ladies hanger",
+                    "delicates hanger",
+                    "saddening",
+                    "stunning",
+                    "satiny",
+                    "steamhammer",
+                    "sit in on",
+                    "staining",
+                    "satin",
+                    "seasoning",
+                    "stoning"
+                ]
+            },
+            {
+                "value": "pants hangers",
+                "synonyms": []
+            },
+            {
+                "value": "pants hanger",
+                "synonyms": [
+                    "slacks hanger",
+                    "knickers hanger",
+                    "pantalon hangers",
+                    "britches hanger",
+                    "bridges hanger",
+                    "trouser hangers",
+                    "Wire hanger",
+                    "tetramer",
+                    "tottering",
+                    "tarring",
+                    "tearing",
+                    "tremor",
+                    "touring"
+                ]
+            },
+            {
+                "value": "laundry bags",
+                "synonyms": []
+            },
+            {
+                "value": "laundry bag",
+                "synonyms": [
+                    "valet bag",
+                    "dirty clothes bag",
+                    "hamper bag",
+                    "wash bag",
+                    "ladybug",
+                    "louderback",
+                    "laundries",
+                    "litterbag",
+                    "ladder back",
+                    "underback"
+                ]
+            },
+            {
+                "value": "laundry price lists",
+                "synonyms": []
+            },
+            {
+                "value": "laundry price list",
+                "synonyms": [
+                    "valet roster",
+                    "laundry roster",
+                    "laundry prospectus",
+                    "laundry flyer",
+                    "laundry tally",
+                    "dry cleaning roster",
+                    "laundry slip",
+                    "ladunfry basket",
+                    "contrabassst",
+                    "leaundresses",
+                    "underpriced",
+                    "centralist",
+                    "landry price list",
+                    "laundered price list",
+                    "lunder price list",
+                    "londres price list",
+                    "lindsay price list",
+                    "lender price list"
+                ]
+            },
+            {
+                "value": "room service menu",
+                "synonyms": [
+                    "in-room dining menu",
+                    "room service roster",
+                    "room service prospectus",
+                    "room service flyer",
+                    "room service food list",
+                    "in room dining menu",
+                    "food list",
+                    "dining menu",
+                    "room service",
+                    "exserrvice man",
+                    "serviceman",
+                    "sumamente"
+                ]
+            },
+            {
+                "value": "do not disturb sign",
+                "synonyms": [
+                    "do not disturb prospectus",
+                    "do not disturb flyer",
+                    "do not disturb hanger",
+                    "do not disturb door sign",
+                    "door knob hanger",
+                    "do not bother sign",
+                    "do not disturb",
+                    "donatists",
+                    "undisturbing",
+                    "undisturbed",
+                    "sinistrin"
+                ]
+            },
+            {
+                "value": "luggage racks",
+                "synonyms": []
+            },
+            {
+                "value": "luggage rack",
+                "synonyms": [
+                    "shoe rack",
+                    "bag rack",
+                    "suitcase rack",
+                    "baggage rack",
+                    "trunk rack",
+                    "case rack",
+                    "gear rack",
+                    "carry-on rack",
+                    "tote rack",
+                    "shoe rack"
+                ]
+            },
+            {
+                "value": "clocks",
+                "synonyms": []
+            },
+            {
+                "value": "clock",
+                "synonyms": [
+                    "clock",
+                    "alarm clock",
+                    "time device",
+                    "timekeeping device",
+                    "timepiece",
+                    "timer",
+                    "alarm",
+                    "timemarker",
+                    "digital watch",
+                    "timekeeper",
+                    "radio",
+                    "time maker"
+                ]
+            },
+            {
+                "value": "umbrellas",
+                "synonyms": []
+            },
+            {
+                "value": "umbrella",
+                "synonyms": [
+                    "sunshade",
+                    "sun guard",
+                    "rain guard",
+                    "send shade",
+                    "sungard",
+                    "embroiled",
+                    "umbra",
+                    "embroil",
+                    "amarilla",
+                    "abella",
+                    "ambala",
+                    "amber ale",
+                    "emboli",
+                    "abril"
+                ]
+            },
+            {
+                "value": "phone chargers",
+                "synonyms": []
+            },
+            {
+                "value": "phone charger",
+                "synonyms": [
+                    "phone power charger",
+                    "extra charger for phone",
+                    "phone cord",
+                    "phone power surge",
+                    "phone power charger",
+                    "phone cable",
+                    "phone power",
+                    "phone power search",
+                    "phone towers search",
+                    "full charge",
+                    "finisher",
+                    "fincher",
+                    "fancher",
+                    "phone card",
+                    "phonier",
+                    "uncharge"
+                ]
+            },
+            {
+                "value": "usb plugs",
+                "synonyms": []
+            },
+            {
+                "value": "usb plug",
+                "synonyms": [
+                    "charger",
+                    "power source",
+                    "surcharger",
+                    "usb battery",
+                    "usb power",
+                    "usb power source",
+                    "upcharge",
+                    "sparger",
+                    "umbarger",
+                    "uncharge",
+                    "sparge",
+                    "starcher",
+                    "scorcher",
+                    "sarge"
+                ]
+            },
+            {
+                "value": "ipod docking stations",
+                "synonyms": []
+            },
+            {
+                "value": "ipod docking station",
+                "synonyms": [
+                    "tablet docking station",
+                    "filling station",
+                    "work station",
+                    "docking station",
+                    "ipod docking",
+                    "docking station",
+                    "sparcstation",
+                    "suppeditation",
+                    "stocking stitch",
+                    "slocking stone",
+                    "secundation"
+                ]
+            },
+            {
+                "value": "cd dvd players",
+                "synonyms": []
+            },
+            {
+                "value": "cd dvd player",
+                "synonyms": [
+                    "audio system",
+                    "video system",
+                    "tape player",
+                    "protable player",
+                    "portable audio system",
+                    "portable video system",
+                    "tapeplayer",
+                    "record player",
+                    "media player",
+                    "dvd player",
+                    "cd player",
+                    "audio video system",
+                    "seeded player",
+                    "city planner",
+                    "sitar player",
+                    "sword player",
+                    "steeply",
+                    "cd video",
+                    "soccer player"
+                ]
+            },
+            {
+                "value": "usb charger hubs",
+                "synonyms": []
+            },
+            {
+                "value": "usb charger hub",
+                "synonyms": [
+                    "usb charger station",
+                    "mobile usb charger station",
+                    "mobile usb hub",
+                    "usb charger",
+                    "mobilization",
+                    "mobilizing",
+                    "mobile library",
+                    "malabsorption",
+                    "metal spraying",
+                    "demobilisation",
+                    "social station",
+                    "sparcstation",
+                    "cybernetician"
+                ]
+            },
+            {
+                "value": "extension cords",
+                "synonyms": []
+            },
+            {
+                "value": "extension cord",
+                "synonyms": [
+                    "power extension cord",
+                    "extension string",
+                    "connection cord",
+                    "extension cable",
+                    "extension drink",
+                    "extension course",
+                    "extension board",
+                    "expansion card",
+                    "extension lead",
+                    "expansionary"
+                ]
+            },
+            {
+                "value": "power converters",
+                "synonyms": []
+            },
+            {
+                "value": "power converter",
+                "synonyms": [
+                    "electric converter",
+                    "travel adapters",
+                    "plug adaptors",
+                    "power adaptor",
+                    "electric converter",
+                    "rotary converter",
+                    "data converter"
+                ]
+            },
+            {
+                "value": "mineral water",
+                "synonyms": [
+                    "spring water",
+                    "minetral tar",
+                    "mineralizer",
+                    "mineral rights",
+                    "mineral wool",
+                    "mineraloid",
+                    "moneralist",
+                    "monolater"
+                ]
+            },
+            {
+                "value": "sparkling water",
+                "synonyms": [
+                    "carbonated water",
+                    "tonic water"
+                ]
+            },
+            {
+                "value": "bottled water",
+                "synonyms": [
+                    "flask",
+                    "water flask",
+                    "water jug",
+                    "water thermos",
+                    "bottled washer",
+                    "bottled-out",
+                    "battledore",
+                    "barley water"
+                ]
+            },
+            {
+                "value": "hot water",
+                "synonyms": [
+                    "hot water for tea",
+                    "tea water",
+                    "tea pot",
+                    "hot water pot",
+                    "water for tea",
+                    "hot water part",
+                    "headwater",
+                    "whitewater",
+                    "high water",
+                    "hot wire",
+                    "light water",
+                    "hold water",
+                    "hot butter"
+                ]
+            }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+    },
+    "itemNeedRepair": {
+        "name": "itemNeedRepair",
+        "version": "latest",
+        "enumerationValues": [
+            {
+                "value": "water kettle",
+                "synonyms": [
+                    "kettle",
+                    "water boiler",
+                    "water pot",
+                    "tea kettle"
+                ]
+            },
+            {
+                "value": "hair dryers",
+                "synonyms": []
+            },
+            {
+                "value": "hair dryer",
+                "synonyms": [
+                    "blow dryer",
+                    "hair blower"
+                ]
+            },
+            {
+                "value": "makeup mirrors",
+                "synonyms": []
+            },
+            {
+                "value": "makeup mirror",
+                "synonyms": [
+                    "cosmetics mirror",
+                    "magnifying mirror"
+                ]
+            },
+            {
+                "value": "irons",
+                "synonyms": []
+            },
+            {
+                "value": "iron",
+                "synonyms": [
+                    "ironing appliance",
+                    "clothes iron",
+                    "steam iron",
+                    "flat iron",
+                    "smoothing iron",
+                    "iron box"
+                ]
+            },
+            {
+                "value": "ironing boards",
+                "synonyms": []
+            },
+            {
+                "value": "ironing board",
+                "synonyms": [
+                    "pressing board"
+                ]
+            },
+            {
+                "value": "TVs",
+                "synonyms": []
+            },
+            {
+                "value": "TV",
+                "synonyms": [
+                    "television",
+                    "telly",
+                    "tube",
+                    "TV box",
+                    "Tovey",
+                    "tevye",
+                    "tvs",
+                    "truvy",
+                    "tivo",
+                    "tfe",
+                    "tufa",
+                    "televising",
+                    "telogen",
+                    "daylogh vision",
+                    "tunnelvision",
+                    "division",
+                    "elevation",
+                    "cell division"
+                ]
+            },
+            {
+                "value": "TV remote",
+                "synonyms": [
+                    "remote control",
+                    "clicker",
+                    "push-button control",
+                    "remote",
+                    "telly control",
+                    "tiaret",
+                    "tv room",
+                    "remote controller",
+                    "remote controlled",
+                    "rent control",
+                    "riot control"
+                ]
+            },
+            {
+                "value": "air conditioner",
+                "synonyms": [
+                    "AC",
+                    "HVAC",
+                    "hot-cold",
+                    "cooler",
+                    "climate control",
+                    "central air",
+                    "clima",
+                    "climatization",
+                    "thermostat",
+                    "summer stat",
+                    "hair conditioner",
+                    "air conditioned",
+                    "power conditioner",
+                    "air conduction",
+                    "eye condition",
+                    "weather"
+                ]
+            },
+            {
+                "value": "heaters",
+                "synonyms": []
+            },
+            {
+                "value": "heater",
+                "synonyms": [
+                    "warmer",
+                    "radiator",
+                    "hotter",
+                    "hitter",
+                    "hautuer",
+                    "hatter",
+                    "hutter",
+                    "heat",
+                    "heaters",
+                    "hodder",
+                    "haider",
+                    "heider"
+                ]
+            },
+            {
+                "value": "microwaves",
+                "synonyms": []
+            },
+            {
+                "value": "microwave",
+                "synonyms": [
+                    "food warmer",
+                    "microwave",
+                    "macrame",
+                    "microarray",
+                    "micro switch",
+                    "microware",
+                    "makeaway",
+                    "mikey way",
+                    "microgroove"
+                ]
+            },
+            {
+                "value": "light bulbs",
+                "synonyms": []
+            },
+            {
+                "value": "light bulb",
+                "synonyms": [
+                    "light tube",
+                    "wet bulb",
+                    "hot bulb",
+                    "liable",
+                    "litle",
+                    "light up"
+                ]
+            },
+            {
+                "value": "light switches",
+                "synonyms": []
+            },
+            {
+                "value": "light switch",
+                "synonyms": [
+                    "electric switch",
+                    "light plate",
+                    "white witch",
+                    "light weight",
+                    "light touch",
+                    "lights on",
+                    "light wave",
+                    "limit switch"
+                ]
+            },
+            {
+                "value": "plugs",
+                "synonyms": []
+            },
+            {
+                "value": "plug",
+                "synonyms": [
+                    "power plug",
+                    "electric plug",
+                    "electric connection",
+                    "plaque",
+                    "pluck",
+                    "ploeg",
+                    "plog",
+                    "pug",
+                    "plugged",
+                    "plac"
+                ]
+            },
+            {
+                "value": "doors",
+                "synonyms": []
+            },
+            {
+                "value": "door",
+                "synonyms": [
+                    "main room door",
+                    "room door",
+                    "entrance door",
+                    "entryway door",
+                    "front gate",
+                    "exit",
+                    "sliding door",
+                    "dore",
+                    "dor",
+                    "dorr",
+                    "doerr",
+                    "dar",
+                    "dower",
+                    "dour",
+                    "dhar",
+                    "daher",
+                    "dauer",
+                    "daar",
+                    "dare",
+                    "dire",
+                    "dyer",
+                    "doer",
+                    "dewar",
+                    "dur",
+                    "duer",
+                    "deare",
+                    "dear"
+                ]
+            },
+            {
+                "value": "closet doors",
+                "synonyms": []
+            },
+            {
+                "value": "closet door",
+                "synonyms": [
+                    "wardrobe door",
+                    "clothes room",
+                    "storage door",
+                    "closet auger",
+                    "closed door",
+                    "cazador",
+                    "closet",
+                    "closets",
+                    "closeted",
+                    "close the door",
+                    "cost dear",
+                    "lays at door"
+                ]
+            },
+            {
+                "value": "windows",
+                "synonyms": []
+            },
+            {
+                "value": "window",
+                "synonyms": [
+                    "casement",
+                    "windy",
+                    "one day",
+                    "wendy",
+                    "widow",
+                    "wind",
+                    "winds",
+                    "wanda",
+                    "windowed",
+                    "winnow",
+                    "winde",
+                    "wend",
+                    "one two",
+                    "hindu",
+                    "wende"
+                ]
+            },
+            {
+                "value": "desks",
+                "synonyms": []
+            },
+            {
+                "value": "desk",
+                "synonyms": [
+                    "workspace",
+                    "secretary",
+                    "work counter",
+                    "secretary shelf",
+                    "desk drawer"
+                ]
+            },
+            {
+                "value": "lamps",
+                "synonyms": []
+            },
+            {
+                "value": "lamp",
+                "synonyms": [
+                    "lantern",
+                    "light",
+                    "desk lamp",
+                    "desk light",
+                    "workspace lamp",
+                    "workspace light",
+                    "secretary lamp",
+                    "secretary light",
+                    "lampe",
+                    "lump",
+                    "limp",
+                    "lap",
+                    "lamb",
+                    "lamps",
+                    "clamp",
+                    "lam",
+                    "lapp"
+                ]
+            },
+            {
+                "value": "chairs",
+                "synonyms": []
+            },
+            {
+                "value": "chair",
+                "synonyms": [
+                    "desk chair",
+                    "workspace chair",
+                    "secretary chair",
+                    "chair leg"
+                ]
+            },
+            {
+                "value": "beds",
+                "synonyms": []
+            },
+            {
+                "value": "bed",
+                "synonyms": [
+                    "mattress",
+                    "chaise",
+                    "sleeping platform",
+                    "divan",
+                    "trundle",
+                    "chase"
+                ]
+            },
+            {
+                "value": "luggage racks",
+                "synonyms": []
+            },
+            {
+                "value": "luggage rack",
+                "synonyms": [
+                    "shoe rack",
+                    "bag rack",
+                    "suitcase rack",
+                    "baggage rack",
+                    "trunk rack",
+                    "case rack",
+                    "gear rack",
+                    "carry-on rack",
+                    "tote rack",
+                    "shoe rack"
+                ]
+            },
+            {
+                "value": "clocks",
+                "synonyms": []
+            },
+            {
+                "value": "clock",
+                "synonyms": [
+                    "clock",
+                    "alarm clock",
+                    "time device",
+                    "timekeeping device",
+                    "timepiece",
+                    "timer",
+                    "alarm",
+                    "timemarker",
+                    "digital watch",
+                    "timekeeper",
+                    "radio",
+                    "time maker"
+                ]
+            },
+            {
+                "value": "night stands",
+                "synonyms": []
+            },
+            {
+                "value": "night stand",
+                "synonyms": [
+                    "bed table",
+                    "bedstand",
+                    "night table"
+                ]
+            },
+            {
+                "value": "night stand lamps",
+                "synonyms": []
+            },
+            {
+                "value": "night stand lamp",
+                "synonyms": [
+                    "night lamp",
+                    "bed table lamp",
+                    "bedstand lamp",
+                    "bed stand lamp",
+                    "night table lamp",
+                    "bedside lamp",
+                    "night lantern",
+                    "bed table lantern",
+                    "bedstand lantern",
+                    "bed stand lantern",
+                    "night table lantern",
+                    "bedside lantern",
+                    "night light",
+                    "bed table light",
+                    "bedstand light",
+                    "bed stand light",
+                    "night table light",
+                    "bedside light"
+                ]
+            },
+            {
+                "value": "bathroom doors",
+                "synonyms": []
+            },
+            {
+                "value": "bathroom door",
+                "synonyms": [
+                    "toilet door",
+                    "lavatory door",
+                    "washroom door",
+                    "outhouse door",
+                    "restroom door",
+                    "ladies' room door",
+                    "gentlemen's room door",
+                    "women's room door",
+                    "men's room door",
+                    "little boy's room door",
+                    "little girl's room door",
+                    "barrymore",
+                    "barn door",
+                    "borrador",
+                    "batten door",
+                    "beam rider"
+                ]
+            },
+            {
+                "value": "shower doors",
+                "synonyms": []
+            },
+            {
+                "value": "shower door",
+                "synonyms": [
+                    "shower glass",
+                    "washbasin door"
+                ]
+            },
+            {
+                "value": "showers",
+                "synonyms": []
+            },
+            {
+                "value": "shower",
+                "synonyms": [
+                    "shower head",
+                    "shower sprinkler"
+                ]
+            },
+            {
+                "value": "retractable clothes drying line",
+                "synonyms": [
+                    "drying line",
+                    "clothes line",
+                    "clothes hanging line",
+                    "hanging mine"
+                ]
+            },
+            {
+                "value": "wall hooks",
+                "synonyms": []
+            },
+            {
+                "value": "wall hook",
+                "synonyms": [
+                    "wall peg",
+                    "wall hanger",
+                    "wall holder",
+                    "wall clasp"
+                ]
+            },
+            {
+                "value": "towel bars",
+                "synonyms": []
+            },
+            {
+                "value": "towel bar",
+                "synonyms": [
+                    "towel pole",
+                    "towel stake",
+                    "towel rail",
+                    "wall bar",
+                    "towel hanger",
+                    "towel hanging bar",
+                    "hanging bar",
+                    "towel poll"
+                ]
+            },
+            {
+                "value": "mirrors",
+                "synonyms": []
+            },
+            {
+                "value": "mirror",
+                "synonyms": [
+                    "reflector",
+                    "looking glass"
+                ]
+            },
+            {
+                "value": "toilets",
+                "synonyms": []
+            },
+            {
+                "value": "toilet",
+                "synonyms": [
+                    "lavatory",
+                    "potty",
+                    "john",
+                    "commode",
+                    "can"
+                ]
+            },
+            {
+                "value": "faucets",
+                "synonyms": []
+            },
+            {
+                "value": "faucet",
+                "synonyms": [
+                    "sink",
+                    "water faucet",
+                    "water sink"
+                ]
+            },
+            {
+                "value": "bathtubs",
+                "synonyms": []
+            },
+            {
+                "value": "bathtub",
+                "synonyms": [
+                    "bath",
+                    "shower tub",
+                    "backed up",
+                    "beat up",
+                    "bathrobe",
+                    "basta",
+                    "beefed up",
+                    "booked up",
+                    "bust up",
+                    "bucked up"
+                ]
+            },
+            {
+                "value": "water leak",
+                "synonyms": [
+                    "leakage",
+                    "water leakage",
+                    "water leak",
+                    "water overflow",
+                    "runny water"
+                ]
+            },
+            {
+                "value": "ice machines",
+                "synonyms": []
+            },
+            {
+                "value": "ice machine",
+                "synonyms": [
+                    "ice motor",
+                    "ice engine",
+                    "ice appliance",
+                    "ice box"
+                ]
+            }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+    },
+    "serviceNeedCallBack": {
+        "name": "serviceNeedCallBack",
+        "version": "latest",
+        "enumerationValues": [
+            {
+                "value": "late check outs",
+                "synonyms": []
+            },
+            {
+                "value": "late check out",
+                "synonyms": [
+                    "delayed check out",
+                    "low ticket",
+                    "litigate",
+                    "light legged"
+                ]
+            },
+            {
+                "value": "transportation services",
+                "synonyms": []
+            },
+            {
+                "value": "transportation service",
+                "synonyms": [
+                    "car service",
+                    "uber service",
+                    "lyft service",
+                    "airport shuttle",
+                    "shuttle",
+                    "car rental",
+                    "taxi",
+                    "limo",
+                    "courier service",
+                    "wire service",
+                    "choral service",
+                    "courses",
+                    "coarseness",
+                    "car seats"
+                ]
+            },
+            {
+                "value": "valet parking",
+                "synonyms": [
+                    "parking service",
+                    "villa park",
+                    "evil speaking",
+                    "sparking",
+                    "bulwarking",
+                    "skylarking",
+                    "sleepmarken"
+                ]
+            },
+            {
+                "value": "complaints",
+                "synonyms": []
+            },
+            {
+                "value": "complaint",
+                "synonyms": [
+                    "dissatisfaction",
+                    "objection",
+                    "criticsm",
+                    "trouble",
+                    "annoyance",
+                    "disturbance",
+                    "commotion",
+                    "distraction",
+                    "intrusion",
+                    "rumble",
+                    "hindrance",
+                    "bother",
+                    "turmoil",
+                    "complete",
+                    "complains",
+                    "comletes",
+                    "compunds",
+                    "compiance",
+                    "complaining",
+                    "completeness"
+                ]
+            }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+    },
+    "informaitonService": {
+        "name": "informaitonService",
+        "version": "latest",
+        "enumerationValues": [
+            {
+                "value": "club lounges",
+                "synonyms": []
+            },
+            {
+                "value": "club lounge",
+                "synonyms": [
+                    "membership lounge",
+                    "club room",
+                    "membership room",
+                    "members only room",
+                    "members only lounge"
+                ]
+            },
+            {
+                "value": "fitness centers",
+                "synonyms": []
+            },
+            {
+                "value": "fitness center",
+                "synonyms": [
+                    "gym",
+                    "fitness room",
+                    "workout room",
+                    "exercise rooms"
+                ]
+            },
+            {
+                "value": "guest laundry room",
+                "synonyms": [
+                    "laundry room",
+                    "laundry facilities",
+                    "laundry machines",
+                    "washers",
+                    "dryers",
+                    "washing"
+                ]
+            },
+            {
+                "value": "restaurants",
+                "synonyms": []
+            },
+            {
+                "value": "restaurant",
+                "synonyms": [
+                    "dinign room",
+                    "lunch room",
+                    "diner",
+                    "lunchroom",
+                    "cafeteria",
+                    "outlet",
+                    "joint",
+                    "eating house",
+                    "eating place"
+                ]
+            },
+            {
+                "value": "breakfasts",
+                "synonyms": []
+            },
+            {
+                "value": "breakfast",
+                "synonyms": [
+                    "brunch",
+                    "early meal",
+                    "morning meal"
+                ]
+            },
+            {
+                "value": "lunches",
+                "synonyms": []
+            },
+            {
+                "value": "lunch",
+                "synonyms": [
+                    "luncheon",
+                    "midday meal"
+                ]
+            },
+            {
+                "value": "dinners",
+                "synonyms": []
+            },
+            {
+                "value": "dinner",
+                "synonyms": [
+                    "supper",
+                    "evening meal"
+                ]
+            },
+            {
+                "value": "in-room dining",
+                "synonyms": [
+                    "room service",
+                    "in-room eating",
+                    "in room eating",
+                    "in-room food service",
+                    "in room food",
+                    "food delivery",
+                    "drink delivery"
+                ]
+            },
+            {
+                "value": "bar lounge",
+                "synonyms": [
+                    "drink lounge",
+                    "bar service",
+                    "night club",
+                    "saloon",
+                    "cocktail lounge",
+                    "beverage lounge",
+                    "parlor",
+                    "pub",
+                    "taproom",
+                    "watering hole",
+                    "drinkery"
+                ]
+            },
+            {
+                "value": "coffee shop",
+                "synonyms": [
+                    "sandwich shop",
+                    "cake shop",
+                    "coffee place",
+                    "deli"
+                ]
+            },
+            {
+                "value": "gift shop",
+                "synonyms": [
+                    "boutique",
+                    "store",
+                    "market",
+                    "shop"
+                ]
+            },
+            {
+                "value": "business centre",
+                "synonyms": [
+                    "work space",
+                    "work area",
+                    "internet room",
+                    "printer room",
+                    "copy room",
+                    "computer room",
+                    "business center"
+                ]
+            },
+            {
+                "value": "meeting rooms",
+                "synonyms": []
+            },
+            {
+                "value": "meeting room",
+                "synonyms": [
+                    "gathering room",
+                    "conference room",
+                    "convention room",
+                    "session room"
+                ]
+            },
+            {
+                "value": "ballrooms",
+                "synonyms": []
+            },
+            {
+                "value": "ballroom",
+                "synonyms": [
+                    "music hall",
+                    "auditorium",
+                    "concert hall",
+                    "dance hall",
+                    "hall",
+                    "party room"
+                ]
+            }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+    }
+}
