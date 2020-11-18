@@ -167,13 +167,14 @@ def cancelAllRequests(session_attributes):
 def cancelSomeRequests(session_attributes, itemType, itemNum):
     tmp = session_attributes['confirmedItems']
     for ele in tmp:
-        if ele['itemNeedQuantity'] == itemType and ele['quantityListSpec'] == itemNum:
+        if ele['itemNeedQuantity'] == itemType and ele['quantityList'] == itemNum:
             tmp.remove(ele)
             return tmp
 
 def buildFinalOrder(session_attributes, fullcall_id):
     confirmedItems = try_ex(lambda: session_attributes['confirmedItems'])
-    if confirmedItems is None:
+    if confirmedItems is None or confirmedItems == '':
+        logger.warn("Find no confirmed items in session_attributes!")
         return None
     list = json.loads(confirmedItems)
     for ele in list:
@@ -189,7 +190,7 @@ def buildFinalOrder(session_attributes, fullcall_id):
                 "dept": try_ex(lambda: item["department"]),
                 "service": try_ex(lambda: item["type"]),
                 "subCategory": itemType,
-                "quantity": try_ex(lambda: ele['quantityListSpec']),
+                "quantity": try_ex(lambda: ele['quantityList']),
                 "escalation": "None",
                 "requestTime": try_ex(lambda: ele['time']),
                 "completionTime": "",
@@ -306,16 +307,19 @@ def build_confirm_msg(session_attributes):
     if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
         confirmedItems = json.loads(session_attributes['confirmedItems'])
         logger.debug('requestItem is {}'.format(confirmedItems))
-        confirmMsg = 'Ok we will send you  '
-        confirmMsgEnd = 'enjoy your day!'
+        confirmMsg = confirmSend
+        confirmMsgEnd = confirmSendEnd
         confirmMsgBody = ''
         for ele in confirmedItems:
             itemType = try_ex(lambda: ele['itemNeedQuantity'])
-            if ele['quantityListSpec'] == '':
+            if ele['quantityList'] == '':
                 confirmMsgBody += itemType + ', '
             else:
-                confirmMsgBody += ele['quantityListSpec'] + ' ' + itemType + ', '
-            confirmAll = confirmMsg + confirmMsgBody + confirmMsgEnd
+                confirmMsgBody += ele['quantityList'] + ' ' + itemType + ', '
+        #confirmMsgBody = 'a bath towel,a hand towel,a body towel,'
+        confirmMsgBody = re.sub(',(?=((?!,).)*$)','',confirmMsgBody)
+        confirmMsgBody = re.sub(',(?=((?!,).)*$)',' and ',confirmMsgBody)
+        confirmAll = confirmMsg + confirmMsgBody + confirmMsgEnd
     logger.debug('confirm all the thing is: {}'.format(confirmAll))
     return confirmAll
 
@@ -339,27 +343,31 @@ def request_item(intent_request):
         logger.debug('request_item item_type={}'.format(item_type))
         # To make sure item type is not None
         if item_type is None:
-            slots = get_slots(intent_request)
-            return elicit_slot(intent_request['sessionAttributes'],
-                intent_request['currentIntent']['name'],
-                slots,
-                'itemNeedQuantity',
-                {
-                    'contentType': 'PlainText',
-                    'content': NullItemType
-                }
+            logger.debug('request_item - Bot can not identify your intent/slot. Transfer to FrontDesk after trying for two times')
+            return delegate(
+                intent_request['sessionAttributes'],
+                {}
             )
 
+    if item_number:
+        confirmType = confirmItemType + item_number + ' ' + item_type + confirmItemTypeAnythingElse
+        reservation = {
+            'itemNeedQuantity': item_type,
+            'quantityList': item_number,
+            'validationSet': '',
+            'time': getTimeNow()
+        }
+    else:
+        confirmType = confirmItemType + item_type + confirmItemTypeAnythingElse
+        reservation = {
+            'itemNeedQuantity': item_type,
+            'quantityList': '',
+            'validationSet': '',
+            'time': getTimeNow()
+        }
+
     session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
-    confirmation_status = intent_request['currentIntent']['confirmationStatus']
-
-    reservation = {
-        'itemNeedQuantity': item_type,
-        'quantityListSpec': item_number,
-        'validationSet': ''
-    }
-
-    session_attributes['currentReservation'] = json.dumps(reservation)
+    session_attributes['lastIntent'] = intent_request['currentIntent']['name']
 
     if intent_request['invocationSource'] == 'DialogCodeHook':
         # Perform basic validation on the supplied input slots.
@@ -368,30 +376,22 @@ def request_item(intent_request):
 
         # item type validation check
         validation_result = validate_item_type(item_type, item_type_slot, session_attributes)
-        logger.debug('lambda func: validation_result: {}'.format(validation_result))
+        #logger.debug('lambda func: validation_result: {}'.format(validation_result))
+        #add validation flag
         reservation['validationSet'] = validation_result['validationSet'] # includes approvedQuest, checkingQuest
         session_attributes['currentReservation'] = json.dumps(reservation)
         logger.debug('request_item - dialogcodehook - currentReservation: {}'.format(session_attributes['currentReservation']))
 
-        if not validation_result['isValid']:
-            slots[validation_result['violatedSlot']] = None
-
+        # validate haveNone,cost,in room,then close the session.
         if validation_result['message']['content']:
-            # need to enhance, not cover cost case
-            # session_attributes['lastRoomItemReservation'] = reservation
-            return elicit_slot(intent_request['sessionAttributes'],
-                               intent_request['currentIntent']['name'],
-                               slots,
-                               validation_result['violatedSlot'],
-                               validation_result['message'])
+            return close(intent_request['sessionAttributes'],
+                                   'Fulfilled',
+                                   validation_result['message'])
 
         output_session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
         return delegate(output_session_attributes, get_slots(intent_request))
 
     if intent_request['invocationSource'] == 'FulfillmentCodeHook':
-        if ((intent_name == 'requestItemQuantity')):
-            try_ex(lambda: session_attributes.pop('currentReservation'))
-            session_attributes['lastConfirmedReservation'] = json.dumps(reservation)
 
         inputsentence = try_ex(lambda: intent_request['inputTranscript'])
         if inputsentence is not None:
@@ -403,21 +403,6 @@ def request_item(intent_request):
 
             session_attributes['inputsentenceHis'] = inputsentenceHis
             session_attributes['lastIntent'] = intent_request['currentIntent']['name']
-
-        if item_number:
-            confirmType = 'Ok, you would like ' + item_number + ' ' + item_type + ', anything else?'
-            reservation = {
-                'itemNeedQuantity': item_type,
-                'quantityListSpec': item_number,
-                'time': getTimeNow()
-            }
-        else:
-            confirmType = 'Ok, you would like ' + item_type + ', anything else?'
-            reservation = {
-                'itemNeedQuantity': item_type,
-                'quantityListSpec': '',
-                'time': getTimeNow()
-            }
 
         confirmedItems = []
         if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
@@ -439,8 +424,8 @@ def byebye(intent_request):
     if session_attributes != {}:
         room = getRoomNum(session_attributes)
         fullcall_id, call_id = getCallID(intent_request)
-        order = buildFinalOrder(session_attributes, fullcall_id)
-        sendOrder(order, call_id, room, '5') # check how to get bot version?
+        #order = buildFinalOrder(session_attributes, fullcall_id)
+        #sendOrder(order, call_id, room, '5') # check how to get bot version?
         # TODO: need to clear item_type, item_number, session_attributes
         session_attributes.clear()
         return close(
@@ -469,13 +454,16 @@ def confirm_yes(intent_request):
     2) Use of sessionAttributes to pass information that can be used to guide conversation
     """
     session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
+    lastIntent = try_ex(lambda: session_attributes['lastIntent'])
+    session_attributes['lastIntent'] = lastIntent
 
-    # add for flow #3
+    logger.debug('confim_yes session_attributes[currentReservation] = {}'.format(session_attributes['currentReservation']))
+
+    # add for flow #2: cost and #3:in room
     checkingReservation = {}
-    if try_ex(lambda: json.loads(session_attributes['currentReservation'])) is not None:
+    if try_ex(lambda: session_attributes['currentReservation']) is not None and try_ex(lambda: session_attributes['currentReservation']) != '':
         checkingReservation = json.loads(session_attributes['currentReservation'])
-    elif try_ex(lambda: json.loads(session_attributes['lastConfirmedReservation'])) is not None:
-        checkingReservation = json.loads(session_attributes['lastConfirmedReservation'])
+        logger.debug('confim_yes checkingReservation {}'.format(checkingReservation))
 
     checkingSet = ''
     checkingContent = ''
@@ -484,40 +472,66 @@ def confirm_yes(intent_request):
         if checkingSet:
             checkingContent = try_ex(lambda: checkingSet['checkingQuest']) if try_ex(lambda: checkingSet['checkingQuest']) is not None else ''
         item_type = try_ex(lambda: checkingReservation['itemNeedQuantity'])
-        item_number = try_ex(lambda: checkingReservation['quantityListSpec'])
+        item_number = try_ex(lambda: checkingReservation['quantityList']) if try_ex(lambda: checkingReservation['quantityList']) is not None else ''
 
-    if item_type is None or item_number is None:
-        logger.error('Cannot receive item type or number!')
     if checkingContent == 'inRoom':
         validationSet = json.loads(session_attributes['currentReservation'])['validationSet']
         checkingReservation['validationSet'] = updateItemValidationSet(validationSet, 'inRoom', None) # clear inRoom check status, make inRoom approve status
         session_attributes['currentReservation'] = json.dumps(checkingReservation)
-        session_attributes['lastIntent'] = intent_request['currentIntent']['name']
 
+        confirmedItems = []
+        if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
+            confirmedItems = json.loads(session_attributes['confirmedItems'])
+            # delete last confirmedItems if last intent is change intents
+            if lastIntent == 'confirmNoNeedQuantity' or lastIntent == 'confirmNoNeedQuantityClarify' or lastIntent == 'confirmNoWoQuantity':
+                confirmedItems.pop()
+            session_attributes['confirmedItems'] = json.dumps(confirmedItems)
+            logger.debug('confirm_yes - if inRoom is yes, print session_attributes[confirmedItems] = {} '.format(session_attributes['confirmedItems']))
+
+        session_attributes['lastIntent'] = intent_request['currentIntent']['name']
         # cofirm yes for item in the room, close the session.
         return close(
             session_attributes,
             'Fulfilled',
             {
                 'contentType': 'PlainText',
-                'content': 'Anything else I can help you with today?'
+                'content': anythingElse
             }
         )
-
-    reservation = {
-        'itemNeedQuantity': item_type,
-        'quantityListSpec': item_number,
-        'time': getTimeNow()
-    }
-
-    if intent_request['invocationSource'] == 'FulfillmentCodeHook':
-        session_attributes['lastConfirmedReservation'] = json.dumps(reservation)
-
+    elif checkingContent == 'cost':
+        validationSet = json.loads(session_attributes['currentReservation'])['validationSet']
+        checkingReservation['validationSet'] = updateItemValidationSet(validationSet, 'cost', None) # clear inRoom check status, make inRoom approve status
+        session_attributes['currentReservation'] = json.dumps(checkingReservation)
+        # fake a ConfirmedItem for item customer want to charge
+        reservation = {
+            'itemNeedQuantity': item_type,
+            'quantityList': '',
+            'time': getTimeNow()
+        }
         confirmedItems = []
         if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
             confirmedItems = json.loads(session_attributes['confirmedItems'])
+            # delete last confirmedItems if last intent is change intents
+            if lastIntent == 'confirmNoNeedQuantity' or lastIntent == 'confirmNoNeedQuantityClarify' or lastIntent == 'confirmNoWoQuantity':
+                confirmedItems.pop()
         confirmedItems.append(reservation)
         session_attributes['confirmedItems'] = json.dumps(confirmedItems)
+        logger.debug('confirm_yes - if cost is yes, print session_attributes[confirmedItems] = {} '.format(session_attributes['confirmedItems']))
+
+        confirmType = confirmItemType + item_type + confirmItemTypeAnythingElse
+
+        session_attributes['lastIntent'] = intent_request['currentIntent']['name']
+        # cofirm yes for charging, close the session.
+        return close(
+            session_attributes,
+            'Fulfilled',
+            {
+                'contentType': 'PlainText',
+                'content': confirmType
+            }
+        )
+
+    if intent_request['invocationSource'] == 'FulfillmentCodeHook':
 
         inputsentence = try_ex(lambda: intent_request['inputTranscript'])
         if inputsentence is not None:
@@ -530,13 +544,20 @@ def confirm_yes(intent_request):
             session_attributes['inputsentenceHis'] = inputsentenceHis
             session_attributes['lastIntent'] = intent_request['currentIntent']['name']
 
-        toDo = 'OK, we will bring you ' + item_number + ' ' + item_type + '. Anything else I can help you with?'
+        '''
+        if item_number:
+            toDo = confirmYesToDo + item_number + ' ' + item_type + '. ' + anythingElse
+        else:
+            toDo = confirmYesToDo  + item_type +  '. ' + anythingElse
+        '''
+        session_attributes['lastIntent'] = intent_request['currentIntent']['name']
         return close(
             session_attributes,
             'Fulfilled',
             {
                 'contentType': 'PlainText',
-                'content': toDo
+                #'content': toDo
+                'content': anythingElse
             }
         )
 
@@ -544,38 +565,24 @@ def confirm_yes(intent_request):
 #no I need 3 bath towels
 def confirm_no_needQuantity(intent_request):
     item_type = try_ex(lambda: intent_request['currentIntent']['slots']['itemNeedQuantity'])
-    item_number = try_ex(lambda: intent_request['currentIntent']['slots']['quantityListSpec'])
+    item_number = try_ex(lambda: intent_request['currentIntent']['slots']['quantityList'])
 
+    # To make sure item type is not None
     if item_type is None:
-        return elicit_slot(intent_request['sessionAttributes'],
-            intent_request['currentIntent']['name'],
-            intent_request['currentIntent']['slots'],
-            'itemNeedQuantity',
-            {
-                'contentType': 'PlainText',
-                'content': NullItemType
-            }
+        logger.debug('confirm_no_needQuantity - Bot can not identify your intent/slot. Transfer to FrontDesk after trying for two times')
+        return delegate(
+            intent_request['sessionAttributes'],
+            {}
         )
 
-    confirmation_status = intent_request['currentIntent']['confirmationStatus']
     session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
+    session_attributes['lastIntent'] = intent_request['currentIntent']['name']
 
-    last_confirmed_reservation = try_ex(lambda: session_attributes['lastConfirmedReservation'])
-    if last_confirmed_reservation:
-        last_confirmed_reservation = json.loads(last_confirmed_reservation)
-    confirmation_context = try_ex(lambda: session_attributes['confirmationContext'])
-
-    item_typeold = try_ex(lambda: last_confirmed_reservation['itemNeedQuantity'])
-    item_numberold = try_ex(lambda: last_confirmed_reservation['quantityListSpec'])
-
-    #no I need bath towels
-
-    # Load confirmation history and track the current reservation.
+    # the current reservation.
     reservation = {
-        'itemNeedQuantityOld': item_typeold,
-        'quantityListSpecOld': item_numberold,
         'itemNeedQuantity': item_type,
-        'quantityListSpec': item_number
+        'quantityList': item_number,
+        'validationSet': ''
     }
 
     session_attributes['currentReservation'] = json.dumps(reservation)
@@ -584,20 +591,27 @@ def confirm_no_needQuantity(intent_request):
     if intent_request['invocationSource'] == 'DialogCodeHook':
         # Perform basic validation on the supplied input slots.
         # Use the elicitSlot dialog action to re-prompt for the first violation detected.
-        slots = get_slots(intent_request)
 
-        # confirm intent should ignore validation check
+        # item type validation check
         validation_result = validate_item_type(item_type, item_type_slot, session_attributes)
+        logger.debug('lambda func: validation_result: {}'.format(validation_result))
         reservation['validationSet'] = validation_result['validationSet'] # includes approvedQuest, checkingQuest
         session_attributes['currentReservation'] = json.dumps(reservation)
+        logger.debug('confirm_no_needQuantity - dialogcodehook - currentReservation: {}'.format(session_attributes['currentReservation']))
 
+        # validate haveNone,cost,in room,then close the session.
         if validation_result['message']['content']:
-            # need to enhance, not cover cost case
-            # session_attributes['lastRoomItemReservation'] = reservation
-            return elicit_slot(intent_request['sessionAttributes'],
-                               intent_request['currentIntent']['name'],
-                               slots,
-                               validation_result['violatedSlot'],
+            # do not have case
+            if not validation_result['isValid']:
+                confirmedItems = []
+                if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
+                    confirmedItems = json.loads(session_attributes['confirmedItems'])
+                    #delete last confirm item
+                    confirmedItems.pop()
+                    session_attributes['confirmedItems'] = json.dumps(confirmedItems)
+
+            return close(intent_request['sessionAttributes'],
+                               'Fulfilled',
                                validation_result['message'])
 
         output_session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
@@ -605,11 +619,8 @@ def confirm_no_needQuantity(intent_request):
 
     if intent_request['invocationSource'] == 'FulfillmentCodeHook':
         # Validate any slot has been specified to check if any invalid, re-elicit for its value
-        del session_attributes['currentReservation']
-        session_attributes['lastConfirmedReservation'] = json.dumps(reservation)
-
         if item_type is not None:
-            toDo = confirmItemType + item_number + ' ' + item_type + ' ' + confirmItemTypeCorrect
+            toDo = confirmItemType + item_number + ' ' + item_type + ' ' + confirmItemTypeAnythingElse
         else:
             toDo = anythingElse
 
@@ -623,6 +634,14 @@ def confirm_no_needQuantity(intent_request):
 
             session_attributes['inputsentenceHis'] = inputsentenceHis
             session_attributes['lastIntent'] = intent_request['currentIntent']['name']
+
+        confirmedItems = []
+        if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
+            confirmedItems = json.loads(session_attributes['confirmedItems'])
+            #delete last confirm item
+            confirmedItems.pop()
+        confirmedItems.append(reservation)
+        session_attributes['confirmedItems'] = json.dumps(confirmedItems)
 
         return close(
             session_attributes,
@@ -635,37 +654,46 @@ def confirm_no_needQuantity(intent_request):
 
 #no I need 3
 def confirmNoNeedQuantityClarify(intent_request):
-    item_number = try_ex(lambda: intent_request['currentIntent']['slots']['quantityListSpec'])
+    item_number = try_ex(lambda: intent_request['currentIntent']['slots']['quantityList'])
     session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
 
-    last_confirmed_reservation = try_ex(lambda: session_attributes['lastConfirmedReservation'])
-    if last_confirmed_reservation:
-        last_confirmed_reservation = json.loads(last_confirmed_reservation)
-    confirmation_context = try_ex(lambda: session_attributes['confirmationContext'])
+    # To make sure item type is not None
+    if item_number is None:
+        logger.debug('confirmNoNeedQuantityClarify - Bot can not identify your intent/slot. Transfer to FrontDesk after trying for two times')
+        return delegate(
+            intent_request['sessionAttributes'],
+            {}
+        )
 
-    item_typeold = try_ex(lambda: last_confirmed_reservation['itemNeedQuantity'])
-    item_numberold = try_ex(lambda: last_confirmed_reservation['quantityListSpec'])
+    # Get itemtype
+    item_type = ''
+    confirmedItems = []
+    #logger.debug('confirmNoNeedQuantityClarify - intent_request={}:'.format(intent_request))
+    logger.debug('confirmNoNeedQuantityClarify - session_attributes[confirmedItems]={}:'.format(session_attributes['confirmedItems']))
+    if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
+        confirmedItems = json.loads(session_attributes['confirmedItems'])
+        lastconfirmItem = confirmedItems[-1]
+        item_type = try_ex(lambda: lastconfirmItem['itemNeedQuantity'])
+        #logger.debug('confirmNoNeedQuantityClarify -  lastconfirmItem is {} '.format(lastconfirmItem))
+        logger.debug('confirmNoNeedQuantityClarify -  item_type is {} '.format(item_type))
 
-    #no I need 9
-    item_type = item_typeold
-
-    # Load confirmation history and track the current reservation.
+    # the current reservation.
     reservation = {
-        'itemNeedQuantityOld': item_typeold,
-        'quantityListSpecOld': item_numberold,
         'itemNeedQuantity': item_type,
-        'quantityListSpec': item_number
+        'quantityList': item_number
     }
 
+    session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
     session_attributes['currentReservation'] = json.dumps(reservation)
+    session_attributes['lastIntent'] = intent_request['currentIntent']['name']
+
+    #no i need 9 , this senario doesn't need DialogCodeHook to do type validation
+    #if intent_request['invocationSource'] == 'DialogCodeHook':
 
     if intent_request['invocationSource'] == 'FulfillmentCodeHook':
         # Validate any slots which have been specified.  If any are invalid, re-elicit for their value
-        del session_attributes['currentReservation']
-        session_attributes['lastConfirmedReservation'] = json.dumps(reservation)
-
         if item_number is not None:
-            toDo = confirmItemType + item_number + ' ' + item_type + ' ' + confirmItemTypeCorrect
+            toDo = confirmItemType + item_number + ' ' + item_type + ' ' + confirmItemTypeAnythingElse
         else:
             toDo = anythingElse
 
@@ -679,6 +707,14 @@ def confirmNoNeedQuantityClarify(intent_request):
 
             session_attributes['inputsentenceHis'] = inputsentenceHis
             session_attributes['lastIntent'] = intent_request['currentIntent']['name']
+
+        confirmedItems = []
+        if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
+            confirmedItems = json.loads(session_attributes['confirmedItems'])
+            #delete last confirm item
+            confirmedItems.pop()
+        confirmedItems.append(reservation)
+        session_attributes['confirmedItems'] = json.dumps(confirmedItems)
 
         return close(
             session_attributes,
@@ -694,56 +730,63 @@ def confirmNoWoQuantity(intent_request):
     item_type = try_ex(lambda: intent_request['currentIntent']['slots']['itemNeedQuantity'])
     session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
 
+    # To make sure item type is not None
     if item_type is None:
-        return elicit_slot(intent_request['sessionAttributes'],
-            intent_request['currentIntent']['name'],
-            intent_request['currentIntent']['slots'],
-            'itemNeedQuantity',
+        logger.debug('confirmNoWoQuantity - Bot can not identify your intent/slot. Transfer to FrontDesk after trying for two times')
+        return delegate(
+            intent_request['sessionAttributes'],
             {
-                'contentType': 'PlainText',
-                'content': NullItemType
             }
         )
 
-    last_confirmed_reservation = try_ex(lambda: session_attributes['lastConfirmedReservation'])
-    if last_confirmed_reservation:
-        last_confirmed_reservation = json.loads(last_confirmed_reservation)
-    confirmation_context = try_ex(lambda: session_attributes['confirmationContext'])
+    # Get item_number
+    item_number = ''
+    confirmedItems = []
+    #logger.debug('confirmNoWoQuantity - intent_request={}:'.format(intent_request))
+    logger.debug('confirmNoWoQuantity - session_attributes[confirmedItems]={}:'.format(session_attributes['confirmedItems']))
+    if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
+        confirmedItems = json.loads(session_attributes['confirmedItems'])
+        lastconfirmItem = confirmedItems[-1]
+        item_number = try_ex(lambda: lastconfirmItem['quantityList'])
+        #logger.debug('confirmNoWoQuantity -  lastconfirmItem is {} '.format(lastconfirmItem))
+        logger.debug('confirmNoWoQuantity -  item_type is {} '.format(item_number))
 
-    item_typeold = try_ex(lambda: last_confirmed_reservation['itemNeedQuantity'])
-    item_numberold = try_ex(lambda: last_confirmed_reservation['quantityListSpec'])
-
-    #no I need hand towels
-    item_number = item_numberold
-
-    # Load confirmation history and track the current reservation.
+    # the current reservation.
     reservation = {
-        'itemNeedQuantityOld': item_typeold,
-        'quantityListSpecOld': item_numberold,
         'itemNeedQuantity': item_type,
-        'quantityListSpec': item_number
+        'quantityList': item_number,
+        'validationSet': ''
     }
 
+    session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
     session_attributes['currentReservation'] = json.dumps(reservation)
+    session_attributes['lastIntent'] = intent_request['currentIntent']['name']
 
     item_type_slot = 'itemNeedQuantity'
     if intent_request['invocationSource'] == 'DialogCodeHook':
         # Perform basic validation on the supplied input slots.
         # Use the elicitSlot dialog action to re-prompt for the first violation detected.
-        slots = get_slots(intent_request)
 
-        # confirm intent should ignore validation check
+        # item type validation check
         validation_result = validate_item_type(item_type, item_type_slot, session_attributes)
+        logger.debug('lambda func: validation_result: {}'.format(validation_result))
         reservation['validationSet'] = validation_result['validationSet'] # includes approvedQuest, checkingQuest
         session_attributes['currentReservation'] = json.dumps(reservation)
+        logger.debug('request_item - dialogcodehook - currentReservation: {}'.format(session_attributes['currentReservation']))
 
+        # validate haveNone,cost,in room,then close the session.
         if validation_result['message']['content']:
-            # need to enhance, not cover cost case
-            # session_attributes['lastRoomItemReservation'] = reservation
-            return elicit_slot(intent_request['sessionAttributes'],
-                               intent_request['currentIntent']['name'],
-                               slots,
-                               validation_result['violatedSlot'],
+            # do not have case
+            if not validation_result['isValid']:
+                confirmedItems = []
+                if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
+                    confirmedItems = json.loads(session_attributes['confirmedItems'])
+                    #delete last confirm item
+                    confirmedItems.pop()
+                    session_attributes['confirmedItems'] = json.dumps(confirmedItems)
+
+            return close(intent_request['sessionAttributes'],
+                               'Fulfilled',
                                validation_result['message'])
 
         output_session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
@@ -751,11 +794,9 @@ def confirmNoWoQuantity(intent_request):
 
     if intent_request['invocationSource'] == 'FulfillmentCodeHook':
         # Validate any slots which have been specified.  If any are invalid, re-elicit for their value
-        del session_attributes['currentReservation']
-        session_attributes['lastConfirmedReservation'] = json.dumps(reservation)
 
         if item_type is not None:
-            toDo = confirmItemType + item_number + ' ' + item_type + ' ' + confirmItemTypeCorrect
+            toDo = confirmItemType + item_number + ' ' + item_type + ' ' + confirmItemTypeAnythingElse
         else:
             toDo = anythingElse
 
@@ -770,6 +811,14 @@ def confirmNoWoQuantity(intent_request):
             session_attributes['inputsentenceHis'] = inputsentenceHis
             session_attributes['lastIntent'] = intent_request['currentIntent']['name']
 
+        confirmedItems = []
+        if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
+            confirmedItems = json.loads(session_attributes['confirmedItems'])
+            #delete last confirm item
+            confirmedItems.pop()
+        confirmedItems.append(reservation)
+        session_attributes['confirmedItems'] = json.dumps(confirmedItems)
+
         return close(
             session_attributes,
             'Fulfilled',
@@ -781,11 +830,14 @@ def confirmNoWoQuantity(intent_request):
 
 def confirm_no_only(intent_request):
     session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
+    lastIntent = try_ex(lambda: session_attributes['lastIntent'])
+
+    logger.debug('confim_no_only session_attributes[currentReservation] = {}'.format(session_attributes['currentReservation']))
+
     checkingReservation = {}
-    if try_ex(lambda: json.loads(session_attributes['currentReservation'])) is not None:
+    if try_ex(lambda: session_attributes['currentReservation']) is not None and try_ex(lambda: session_attributes['currentReservation']) != '':
         checkingReservation = json.loads(session_attributes['currentReservation'])
-    elif try_ex(lambda: json.loads(session_attributes['lastConfirmedReservation'])) is not None:
-        checkingReservation = json.loads(session_attributes['lastConfirmedReservation'])
+        logger.debug('confirm_no_only -  currentReservation is not None, checkingReservation {} '.format(checkingReservation))
 
     checkingSet = ''
     checkingContent = ''
@@ -794,7 +846,8 @@ def confirm_no_only(intent_request):
         if checkingSet:
             checkingContent = try_ex(lambda: checkingSet['checkingQuest']) if try_ex(lambda: checkingSet['checkingQuest']) is not None else ''
         item_type = try_ex(lambda: checkingReservation['itemNeedQuantity'])
-        item_number = try_ex(lambda: checkingReservation['quantityListSpec'])
+        item_number = try_ex(lambda: checkingReservation['quantityList'])
+
     if checkingContent == 'inRoom':
         validationSet = json.loads(session_attributes['currentReservation'])['validationSet']
         checkingReservation['validationSet'] = updateItemValidationSet(validationSet, 'inRoom', None) # clear inRoom check status, make inRoom approve status
@@ -802,14 +855,41 @@ def confirm_no_only(intent_request):
         # fake a ConfirmedItem for item not find inRoom
         reservation = {
             'itemNeedQuantity': item_type,
-            'quantityListSpec': '',
+            'quantityList': '',
             'time': getTimeNow()
         }
         confirmedItems = []
         if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
             confirmedItems = json.loads(session_attributes['confirmedItems'])
+            # delete last confirmedItems if last intent is change intents
+            if lastIntent == 'confirmNoNeedQuantity' or lastIntent == 'confirmNoNeedQuantityClarify' or lastIntent == 'confirmNoWoQuantity' :
+                confirmedItems.pop()
         confirmedItems.append(reservation)
         session_attributes['confirmedItems'] = json.dumps(confirmedItems)
+        session_attributes['lastIntent'] = intent_request['currentIntent']['name']
+        logger.debug('confirm_no_only - if inRoom is no, print session_attributes[confirmedItems] = {} '.format(session_attributes['confirmedItems']))
+
+        return close(
+            session_attributes,
+            'Fulfilled',
+            {
+                'contentType': 'PlainText',
+                'content': 'I apologize for the inconvenience. We will bring to you right away. Anything else I can help you with?'
+            }
+        )
+    elif checkingContent == 'cost':
+        validationSet = json.loads(session_attributes['currentReservation'])['validationSet']
+        checkingReservation['validationSet'] = updateItemValidationSet(validationSet, 'cost', None) # clear cost check status
+        session_attributes['currentReservation'] = json.dumps(checkingReservation)
+
+        confirmedItems = []
+        if 'confirmedItems' in session_attributes and try_ex(lambda: session_attributes['confirmedItems']) != '':
+            confirmedItems = json.loads(session_attributes['confirmedItems'])
+            # delete last confirmedItems if last intent is change intents
+            if lastIntent == 'confirmNoNeedQuantity' or lastIntent == 'confirmNoNeedQuantityClarify' or lastIntent == 'confirmNoWoQuantity':
+                confirmedItems.pop()
+                session_attributes['confirmedItems'] = json.dumps(confirmedItems)
+        logger.debug('confirm_no_only  - if cost is no, print session_attributes[confirmedItems] = {} '.format(session_attributes['confirmedItems']))
         session_attributes['lastIntent'] = intent_request['currentIntent']['name']
 
         return close(
@@ -817,11 +897,9 @@ def confirm_no_only(intent_request):
             'Fulfilled',
             {
                 'contentType': 'PlainText',
-                'content': 'I apologize for the inconvenience. We will bring to you right away. Anything else I can help you with today?'
+                'content': anythingElse
             }
         )
-
-    lastIntent = try_ex(lambda: session_attributes['lastIntent'])
 
     inputsentence = try_ex(lambda: intent_request['inputTranscript'])
     if inputsentence is not None:
@@ -833,38 +911,36 @@ def confirm_no_only(intent_request):
 
         session_attributes['inputsentenceHis'] = inputsentenceHis
         session_attributes['lastIntent'] = intent_request['currentIntent']['name']
-    '''
-    # This part is commented by Vimin. To add back per logic
-    session_attributes['lastIntent'] = lastIntent
+
+        logger.debug('confirm_no_only  - at the end , print session_attributes[confirmedItems] = {} '.format(session_attributes['confirmedItems']))
+
+    confirm_msg = build_confirm_msg(session_attributes)
+    if confirm_msg == 'No request yet':  #if session_attributes == {}
+        confirm_msg = thankyou
 
     logger.debug("confirmnoonly - lastIntent: {}".format(lastIntent))
     if lastIntent == 'confirmNoOnly' or lastIntent == 'confirmYes':
-        byebye(intent_request)
+        room = getRoomNum(session_attributes)
+        fullcall_id, call_id = getCallID(intent_request)
+        #order = buildFinalOrder(session_attributes, fullcall_id)
+        #sendOrder(order, call_id, room, '5') # check how to get bot version?
+        # TODO: need to clear item_type, item_number, session_attributes
+        session_attributes.clear()
         return close(
             session_attributes,
             'Fulfilled',
             {
                 'contentType': 'PlainText',
-                'content': "Bye bye!"
+                'content': confirm_msg
             }
         )
 
-    return close(
-        session_attributes,
-        'Fulfilled',
-        {
-            'contentType': 'PlainText',
-            'content': anythingElse
-        }
-    )
-    '''
-
-    confirm_msg = build_confirm_msg(session_attributes)
-    if confirm_msg == 'No request yet':
-        confirm_msg = 'Have a nice day, bye bye'
-
-    ## To add send order
-
+    room = getRoomNum(session_attributes)
+    fullcall_id, call_id = getCallID(intent_request)
+    #order = buildFinalOrder(session_attributes, fullcall_id)
+    #sendOrder(order, call_id, room, '5') # check how to get bot version?
+    # TODO: need to clear item_type, item_number, session_attributes
+    session_attributes.clear()
     return close(
         session_attributes,
         'Fulfilled',
@@ -877,14 +953,15 @@ def confirm_no_only(intent_request):
 def noOtherNeeds(intent_request):
 
     session_attributes = intent_request['sessionAttributes'] if intent_request['sessionAttributes'] is not None else {}
-
     logger.debug('noOtherNeeds session_attributes={}'.format(session_attributes))
 
+    '''
     confirmedItems = try_ex(lambda: session_attributes['confirmedItems'])
     inputsentenceHis = try_ex(lambda: session_attributes['inputsentenceHis'])
     if confirmedItems:
         email_subj = "[Guest Services] New Request  HK"
         sendmail(email_subj, confirmedItems+inputsentenceHis)
+    '''
 
     inputsentence = try_ex(lambda: intent_request['inputTranscript'])
     if inputsentence is not None:
@@ -898,17 +975,28 @@ def noOtherNeeds(intent_request):
         session_attributes['lastIntent'] = intent_request['currentIntent']['name']
 
     #set None
-    session_attributes['confirmedItems'] = "{}"
-    session_attributes['inputsentenceHis'] = "{}"
+    #session_attributes['confirmedItems'] = "{}"
+    #session_attributes['inputsentenceHis'] = "{}"
 
+    confirm_msg = build_confirm_msg(session_attributes)
+    if confirm_msg == 'No request yet':  #if session_attributes == {}
+        confirm_msg = thankyou
+
+    room = getRoomNum(session_attributes)
+    fullcall_id, call_id = getCallID(intent_request)
+    #order = buildFinalOrder(session_attributes, fullcall_id)
+    #sendOrder(order, call_id, room, '5') # check how to get bot version?
+    # TODO: need to clear item_type, item_number, session_attributes
+    session_attributes.clear()
     return close(
         session_attributes,
         'Fulfilled',
         {
             'contentType': 'PlainText',
-            'content': "Happy to help!"
+            'content': confirm_msg
         }
     )
+
 # --- Intents ---
 
 def dispatch(intent_request):
@@ -937,8 +1025,6 @@ def dispatch(intent_request):
         return byebye(intent_request)
 
     raise Exception('Intent with name ' + intent_name + ' not supported')
-
-
 
 # --- Main handler ---
 

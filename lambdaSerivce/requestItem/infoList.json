@@ -1,0 +1,36 @@
+
+# item & name & type = as unique key
+{
+    'Coffee Shop': [ # Item
+        'Starbucks': [ # Name
+            {
+                'Type': '', # Type
+                'OpenTime': '7am - 4pm',
+                'Location': 'Lobby floor',
+                'SpecialNotes': 'It offers delicious fresh pastries and sandwiches.'
+            }
+        ]
+    ],
+    'Restaurant/Dining Room': [
+        'Gino': [
+            {
+                'Type': 'Breakfast',
+                'OpenTime': '',
+                'Location': '',
+                'SpecialNotes': ''
+            },
+            {
+                'Type': 'Lunch',
+                'OpenTime': '',
+                'Location': '',
+                'SpecialNotes': ''
+            },
+            {
+                'Type': 'Diner',
+                'OpenTime': '',
+                'Location': '',
+                'SpecialNotes': ''
+            }
+        ]
+    ]
+}

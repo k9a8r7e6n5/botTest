@@ -1,2001 +1,2243 @@
-[{
-    "item": "service the room",
-    "type": "service",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "dirty item pick up",
-    "type": "service",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "dirty items pick up",
-    "type": "service",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "turndown service",
-    "type": "service",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "previous request",
-    "type": "service",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "previous requests",
-    "type": "service",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "valet laundry service",
-    "type": "service",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "laundry",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "valet laundry services",
-    "type": "service",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "laundry",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "pillow",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "bedding",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "pillows",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "bedding",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "non-allergenic pillow",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "non allergenic pillows",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "pillow case",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "pillow cases",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "blanket",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "bedding",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "blankets",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "bedding",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "bedsheet",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bedsheets",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bed spread",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "rollaway bed",
-    "type": "supplies w-fee",
-    "department": "housekeeping",
-    "cost": "$25 ",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "rollaway beds",
-    "type": "supplies w-fee",
-    "department": "housekeeping",
-    "cost": "$25 ",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "baby crib",
-    "type": "supplies w-fee",
-    "department": "housekeeping",
-    "cost": "$20 ",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "baby cribs",
-    "type": "supplies w-fee",
-    "department": "housekeeping",
-    "cost": "$20 ",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "wheelchair",
-    "type": "supplies w-fee",
-    "department": "housekeeping",
-    "cost": "$12 ",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "wheelchairs",
-    "type": "supplies w-fee",
-    "department": "housekeeping",
-    "cost": "$12 ",
-    "roomSection": "bedding",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "coffee machine",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "coffee machines",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "tea bag",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "tea bags",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "coffee packet",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "coffee packets",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "coffee pod",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "coffee pods",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "sugar packet",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "sugar packets",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "cream packet",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "cream packets",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "coffee cup",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "cofee cups",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "plastic cup",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "plastic cups",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "glasses",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "ice bucket",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "ice buckets",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "tea/coffee",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "towel",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "towels",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bath towel",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bath towels",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "hand towel",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "hand towels",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "face towel",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "face towels",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bath mat",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bath mats",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bathrobe",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "bathrobes",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "bath slipper",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "bath slippers",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "toiletries",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "set of toiletries",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "shampoo",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "shampoos",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "conditioner",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "conditioners",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "shower gel",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "shower gels",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "lotion",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "lotions",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "soap",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "soaps",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "mouthwash",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "mouthwashes",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "make up remover wipe",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "make up remover wipes",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "nail polish remover  pad",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "nail polish remover  pads",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "nail file",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "nail files",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "cotton balls",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "disposable razor",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "disposable razors",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "dental kit",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "dental kits",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "sewing kit",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "sewing kits",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "shoe shine kit",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "shower cap",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "shower caps",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "q-tips",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "toothbrush",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "toothbrushes",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "toothpaste",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "toothpastes",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "toilet paper",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "toilet papers",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "kleenex",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "hand/room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "waste basket",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "hand/room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "waste baskets",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "hand/room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "gargle glass",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "hand/room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "gargle glasses",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "hand/room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "ashtray",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "ashtrays",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "matchbox",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "matchboxes",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "hair dryer",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "under sink",
-    "hasnone": "yes"
-}, {
-    "item": "hair dryers",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "under sink",
-    "hasnone": "yes"
-}, {
-    "item": "make up mirror",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "make up mirrors",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "iron",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "yes"
-}, {
-    "item": "irons",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "yes"
-}, {
-    "item": "ironing board",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "yes"
-}, {
-    "item": "ironing boards",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "yes"
-}, {
-    "item": "hanger",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "hangers",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "dress hanger",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "dress hangers",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "satin hanger",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "satin hangers",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "pants hanger",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "trouser hangers",
-    "type": "amenity",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "laundry bag",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "laundry bags",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "laundry price list",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "laundry price lists",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "in closet",
-    "hasnone": "no"
-}, {
-    "item": "room service menu",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "desk",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "do not disturb sign",
-    "type": "supplies",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "door",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "tv ",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "tv s",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "tv remote ",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "air conditioner",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "heater",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "heaters",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "microwave",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "microwaves",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "light bulb",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "light bulbs",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "light switch",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "light switches",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "plug",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "plugs",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "door",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "doors",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "closet door",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "closet doors",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "closet",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "window",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "windows",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "desk",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "desks",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "lamp",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "lamps",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "chair",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "chairs",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bed",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "luggage rack",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "in closet",
-    "hasnone": "yes"
-}, {
-    "item": "luggage racks",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "in closet",
-    "hasnone": "yes"
-}, {
-    "item": "clock",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "clocks",
-    "type": "device",
-    "department": "housekeeping",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "night stand",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "night stands",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "night stand lamp",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "night stand lamps",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bathroom door",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bathroom doors",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "shower door",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "shower doors",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "shower",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "showers",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "retractable clothes drying line",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "wall hook",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "wall hooks",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "towel bar",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "towel bars",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "mirror",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "hand/room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "mirrors",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "hand/room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "toilet",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "toilets",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "faucet",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "faucets",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bathtub",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bathtubs",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "water leak",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "handroom",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "ice machine",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "hallway",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "ice machines",
-    "type": "repair",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "hallway",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "umbrella",
-    "type": "amenity",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "umbrellas",
-    "type": "amenity",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "phone charger",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "phone chargers",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "usb charger",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "usb chargers",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "ipod docking station",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "ipod docking stations",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "cd player",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "cd players",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "mobile usb hub",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "mobile usb hubs",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "extension cord",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "extension cords",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "electric converter",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "electric converters",
-    "type": "supplies",
-    "department": "engineering",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "mineral water",
-    "type": "amenity",
-    "department": "room service",
-    "cost": "$8 ",
-    "roomSection": "service",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "bottled water",
-    "type": "amenity",
-    "department": "room service",
-    "cost": "$5 ",
-    "roomSection": "service",
-    "inRoom": "no",
-    "hasnone": "yes"
-}, {
-    "item": "hot water",
-    "type": "amenity",
-    "department": "room service",
-    "cost": "no",
-    "roomSection": "service",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "room change",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "room changes",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "wifi connection",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "wifi connections",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "wifi password",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "wifi passwords",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "wake up call",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "wake up calls",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "late check out",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "late check outs",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "baggage porter",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "baggage porters",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bell cart",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bell carts",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "transportation service",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "transportation services",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "valet parking",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "complaints",
-    "type": "service",
-    "department": "front office ",
-    "cost": "no",
-    "roomSection": "extra",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "room key",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "service",
-    "department": "front office",
-    "cost": "no",
-    "roomSection": "room",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "club lounge",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "fitness center",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "guest laundry room",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "restaurants",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "breakfast",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "lunch",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "dinner",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "in-room dining",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "bar lounge",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "coffee shop",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "gift shop",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "business centre",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "meeting room",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "meeting rooms",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "ballroom",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}, {
-    "item": "ballrooms",
-    "type": "inquiry",
-    "department": "general",
-    "cost": "no",
-    "roomSection": "information",
-    "inRoom": "no",
-    "hasnone": "no"
-}]
+[
+    {
+        "item": "service the room",
+        "type": "service",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "dirty item pick up",
+        "type": "service",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "dirty items pick up",
+        "type": "service",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "turndown service",
+        "type": "service",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "previous request",
+        "type": "service",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "previous requests",
+        "type": "service",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "valet laundry service",
+        "type": "service",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "laundry",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "valet laundry services",
+        "type": "service",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "laundry",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "pillow",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "bedding",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "pillows",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "bedding",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "non-allergenic pillow",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "non allergenic pillows",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "pillow case",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "pillow cases",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "blanket",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "bedding",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "blankets",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "bedding",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "bed sheet",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bed sheets",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bed spread",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "rollaway bed",
+        "type": "supplies w-fee",
+        "department": "housekeeping",
+        "cost": "$25 ",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "rollaway beds",
+        "type": "supplies w-fee",
+        "department": "housekeeping",
+        "cost": "$25 ",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "baby crib",
+        "type": "supplies w-fee",
+        "department": "housekeeping",
+        "cost": "$20 ",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "baby cribs",
+        "type": "supplies w-fee",
+        "department": "housekeeping",
+        "cost": "$20 ",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "wheelchair",
+        "type": "supplies w-fee",
+        "department": "housekeeping",
+        "cost": "$12 ",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "wheelchairs",
+        "type": "supplies w-fee",
+        "department": "housekeeping",
+        "cost": "$12 ",
+        "roomSection": "bedding",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "coffee machine",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "coffee machines",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "water kettle",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "tea bag",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "tea bags",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "coffee packet",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "coffee packets",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "coffee pod",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "coffee pods",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "sugar packet",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "sugar packets",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "cream packet",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "cream packets",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "coffee cup",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "cofee cups",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "cup",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "cups",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "plastic cup",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "plastic cups",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "glasses",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "ice bucket",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "ice buckets",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "tea/coffee",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "towel",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "towels",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bath towel",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bath towels",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "hand towel",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "hand towels",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "face towel",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "face towels",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bath mat",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bath mats",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bathrobe",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "bathrobes",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "bath slipper",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "bath slippers",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "toiletries",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "shampoo",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "shampoos",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "conditioner",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "conditioners",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "shower gel",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "shower gels",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "lotion",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "lotions",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "soap",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "soaps",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "mouthwash",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "mouthwashes",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "makeup remover wipe",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "makeup remover wipes",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "nail polish remover  pad",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "nail polish remover  pads",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "nail file",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "nail files",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "cotton balls",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "disposable razor",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "disposable razors",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "dental kit",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "dental kits",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "sewing kit",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "sewing kits",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "shoe shine kit",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "shower cap",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "shower caps",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "q-tips",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "toothbrush",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "toothbrushes",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "toothpaste",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "toothpastes",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "toilet paper",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "toilet papers",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "kleenex",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "hand/room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "waste basket",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "hand/room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "waste baskets",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "hand/room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "gargle glass",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "hand/room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "gargle glasses",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "hand/room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "ashtray",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "ashtrays",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "matchbox",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "matchboxes",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "hair dryer",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "under sink",
+        "hasnone": "yes"
+    },
+    {
+        "item": "hair dryers",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "under sink",
+        "hasnone": "yes"
+    },
+    {
+        "item": "makeup mirror",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "makeup mirrors",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "iron",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "yes"
+    },
+    {
+        "item": "irons",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "yes"
+    },
+    {
+        "item": "ironing board",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "yes"
+    },
+    {
+        "item": "ironing boards",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "yes"
+    },
+    {
+        "item": "hanger",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "hangers",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "dress hanger",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "dress hangers",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "satin hanger",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "satin hangers",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "pants hanger",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "pants hangers",
+        "type": "amenity",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "laundry bag",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "laundry bags",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "laundry price list",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "laundry price lists",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "in closet",
+        "hasnone": "no"
+    },
+    {
+        "item": "room service menu",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "desk",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "do not disturb sign",
+        "type": "supplies",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "door",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "tv",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "tvs",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "tv remote ",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "air conditioner",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "heater",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "heaters",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "microwave",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "microwaves",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "light bulb",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "light bulbs",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "light switch",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "light switches",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "plug",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "plugs",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "door",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "doors",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "closet door",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "closet doors",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "closet",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "window",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "windows",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "desk",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "desks",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "lamp",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "lamps",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "chair",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "chairs",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bed",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "beds",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "luggage rack",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "in closet",
+        "hasnone": "yes"
+    },
+    {
+        "item": "luggage racks",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "in closet",
+        "hasnone": "yes"
+    },
+    {
+        "item": "clock",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "clocks",
+        "type": "device",
+        "department": "housekeeping",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "night stand",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "night stands",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "night stand lamp",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "night stand lamps",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bathroom door",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bathroom doors",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "shower door",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "shower doors",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "shower",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "showers",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "retractable clothes drying line",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "wall hook",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "wall hooks",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "towel bar",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "towel bars",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "mirror",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "hand/room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "mirrors",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "hand/room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "toilet",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "toilets",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "faucet",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "faucets",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bathtub",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bathtubs",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "water leak",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "handroom",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "ice machine",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "hallway",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "ice machines",
+        "type": "repair",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "hallway",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "umbrella",
+        "type": "amenity",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "umbrellas",
+        "type": "amenity",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "phone charger",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "phone chargers",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "usb plug",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "usb plugs",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "ipod docking station",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "ipod docking stations",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "cd dvd player",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "cd dvd players",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "usb charger hub",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "usb charger hubs",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "extension cord",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "extension cords",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "power converter",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "power converters",
+        "type": "supplies",
+        "department": "engineering",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "mineral water",
+        "type": "amenity",
+        "department": "room service",
+        "cost": "$8 ",
+        "roomSection": "service",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "sparkling water",
+        "type": "amenity",
+        "department": "room service",
+        "cost": "$8 ",
+        "roomSection": "service",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "bottled water",
+        "type": "amenity",
+        "department": "room service",
+        "cost": "$5 ",
+        "roomSection": "service",
+        "inRoom": "no",
+        "hasnone": "yes"
+    },
+    {
+        "item": "hot water",
+        "type": "amenity",
+        "department": "room service",
+        "cost": "no",
+        "roomSection": "service",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "room change",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "room changes",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "wifi connection",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "wifi connections",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "wifi password",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "wifi passwords",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "wake up call",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "wake up calls",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "late check out",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "late check outs",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "baggage porter",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "baggage porters",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bell cart",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bell carts",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "transportation service",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "transportation services",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "valet parking",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "complaint",
+        "type": "service",
+        "department": "front office ",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "complaints",
+        "type": "service",
+        "department": "front office ",
+        "cost": "no",
+        "roomSection": "extra",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "room key",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "room keys",
+        "type": "service",
+        "department": "front office",
+        "cost": "no",
+        "roomSection": "room",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "club lounge",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "club lounges",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "fitness center",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "fitness centers",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "guest laundry room",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "restaurant",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "restaurants",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "breakfast",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "breakfasts",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "lunch",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "lunches",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "dinner",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "dinners",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "in-room dining",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "bar lounge",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "coffee shop",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "gift shop",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "business centre",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "meeting room",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "meeting rooms",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "ballroom",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    },
+    {
+        "item": "ballrooms",
+        "type": "inquiry",
+        "department": "general",
+        "cost": "no",
+        "roomSection": "information",
+        "inRoom": "no",
+        "hasnone": "no"
+    }
+]

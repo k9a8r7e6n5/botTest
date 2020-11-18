@@ -3,9 +3,13 @@ Your module description
 """
 
 
-confirmItemType = 'Just to confirm, you would like '
-confirmItemTypeCorrect = '. Is it correct?'
-confirmYesToDo = 'OK, we will bring you '
-anythingElse = 'OK, anything else I can help you with?'
+confirmItemType = 'You would like '
+confirmItemTypeAnythingElse = '. Anything else i can help you with?'
+#confirmYesToDo = 'OK, we will bring you '
+confirmSend = 'Thank you. We will bring  '
+confirmSendEnd = 'to you shortly. Enjoy your stay!'
+anythingElse = 'Certainly, Anything else I can help you with today?'
 byebye = 'Bye bye, have a great day!'
-NullItemType = 'Bot can not identify your intent. Would you kindly repeat your request again?'
+thankyou = 'Thank you.  Enjoy your stay!'
+NullItemType = 'Would you kindly repeat your request again?'
+NullItemTypeChangeQuantity = 'Certainly, you would like change item quantity. Would you please offer item type firstly?'

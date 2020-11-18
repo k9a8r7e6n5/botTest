@@ -99,12 +99,13 @@ def validate_item_type(item_type, item_type_slot, session_attributes): # need to
     vld_res = isvalid_item_type(item_type)
     logger.debug('validate_item_type - vld_res: {}'.format(vld_res))
     if item_type and vld_res['inStock'] == False and vld_res['details'] != "":
+        #itemNeedQuantity: baby crib / wheelch
         logger.debug('have none!')
         return build_validation_result(
             False,
             item_type_slot,
             'I am very sorry, unfortunately we do not have {}! '
-            'Anything else I can help you with today?'.format(item_type),
+            'Anything else I can help you with?'.format(item_type),
             None
         )
     elif item_type and (vld_res['inStock'] == True):
@@ -137,7 +138,7 @@ def validate_item_type(item_type, item_type_slot, session_attributes): # need to
 
 def searchStockListByItem(itemName):
     itemName = itemName.lower()
-    if itemName not in spMappingList:
+    if itemName in spMappingList:
         itemName = spMappingList[itemName]
     for item in stockList:
         if item['item'] == itemName:
