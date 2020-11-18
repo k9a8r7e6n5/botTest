@@ -40,7 +40,7 @@
         "version": "14",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -87,7 +87,7 @@
           }
         ],
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
           "messageVersion": "1.0"
         }
       },
@@ -267,7 +267,7 @@
           }
         ],
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
           "messageVersion": "1.0"
         }
       },
@@ -276,7 +276,7 @@
         "version": "32",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -343,73 +343,7 @@
           "{quantityList} {itemNeedQuantity}",
           "{WE} {need} {itemNeedQuantity}",
           "{itemNeedQuantity} please",
-          "{WE} {need}  {quantityList} {itemNeedQuantity}",
-          "{itemNeedType}",
-          "I need {itemNeedType}",
-          "{WE} {need} {quantityList} {itemNeedType}",
-          "{WE} {need} {quantityList} {itemNeedType} {toWhere}",
-          "{WE} {need} {someone} {send} {quantityList} {itemNeedType}",
-          "{WE} {need} {someone} {send} {quantityList} {itemNeedType} {toWhere}",
-          "{WE} {need} {get} {quantityList} {itemNeedType}",
-          "{WE} {need} {get} {quantityList} {itemNeedType} {toWhere}",
-          "{WE} {need} {quantityList} {itemNeedType} for room {roomnumber}",
-          "{WE} {need} {someone} {send} {quantityList} {itemNeedType} for room {roomnumber}",
-          "{WE} {need} {get} {quantityList} {itemNeedType} for room {roomnumber}",
-          "{canYou} {let} {someone} {send} {quantityList} {itemNeedType} {toWhere}",
-          "{canYou} {let} {someone} {send} {quantityList} {itemNeedType}",
-          "{canYou} {send} {me} {quantityList} {itemNeedType} {toWhere}",
-          "{canYou} {send} {me}  {quantityList} {itemNeedType}",
-          "{canYou} {send} {me}  {quantityList} {itemNeedType} to room {roomnumber}",
-          "{canYou} {let} {someone} {send} {quantityList} {itemNeedType}  to room {roomnumber}",
-          "{mayI} {get} {quantityList} {itemNeedType} {toWhere}",
-          "{mayI} {get} {quantityList} {itemNeedType}",
-          "{mayI} {let} {someone} {send} {quantityList} {itemNeedType} {toWhere}",
-          "{mayI} {let} {someone} {send} {quantityList} {itemNeedType}",
-          "{mayI} {get} {quantityList} {itemNeedType} for room {roomnumber}",
-          "{mayI} {let} {someone} {send} {quantityList} {itemNeedType} to room {roomnumber}",
-          "{canYou} {replace} {quantityList} {itemNeedType} {toWhere}",
-          "{canYou} {replace}  {itemNeedType}",
-          "{canYou} {dosomething} for {quantityList} {itemNeedType}",
-          "{canYou} {let} {someone} know that {WE} {need} {quantityList} {itemNeedType}",
-          "{how} {mayI} {get} {quantityList} {itemNeedType} {toWhere}",
-          "{how} {mayI} {get} {quantityList} {itemNeedType}",
-          "{WE} {wonder} {whattodo} but I {need} {quantityList} {itemNeedType} {toWhere}",
-          "{WE} {wonder} {whattodo} but I {need} {quantityList} {itemNeedType}",
-          "{WE} {wonder} {whattodo}  {get} {quantityList} {itemNeedType}",
-          "{WE} {wonder} {someone} can {send} {me} {quantityList} {itemNeedType} {toWhere}",
-          "{WE} {wonder} {someone} can {send} {me} {quantityList} {itemNeedType}",
-          "{WE} {wonder} where {itemNeedType} is located",
-          "{WE} {cannot} {find} {quantityList} {itemNeedType} {toWhere}",
-          "{WE} {cannot} {find} {quantityList} {itemNeedType}",
-          "{WE} would appreciate if {someone} can {replace} {itemNeedType}",
-          "{WE} would appreciate if {someone} {replace} {itemNeedType} with {clean} ones",
-          "{WE} would appreciate if {someone} can {send} {quantityList} {itemNeedType} {toWhere}",
-          "{WE} would appreciate if {someone} can {send} {quantityList} {itemNeedType}",
-          "{WE} would appreciate {quantityList} {itemNeedType}",
-          "{WE} would appreciate to {get} {quantityList} {itemNeedType}",
-          "{letyouknow} {WE} {need} {quantityList} {itemNeedType} {toWhere}",
-          "{letyouknow} {WE} {need} {quantityList} {itemNeedType}",
-          "{WE} have no clean {itemNeedType} {toWhere} can you send some",
-          "{WE} have no clean {itemNeedType}",
-          "{WE} have no clean {itemNeedType} {canYou} {send} {me} {clean}",
-          "{WE} have no clean {itemNeedType} would appreciate if {someone} {send} {clean} ones",
-          "{WE} {lack} {itemNeedType} {toWhere}",
-          "{WE} {lack} {itemNeedType}",
-          "{WE} {lack} {itemNeedType} please make sure it gets {replace}",
-          "{my} {itemNeedType} are {dirty}",
-          "{my} {itemNeedType} are {dirty} can you send us some clean ones",
-          "{whattodo} to {get} {quantityList} {itemNeedType}",
-          "Who can help with {replace} {itemNeedType}",
-          "Do {someone} {provide} {itemNeedType}",
-          "{quantityList} {itemNeedType}",
-          "I wonder if housekeeping can {send} me {itemNeedType}",
-          "I like to have {quantityList} {itemNeedType} to be sent to room {roomnumber}",
-          "{WE} {wonder} where is the {itemNeedType}",
-          "does the hotel provide some  {itemNeedType}",
-          "We would love it if {someone} would exchange the {itemNeedType} from room {roomnumber}",
-          "We are out of {itemNeedType} and need it to be replenished",
-          "{WE} would like to {let} {someone} {send} {quantityList} {itemNeedType}",
-          "{WE} want to if you can {send} me {itemNeedType}"
+          "{WE} {need}  {quantityList} {itemNeedQuantity}"
         ],
         "slots": [
           {
@@ -566,7 +500,7 @@
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "OK,What kind of {itemNeedType} would you like?"
+                  "content": "welcome! what could I assist for you?"
                 }
               ],
               "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}",
@@ -592,24 +526,6 @@
             },
             "priority": 32,
             "name": "itemNeedQuantitySnd"
-          },
-          {
-            "sampleUtterances": [],
-            "slotType": "itemNeedType",
-            "slotTypeVersion": "14",
-            "obfuscationSetting": "NONE",
-            "slotConstraint": "Optional",
-            "valueElicitationPrompt": {
-              "messages": [
-                {
-                  "contentType": "PlainText",
-                  "content": "welcome! what could I assist for you?"
-                }
-              ],
-              "maxAttempts": 2
-            },
-            "priority": 1,
-            "name": "itemNeedType"
           },
           {
             "sampleUtterances": [],
@@ -939,7 +855,7 @@
           }
         },
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
           "messageVersion": "1.0"
         }
       },
@@ -1026,7 +942,7 @@
           }
         ],
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
           "messageVersion": "1.0"
         }
       },
@@ -1445,7 +1361,7 @@
           }
         ],
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
           "messageVersion": "1.0"
         }
       },
@@ -1505,7 +1421,7 @@
         "version": "6",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -1539,7 +1455,7 @@
         "version": "10",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -1591,7 +1507,7 @@
         "version": "9",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -1625,7 +1541,7 @@
         "version": "6",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -2053,7 +1969,7 @@
           }
         ],
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
           "messageVersion": "1.0"
         }
       },
@@ -2119,7 +2035,7 @@
         "version": "11",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -2184,7 +2100,7 @@
           }
         ],
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:811715283321:function:requestItems",
+          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
           "messageVersion": "1.0"
         }
       },
