@@ -1,0 +1,48 @@
+
+1. {remove}/{beremoved} + {dirty} + {itemNeedQuantity} => you need to {remove} {dirty} + {itemNeedQuantity}
+"{remove} {dirty}  {itemNeedQuantity}",
+"{WE} {get}  {quantityList} {dirty} {itemNeedQuantity} to {beremoved} from my room",
+"Who can assist in  {remove} {quantityList} {dirty} {itemNeedQuantity}",
+"Who can help in  {remove} {quantityList} {dirty} {itemNeedQuantity}",
+"Who is responsible  for {remove} {quantityList} {dirty} {itemNeedQuantity}",
+"What is the routine  for {remove} {quantityList} {dirty} {itemNeedQuantity}",
+"{my}  {itemNeedQuantity} are {dirty} please {remove} from our room"
+"{WE} {need} {dirty} {itemNeedQuantity} to {beremoved} from our room",
+"{canYou} {remove} {dirty} {itemNeedQuantity}",
+"{canYou} have {someone} {remove} {dirty} {itemNeedQuantity}",
+"I would appreciate if   {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+"I would love it if {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+"We would appreciate if  {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+"We would love it if  {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+"It would be appreciated if  {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+
+2. {serviceNeedMessage} => need {serviceNeedMessage}
+"{WE} {need}  {serviceNeedMessage}",
+"{WE} {need} {serviceNeedMessage} for my room",
+"{MayI} have {serviceNeedMessage}",
+"room {roomnumber}  {need} {serviceNeedMessage}",
+"{canYou} {send} {serviceNeedMessage}",
+"{canYou} {arrange} {serviceNeedMessage}",
+"{WE} {need} {serviceNeedMessage} for our room",
+"{serviceNeedMessage}",
+"{WE} {need} {quantityList} {serviceNeedMessage}",
+"{WE} {need} {serviceNeedMessage} for tonight",
+"{canYou} {provide} {serviceNeedMessage} for our bags",
+
+3. {pickup} => you need something to be picked up from your room
+"{canYou} {pickup} our bags from our room",
+"We need our bags {bepickup} from our room",
+"I need my bags {bepickup} from room {roomnumber}",
+
+4. {serve}/{beserviced} => you need your room to be served
+"{canYou} {serve} {me}",
+"{canYou} {serve}  room {roomnumber}",
+"my room needs to {beserviced}",
+"our room needs sweeping",
+
+5. repeat the input
+"our room key does not work",
+"Room Key is not working",
+"We need our bed turned down",
+
+

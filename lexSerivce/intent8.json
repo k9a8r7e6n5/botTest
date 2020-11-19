@@ -1,0 +1,94 @@
+1. repair {itemNeedRepair}
+"there's {itemNeedRepair}",
+"{my} {itemNeedRepair} is {broken} {canYou} have {someone} {check}",
+"{canYou} have {someone} {check} {itemNeedRepair}",
+"{itemNeedRepair}",
+"{my} {itemNeedRepair} is {broken}",
+"{itemNeedRepair} is {broken}",
+"Lights are {broken} in the {itemNeedRepair}",
+"We can't get {itemNeedRepair} to work",
+"{itemNeedRepair} in the handroom is {broken}",
+"{itemNeedRepair} is not closing properly",
+"{itemNeedRepair} is {broken} needs to be tighten",
+"Something is wrong with the {itemNeedRepair}",
+"hot water in the {itemNeedRepair} is {broken}",
+"Water is running out of {itemNeedRepair}",
+"{itemNeedRepair} doesn't have any ice",
+"{itemNeedRepair} cracked",
+"there is {itemNeedRepair}",
+"{my} {itemNeedRepair} is {broken} it needs to serviced",
+"{my} {itemNeedRepair} is {broken} it needs to fixed",
+"{my} {itemNeedRepair} is {broken} please send {someone} to look at it",
+"{WE} has {itemNeedRepair} {canYou} {let} {someone} {check} it",
+"{WeAre} calling to report {my} {itemNeedRepair} is {broken} {canYou} {let} {someone} {check} it",
+
+2. bring {itemNeedRepair} + [{quantityList} {itemNeedRepairSnd} + {roomnumber}]
+"{WeAre} missing {itemNeedRepair}",
+"{WeAre} missing {itemNeedRepair} {canYou} {send} {quantityList} {itemNeedRepairSnd} to {me}",
+"{WeAre} missing {itemNeedRepair} {canYou} {send} {quantityList} {itemNeedRepairSnd} to room {roomnumber}",
+"{WE} {need} {itemNeedRepair}",
+"{WeAre} missing {itemNeedRepair} {canYou} {send} {quantityList}",
+"{WeAre} missing {itemNeedRepair} {canYou} {let} {someone} {send} {quantityList} for room {roomnumber}",
+"{WeAre} missing {itemNeedRepair} {mayI} {get} {quantityList} {itemNeedRepairSnd} for our room",
+"{WE} {need} {quantityList} {itemNeedRepair}",
+
+3. change {itemNeedRepair} to {quantityList} + {itemNeedRepairSnd}/{newone} + {roomnumber}
+"{my} {itemNeedRepair} is {broken} {canYou} {send} {quantityList} {new} {itemNeedRepairSnd} to {me}",
+"{my} {itemNeedRepair} is {broken} {canYou} {send} {quantityList} {new} {itemNeedRepairSnd} to room {roomnumber}",
+"{my} {itemNeedRepair} is {broken} {canYou} {send} {quantityList} {newone} to {me}",
+"{my} {itemNeedRepair} is {broken} {canYou} {change} it with {newone}",
+"{my} {itemNeedRepair} is {broken} {newone} needs {besent} to {me}",
+"{my} {itemNeedRepair} is {broken} {newone} needs {besent} to room {roomnumber}",
+"{my} {itemNeedRepair} is {broken} it needs {bechanged} {toWhere}",
+"{my} {itemNeedRepair} is {broken} {itemNeedRepairSnd} needs {bechanged} {toWhere}",
+"{canYou} {send} {quantityList} {new} {itemNeedRepairSnd} to {me} {my} {itemNeedRepair} is {broken}",????
+"{WE} {need} {new} {itemNeedRepairSnd} {my} {itemNeedRepair} is {broken}",
+"Do you have {new} {itemNeedRepairSnd} {my} {itemNeedRepair} is {broken}",
+"Where can I get {new} {itemNeedRepairSnd} {my} {itemNeedRepair} is {broken}",
+"We are calling to get {new} {itemNeedRepairSnd} {my} {itemNeedRepair} is {broken}",
+"I'm calling to get {new} {itemNeedRepairSnd} {my} {itemNeedRepair} is {broken}",
+"Where can we get {new} {itemNeedRepairSnd} {my} {itemNeedRepair} is {broken}",
+"{canYou} {change} {itemNeedRepair} with a {newone} for {me}",
+"{canYou} {change} {itemNeedRepair} with a {newone} for room {roomnumber}",
+"Do you have {new} {itemNeedRepair}",
+"{itemNeedRepair} is dirty can you please send a clean one",
+"{WE} {need} {itemNeedRepair} to {bechanged}",
+"{my} {itemNeedRepair} is {broken} {canYou} {send} {newone}",
+"{my} {itemNeedRepair} is {broken} {canYou} {change} it",
+"{my} {itemNeedRepair} is {broken} {mayI} have {someone} give us {newone}",
+"{my} {itemNeedRepair} stopped running {mayI} {change} it",
+"{my} {itemNeedRepair} is {broken} {canYou} {let} {someone} {send} {newone} to room {roomnumber}",
+"{my} {itemNeedRepair} is {broken} {canYou} {change} it with {newone}",
+"{my} {itemNeedRepair} is {broken} {WE} {need} {someone} to {send} {newone}",
+"{my} {itemNeedRepair} is {broken} {WE} {need} {change} it with {newone}",
+"{my} {itemNeedRepair} is {broken} {newone} should {besent} to our room",
+"{my} {itemNeedRepair} is {broken} {newone} needs {besent} to my room",
+"{my} {itemNeedRepair} is {broken} {newone} should {besent}",
+"please {change} {itemNeedRepair}",
+"{my} {itemNeedRepair} needs {bechanged} {toWhere}",
+"{my} {itemNeedRepair} should {bechanged}",
+"{canYou} {send} {quantityList} {new} {itemNeedRepair}",
+"{canYou} {send} {quantityList} {new} {itemNeedRepair} for my room It's not working",
+"{canYou} {send} {quantityList} {itemNeedRepair} for room {roomnumber} the one we have is {broken}",
+"{WE} {need} {quantityList} {new} {itemNeedRepair} for our room. Ours is {broken}",
+"{WE} {need} {quantityList} {new} {itemNeedRepair} for our room. It's {broken}",
+"Do you have {quantityList} {new} {itemNeedRepair} for our room. It is {broken}"
+"{WeAre} calling to report that {my} {itemNeedRepair} is {broken} {canYou} {change} it with {newone}",
+"{WeAre} calling to {change} {itemNeedRepair} {toWhere} it is {broken}",
+"{WeAre} calling to {get} {quantityList} {new} {itemNeedRepair} This one is {broken}",
+"{WeAre} calling to report that {my} {itemNeedRepair} is {broken} {newone} needs {besent} in our room",
+
+4. need info about {itemNeedRepair}
+"Do you have instructions for this {itemNeedRepair}",
+"Where is {itemNeedRepair} in the room",
+"How do I use {itemNeedRepair}",
+
+
+
+
+
+
+
+
+
+
