@@ -1,36 +1,182 @@
-
-# item & name & type = as unique key
 {
-    'Coffee Shop': [ # Item
-        'Starbucks': [ # Name
-            {
-                'Type': '', # Type
-                'OpenTime': '7am - 4pm',
-                'Location': 'Lobby floor',
-                'SpecialNotes': 'It offers delicious fresh pastries and sandwiches.'
-            }
-        ]
+    "Fitness Center": [
+        {
+            "name": "None",
+            "type": "None",
+            "openTime": "4am - 12pm",
+            "location": "2nd floor",
+            "specialNotes": "None"
+        }
     ],
-    'Restaurant/Dining Room': [
-        'Gino': [
-            {
-                'Type': 'Breakfast',
-                'OpenTime': '',
-                'Location': '',
-                'SpecialNotes': ''
-            },
-            {
-                'Type': 'Lunch',
-                'OpenTime': '',
-                'Location': '',
-                'SpecialNotes': ''
-            },
-            {
-                'Type': 'Diner',
-                'OpenTime': '',
-                'Location': '',
-                'SpecialNotes': ''
-            }
-        ]
+    "Guest Laundry Room": [
+        {
+            "name": "None",
+            "type": "None",
+            "openTime": "1am - 12pm",
+            "location": "Lobby floor",
+            "specialNotes": "It offers coin operated machines"
+        }
+    ],
+    "Coffee Shop": [
+        {
+            "name": "Starbucks",
+            "type": "None",
+            "openTime": "7am - 4pm",
+            "location": "Lobby floor",
+            "specialNotes": "It offers delicious fresh pastries and sandwiches"
+        }
+    ],
+    "Gift Shop": [
+        {
+            "name": "Magnolia",
+            "type": "None",
+            "openTime": "8am - 6pm",
+            "location": "1st floor",
+            "specialNotes": "None"
+        }
+    ],
+    "Restaurant / Dining Room": [
+        {
+            "name": "Gino",
+            "type": "Breakfast",
+            "openTime": "6am - 10am",
+            "location": "2nd floor",
+            "specialNotes": "It offers Buffet and Menu breakfast"
+        },
+        {
+            "name": "Gino",
+            "type": "Lunch",
+            "openTime": "11am - 2pm",
+            "location": "2nd floor",
+            "specialNotes": "It offers American style lunch"
+        },
+        {
+            "name": "Gino",
+            "type": "Dinner",
+            "openTime": "5pm - 10pm",
+            "location": "2nd floor",
+            "specialNotes": "It offers Family style Italian cuisine dinner"
+        },
+        {
+            "name": "Ume",
+            "type": "Lunch",
+            "openTime": "11am - 2pm",
+            "location": "Lobby floor",
+            "specialNotes": "It offers #1 rated best Sushi bar experience in the city"
+        },
+        {
+            "name": "Mosaic",
+            "type": "Dinner",
+            "openTime": "7pm - 11pm",
+            "location": "24th floor",
+            "specialNotes": "It offers fine dining experience"
+        }
+    ],
+    "Bar Lounge": [
+        {
+            "name": "Lobby",
+            "type": "None",
+            "openTime": "4pm - 10pm",
+            "location": "Lobby floor",
+            "specialNotes": "None"
+        },
+        {
+            "name": "Scenic",
+            "type": "None",
+            "openTime": "6pm - 1am",
+            "location": "25th floor",
+            "specialNotes": "It offers amazing views of the city"
+        }
+    ],
+    "Meeting Room": [
+        {
+            "name": "AA",
+            "type": "None",
+            "openTime": "None",
+            "location": "1st floor",
+            "specialNotes": "None"
+        },
+        {
+            "name": "BB",
+            "type": "None",
+            "openTime": "None",
+            "location": "2nd floor",
+            "specialNotes": "None"
+        },
+        {
+            "name": "CC",
+            "type": "None",
+            "openTime": "None",
+            "location": "top floor",
+            "specialNotes": "None"
+        },
+        {
+            "name": "DD",
+            "type": "None",
+            "openTime": "None",
+            "location": "10th floor",
+            "specialNotes": "None"
+        }
+    ],
+    "Ballroom": [
+        {
+            "name": "12A",
+            "type": "None",
+            "openTime": "None",
+            "location": "2nd floor",
+            "specialNotes": "None"
+        },
+        {
+            "name": "12B",
+            "type": "None",
+            "openTime": "None",
+            "location": "2nd floor",
+            "specialNotes": "None"
+        }
+    ],
+    "Club Lounge": [
+        {
+            "name": "HVT",
+            "type": "None",
+            "openTime": "None",
+            "location": "15th floor",
+            "specialNotes": "None"
+        }
+    ],
+    "Business Center": [
+        {
+            "name": "None",
+            "type": "None",
+            "openTime": "None",
+            "location": "None",
+            "specialNotes": "None"
+        }
+    ],
+    "WIFI connection": [
+        {
+            "name": "None",
+            "type": "None",
+            "openTime": "None",
+            "location": "None",
+            "specialNotes": "Go to Hotel website by typing www.HotelDu.com, clikc on \"Guest\", enter your room number and click confirm"
+        }
+    ],
+    "WIFI password": [
+        {
+            "name": "None",
+            "type": "None",
+            "openTime": "None",
+            "location": "None",
+            "specialNotes": "   12345   (Should be provided during check in. May need to transfer call to Guest Service Agent)"
+        }
+    ],
+    "Shuttle service to airport and times": [
+        {
+            "name": "None",
+            "type": "None",
+            "openTime": "None",
+            "location": "None",
+            "specialNotes": "None"
+        }
     ]
 }
