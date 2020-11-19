@@ -1,0 +1,29 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+</head>
+<body>
+<button style="width:32px;
+height:32px;border:0px;background: url('images/log_list/u547.png') no-repeat;"onclick="clickA(this)"></button>
+<audio id="audio" src="v1.mp3"></audio><script>
+    var a = document.getElementById("audio");
+
+    function clickA() {
+        //如果暂停   点击即可播放
+        if (a.paused) {
+
+            // 播放
+            a.play();
+            //如果播放  点击暂停
+        } else if (a.play()) {
+
+            //暂停
+            a.pause();
+
+        }
+    }
+
+</script>
+
+</body>
+</html>
