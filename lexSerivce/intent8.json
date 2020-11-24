@@ -14,7 +14,7 @@
 "hot water in the {itemNeedRepair} is {broken}",
 "Water is running out of {itemNeedRepair}",
 "{itemNeedRepair} doesn't have any ice",
-"{itemNeedRepair} cracked",
+"{itemNeedRepair} {broken}",
 "there is {itemNeedRepair}",
 "{my} {itemNeedRepair} is {broken} it needs to serviced",
 "{my} {itemNeedRepair} is {broken} it needs to fixed",
@@ -41,7 +41,7 @@
 "{my} {itemNeedRepair} is {broken} {newone} needs {besent} to room {roomnumber}",
 "{my} {itemNeedRepair} is {broken} it needs {bechanged} {toWhere}",
 "{my} {itemNeedRepair} is {broken} {itemNeedRepairSnd} needs {bechanged} {toWhere}",
-"{canYou} {send} {quantityList} {new} {itemNeedRepairSnd} to {me} {my} {itemNeedRepair} is {broken}",????
+"{canYou} {send} {quantityList} {new} {itemNeedRepairSnd} to {me} {my} {itemNeedRepair} is {broken}",
 "{WE} {need} {new} {itemNeedRepairSnd} {my} {itemNeedRepair} is {broken}",
 "Do you have {new} {itemNeedRepairSnd} {my} {itemNeedRepair} is {broken}",
 "Where can I get {new} {itemNeedRepairSnd} {my} {itemNeedRepair} is {broken}",
@@ -51,7 +51,7 @@
 "{canYou} {change} {itemNeedRepair} with a {newone} for {me}",
 "{canYou} {change} {itemNeedRepair} with a {newone} for room {roomnumber}",
 "Do you have {new} {itemNeedRepair}",
-"{itemNeedRepair} is dirty can you please send a clean one",
+"{itemNeedRepair} is dirty can you please {send} {newone}", ??? a clean one --- {newone}
 "{WE} {need} {itemNeedRepair} to {bechanged}",
 "{my} {itemNeedRepair} is {broken} {canYou} {send} {newone}",
 "{my} {itemNeedRepair} is {broken} {canYou} {change} it",
@@ -78,7 +78,7 @@
 "{WeAre} calling to {get} {quantityList} {new} {itemNeedRepair} This one is {broken}",
 "{WeAre} calling to report that {my} {itemNeedRepair} is {broken} {newone} needs {besent} in our room",
 
-4. need info about {itemNeedRepair}
+4. need info about {itemNeedRepair} add {itemInfo} --- instructions, where, how
 "Do you have instructions for this {itemNeedRepair}",
 "Where is {itemNeedRepair} in the room",
 "How do I use {itemNeedRepair}",

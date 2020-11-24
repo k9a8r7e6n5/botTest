@@ -12,6 +12,7 @@ logger.setLevel(logging.DEBUG)
 
 stockList = json.load(open('stockList.json', 'r'))
 spMappingList = json.load(open('stockMapping.json', 'r'))
+infoList = json.load(open('infoList.json', 'r'))
 request_set = {
     "item_type": "",
     "item_num": "",
@@ -118,7 +119,7 @@ def validate_item_type(item_type, item_type_slot, session_attributes): # need to
             return build_validation_result(
                 True,
                 item_type_slot,
-                'Certainly. One {} will cost {} charging to your room. Are you OK with the charge?'.format(item_type, vld_res['details']['cost']),
+                'One {} will cost {} charging to your room. Are you OK with the charge?'.format(item_type, vld_res['details']['cost']),
                 updateItemValidationSet(itemSet, None, 'cost')
             )
         else:
@@ -126,6 +127,13 @@ def validate_item_type(item_type, item_type_slot, session_attributes): # need to
             if vld_res['details']['inRoom'] != 'no':
                 logger.debug('item in the room')
                 itemSet = initItemValidationSet() #???
+
+                #pillow -> pillows
+                lastChart = ''
+                lastChart = item_type[-1]
+                if lastChart != 's':
+                    item_type = item_type + 's'
+
                 return build_validation_result(
                     True,
                     item_type_slot,

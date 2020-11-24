@@ -211,57 +211,6 @@ def convert2BotJsonWithSynHom(inputFile, outputFile): # homonyms
             jsonFile.writelines(json.dumps(intentList, indent=4))
             jsonFile.close()
 
-def convert2BotJsonWithSynHomSP(inputFile, outputFile): # homonyms
-    intentList = {}
-    with open(inputFile, mode='r') as request_file:
-        csvFile = csv.DictReader(request_file, delimiter=",")
-        for lines in csvFile:
-            ele_Singular = {}
-            if isNotEmpty(lines["Item Singular"]):
-                ele_Singular = {
-                    "value": "",
-                    "synonyms": ""
-                }
-                ele_Singular["value"] = try_ex(lambda: lines["Item Singular"].strip())
-                syn = try_ex(lambda: lines["Synonyms Singular"]).split(',')
-                if syn is not None:
-                    ele_Singular["synonyms"] = [x.strip() for x in syn if x.strip()]
-                hom = try_ex(lambda: lines["Homonyms Singular"]).split(',')
-                if hom is not None:
-                    ele_Singular["synonyms"] += [x.strip() for x in hom if x.strip()]
-
-            ele_Plural = {}
-            if isNotEmpty(lines["Item Plural"]):
-                ele_Plural = {
-                    "value": "",
-                    "synonyms": ""
-                }
-                ele_Plural["value"] = try_ex(lambda: lines["Item Plural"].strip())
-                syn = try_ex(lambda: lines["Synonyms Plural"]).split(',')
-                if syn is not None:
-                    ele_Plural["synonyms"] = [x.strip() for x in syn if x.strip()]
-                hom = try_ex(lambda: lines["Homonyms Plural"]).split(',')
-                if hom is not None:
-                    ele_Plural["synonyms"] += [x.strip() for x in hom if x.strip()]
-
-
-            flowNums = try_ex(lambda: lines["Process Flow Category"]).split(",")
-            if len(flowNums) > 0:
-                for idx in flowNums:
-                    if idx is not None and idx is not "":
-                        intentName = getIntent(str(idx))
-                        if intentName is not None and intentName != "":
-                            if intentName not in intentList:
-                                intentList[intentName] = initIntentItemSlotTypes(intentName)
-                            else:
-                                if ele_Plural and ele_Plural not in intentList[intentName]["enumerationValues"]:
-                                    intentList[intentName]["enumerationValues"].append(ele_Plural)
-                                if ele_Singular and ele_Singular not in intentList[intentName]["enumerationValues"]:
-                                    intentList[intentName]["enumerationValues"].append(ele_Singular)
-
-        with open(outputFile, 'w') as jsonFile:
-            jsonFile.writelines(json.dumps(intentList, indent=4))
-            jsonFile.close()
 
 
 def main(argv):
@@ -293,8 +242,6 @@ def main(argv):
             convert2BotJsonWithSyn(inputFile, outputFile)
         elif function == 'convert2BotJsonWithSynHom':
             convert2BotJsonWithSynHom(inputFile, outputFile)
-        elif function == 'convert2BotJsonWithSynHomSP':
-            convert2BotJsonWithSynHomSP(inputFile, outputFile)
         elif function == 'buildKeywordList4TestSingular':
             buildKeywordList4TestSingular(inputFile, outputFile)
     else:

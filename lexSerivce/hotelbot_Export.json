@@ -6,14 +6,14 @@
   },
   "resource": {
     "name": "hotelbot",
-    "version": "1",
+    "version": "10",
     "intents": [
       {
         "name": "noOtherNeeds",
-        "version": "19",
+        "version": "4",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -26,7 +26,12 @@
           "That's  it.   Thank you.",
           "That's  all I need.",
           "all good",
-          "Nope"
+          "Nope",
+          "nothing else thank you",
+          "that's all thank you",
+          "that's all",
+          "no that's all",
+          "no that's all thank you"
         ],
         "slots": [],
         "conclusionStatement": {
@@ -40,70 +45,18 @@
         }
       },
       {
-        "name": "confirmNoWoQuantity",
-        "version": "36",
+        "name": "requestCallBack",
+        "version": "4",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
         },
         "sampleUtterances": [
-          "{confirmno} I need  {itemNeedQuantity}"
-        ],
-        "slots": [
-          {
-            "sampleUtterances": [],
-            "slotType": "confirmNo",
-            "slotTypeVersion": "2",
-            "obfuscationSetting": "NONE",
-            "slotConstraint": "Optional",
-            "valueElicitationPrompt": {
-              "messages": [
-                {
-                  "contentType": "PlainText",
-                  "content": "confirmno"
-                }
-              ],
-              "maxAttempts": 2
-            },
-            "priority": 1,
-            "name": "confirmno"
-          },
-          {
-            "sampleUtterances": [],
-            "slotType": "itemNeedQuantity",
-            "slotTypeVersion": "31",
-            "obfuscationSetting": "NONE",
-            "slotConstraint": "Required",
-            "valueElicitationPrompt": {
-              "messages": [
-                {
-                  "contentType": "PlainText",
-                  "content": "sorry would you please repeat what you just requested?"
-                }
-              ],
-              "maxAttempts": 2
-            },
-            "priority": 2,
-            "name": "itemNeedQuantity"
-          }
-        ],
-        "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
-          "messageVersion": "1.0"
-        }
-      },
-      {
-        "name": "requestCallBack",
-        "version": "18",
-        "fulfillmentActivity": {
-          "type": "ReturnIntent"
-        },
-        "sampleUtterances": [
           "{WE} {need} {serviceNeedCallBack}",
-          "{MayI} {have} {serviceNeedCallBack}",
+          "{MayI} {get} {serviceNeedCallBack}",
           "{canYou} {arrange} {serviceNeedCallBack}",
           "I like to {arrange} {serviceNeedCallBack}",
           "There are smells in my room",
@@ -133,14 +86,15 @@
           "The staff is unprofessional",
           "the service is disrespectfool",
           "the staff is not doing a good job",
-          "There is so much noise in the next door.",
+          "There is so much noise in the next door. ",
           "We can't sleep because of the commotion in the next room.",
-          "Next door is very loud  It's very annoying",
+          "Next door is very disturbing It's very annoying",
           "Can you please send someone for the commotion in the hallway",
-          "Our hallway is very noisy we like to change our room.",
+          "Our hallway is very noisy we like to change our room. ",
           "I can hear too much noise in my room",
           "So much noise is coming from outside the hotel",
-          "{serviceNeedCallBack}"
+          "{serviceNeedCallBack}",
+          "please send  {serviceNeedCallBack}"
         ],
         "slots": [
           {
@@ -158,44 +112,44 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 7,
+            "priority": 2,
             "name": "arrange"
           },
           {
             "sampleUtterances": [],
             "slotType": "canYou",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "canyou"
+                  "content": "canYou"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 6,
+            "priority": 3,
             "name": "canYou"
           },
           {
             "sampleUtterances": [],
-            "slotType": "have",
-            "slotTypeVersion": "1",
+            "slotType": "get",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "have"
+                  "content": "get"
                 }
               ],
               "maxAttempts": 2
             },
             "priority": 5,
-            "name": "have"
+            "name": "get"
           },
           {
             "sampleUtterances": [],
@@ -207,7 +161,7 @@
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "mayi"
+                  "content": "MayI"
                 }
               ],
               "maxAttempts": 2
@@ -218,7 +172,7 @@
           {
             "sampleUtterances": [],
             "slotType": "need",
-            "slotTypeVersion": "4",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -230,53 +184,127 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 2,
+            "priority": 7,
             "name": "need"
           },
           {
             "sampleUtterances": [],
             "slotType": "serviceNeedCallBack",
-            "slotTypeVersion": "4",
+            "slotTypeVersion": "2",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "serviceneedcallback"
-                }
-              ],
-              "maxAttempts": 2
-            },
-            "priority": 3,
-            "name": "serviceNeedCallBack"
-          },
-          {
-            "sampleUtterances": [],
-            "slotType": "we",
-            "slotTypeVersion": "4",
-            "obfuscationSetting": "NONE",
-            "slotConstraint": "Optional",
-            "valueElicitationPrompt": {
-              "messages": [
-                {
-                  "contentType": "PlainText",
-                  "content": "we"
+                  "content": "I'm sorry. I didn't quite understand. Can you please repeat your request?"
                 }
               ],
               "maxAttempts": 2
             },
             "priority": 1,
+            "name": "serviceNeedCallBack"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "we",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "WE"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 6,
             "name": "WE"
           }
-        ]
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "would you please repeat what you just said?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "confirmNoWoQuantity",
+        "version": "11",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{confirmno} I need  {itemNeedQuantity}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "confirmNo",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "confirmno"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "confirmno"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedQuantity",
+            "slotTypeVersion": "18",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "sorry would you please repeat what you just requested?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "itemNeedQuantity"
+          }
+        ],
+        "dialogCodeHook": {
+          "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
+          "messageVersion": "1.0"
+        },
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "would you please repeat what you just said?"
+            }
+          ]
+        }
       },
       {
         "name": "requestItemQuantity",
-        "version": "112",
+        "version": "39",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -301,9 +329,9 @@
           "{mayI} {let} {someone} {send} {quantityList} {itemNeedQuantity} {toWhere}",
           "{mayI} {let} {someone} {send} {quantityList} {itemNeedQuantity}",
           "{mayI} {get} {quantityList} {itemNeedQuantity} for room {roomnumber}",
-          "{mayI} {let} {someone} {send} {quantityList} {itemNeedQuantity} to room {roomnumber}",
-          "{canYou} {replace} {quantityList} {itemNeedQuantity} {toWhere}",
-          "{canYou} {replace}  {itemNeedQuantity}",
+          "{mayI} {let} {someone} {send} {quantityList} {itemNeedQuantity} for room {roomnumber}",
+          "{canYou} {change} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{canYou} {change}  {itemNeedQuantity}",
           "{canYou} {dosomething} for {quantityList} {itemNeedQuantity}",
           "{canYou} {let} {someone} know that {WE} {need} {quantityList} {itemNeedQuantity}",
           "{how} {mayI} {get} {quantityList} {itemNeedQuantity} {toWhere}",
@@ -316,8 +344,8 @@
           "{WE} {wonder} where {itemNeedQuantity} is located",
           "{WE} {cannot} {find} {quantityList} {itemNeedQuantity} {toWhere}",
           "{WE} {cannot} {find} {quantityList} {itemNeedQuantity}",
-          "{WE} would appreciate if {someone} can {replace} {itemNeedQuantity}",
-          "{WE} would appreciate if {someone} {replace} {itemNeedQuantity} with {clean} ones",
+          "{WE} would appreciate if {someone} can {change} {itemNeedQuantity}",
+          "{WE} would appreciate if {someone} {change} {itemNeedQuantity} with {clean} ones",
           "{WE} would appreciate if {someone} can {send} {quantityList} {itemNeedQuantity} {toWhere}",
           "{WE} would appreciate if {someone} can {send} {quantityList} {itemNeedQuantity}",
           "{WE} would appreciate {quantityList} {itemNeedQuantity}",
@@ -332,24 +360,136 @@
           "{WE} {lack} {itemNeedQuantity}",
           "{WE} {lack} {itemNeedQuantity} {canYou} {send} {quantityList} {itemNeedQuantitySnd} {toWhere}",
           "{WE} {lack} {itemNeedQuantity} {canYou} {send} {quantityList} {itemNeedQuantitySnd}",
-          "{WE} {lack} {itemNeedQuantity} please make sure it gets {replace}",
+          "{WE} {lack} {itemNeedQuantity} please make sure it gets {bechanged}",
           "{WE} need {quantityList} {itemNeedQuantity} {canYou} {send} {itemNeedQuantitySnd}",
           "{my} {itemNeedQuantity} are {dirty}",
           "{my} {itemNeedQuantity} are {dirty} {canYou} {send} {me} {quantityList} {clean} ones",
           "{whattodo} to {get} {quantityList} {itemNeedQuantity}",
-          "Who can help with {replace} {itemNeedQuantity}",
+          "Who can help with {change} {itemNeedQuantity}",
           "Do {someone} {provide} {itemNeedQuantity}",
           "{itemNeedQuantity}",
           "{quantityList} {itemNeedQuantity}",
           "{WE} {need} {itemNeedQuantity}",
           "{itemNeedQuantity} please",
           "{WE} {need}  {quantityList} {itemNeedQuantity}",
+          "do you have {itemNeedQuantity}",
+          "can i have  {itemNeedQuantity}",
+          "do you have {quantityList} {itemNeedQuantity}",
+          "i need {itemNeedQuantity}",
+          "i need {quantityList} {itemNeedQuantity}",
+          "you have  {quantityList} {itemNeedQuantity}",
+          "you have   {itemNeedQuantity}",
+          "please send  {quantityList} {itemNeedQuantity}",
+          "please send  {itemNeedQuantity}",
+          "{mayI} {get} {clean} {itemNeedQuantity}",
+          "{mayI} {get} {clean} {itemNeedQuantity} for my room",
+          "please {change} {dirty} {itemNeedQuantity}",
+          "{WE}  {need}  {dirty} {itemNeedQuantity} to  {bechanged}",
+          "{WE} {need} {clean} {itemNeedQuantity} to {besent}",
+          "{WE} {need} {quantityList} {itemNeedQuantity} {canYou} {send} {itemNeedQuantitySnd}",
+          "{WE} {need} {quantityList} {itemNeedQuantity} to {besent} to {me}",
+          "{canYou} {let}  {someone} to {send} {quantityList} {clean} {itemNeedQuantity} to {me}",
+          "{canYou} {send}  {me} {quantityList} {clean} {itemNeedQuantity}",
+          "{WE}  {let} {someone} to {send} {quantityList} {clean} {itemNeedQuantity}",
+          "please  {let} {someone} {send} {quantityList}  {clean} {itemNeedQuantity}",
+          "{WE}  {need} {quantityList} {dirty}  {itemNeedQuantity}  to {bechanged} to {me}",
+          "{mayI}  {let}  {quantityList}  {itemNeedQuantity}  {change}",
+          "{mayI}  {let}  {quantityList}  {dirty} {itemNeedQuantity}  {change}",
+          "{whattodo} {get} {quantityList} {itemNeedQuantity} to {bechanged}",
+          "{WE}  {wonder} who would have  {quantityList}  {itemNeedQuantity}  but we need some in our room {roomnumber}",
+          "{WE} {wonder} {whattodo}  we need  {quantityList} {clean}  {itemNeedQuantity}",
+          "{WE}  {cannot} {find} where {clean} {itemNeedQuantity}",
+          "{WE} {wonder} where {itemNeedQuantity} is kept",
+          "{WE}  {wonder} {whattodo} but we  {lack} {itemNeedQuantity}",
+          "Who can help with {send}   {quantityList} {itemNeedQuantity}",
+          "{WE}  {wonder} where is {itemNeedQuantity} we need {quantityList}",
+          "{WE}  {cannot} {find} where {quantityList} {clean} {itemNeedQuantity}",
+          "{WE}  {wonder} {whattodo} {quantityList} {clean} {itemNeedQuantity}",
+          "{canYou} {send} {quantityList} {clean}  {itemNeedQuantity}",
+          "{quantityList}  {itemNeedQuantity} is {dirty} please send new one",
+          "{my}  {itemNeedQuantity} is {dirty} please send new one",
+          "please also  have {someone} {send}  {clean} {itemNeedQuantity}",
+          "{WeAre} missing {quantityList} {itemNeedQuantity} Can you please send some",
+          "{WeAre} missing {quantityList} {itemNeedQuantity}",
+          "{WE} {need}  {itemNeedQuantity} to {besent} to {me}",
+          "{my}  {itemNeedQuantity} is {broken} {canYou}   {send} {newone}",
+          "{WeAre}  calling to report that {my} {itemNeedQuantity} is {broken}  {canYou}   {change} it with {newone}",
+          "{my}  {itemNeedQuantity} needs  {bechanged}  {toWhere}",
+          "{canYou}  {send} {quantityList} {new} {itemNeedQuantity}",
+          "{canYou}  {send} {quantityList} {itemNeedQuantity} for room {roomnumber} the one we have  is {broken}",
+          "{WE}  {need} {quantityList} {new} {itemNeedQuantity} for our room.  It's {broken}",
+          "{WeAre}  calling to {get} {quantityList} {new} {itemNeedQuantity}  This one is {broken}",
+          "{my}  {itemNeedQuantity} is {broken} {WE}   {need}  {someone} to {send}  {newone}",
+          "{WeAre}  calling to report that {my} {itemNeedQuantity} is {broken}  {newone} needs {besent} in our room",
+          "{WE} needs to have {quantityList}  {itemNeedQuantity}",
+          "{send} {quantityList} {itemNeedQuantity} for room {roomnumber}",
+          "{my} {itemNeedQuantity} is {broken}",
+          "{WE} {need} {quantityList}  {clean} {itemNeedQuantity}",
+          "send {quantityList} {itemNeedQuantity}",
+          "{WeAre} missing  {itemNeedQuantity} Can you please send some",
+          "{WeAre} missing {itemNeedQuantity}",
+          "{canYou} {send} {quantityList} {itemNeedQuantity} {toWhere}",
+          "{WE} {need} {clean} {itemNeedQuantity} {toWhere}",
           "Can {WE} {get} both {itemNeedQuantity} and {itemNeedQuantitySnd}",
           "Can {WE} {get} both {itemNeedQuantity} and {quantityListSpec} {itemNeedQuantitySnd}",
           "Can {WE} {get} both {quantityList} {itemNeedQuantity} and {quantityListSpec} {itemNeedQuantitySnd}",
           "Can {WE} {get} both {quantityList} {itemNeedQuantity} and {itemNeedQuantitySnd}"
         ],
         "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "bechanged",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "bechanged"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 35,
+            "name": "bechanged"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "besent",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "besent"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 36,
+            "name": "besent"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "broken",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "broken"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 38,
+            "name": "broken"
+          },
           {
             "sampleUtterances": [],
             "slotType": "cannot",
@@ -371,7 +511,7 @@
           {
             "sampleUtterances": [],
             "slotType": "canYou",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -385,6 +525,24 @@
             },
             "priority": 5,
             "name": "canYou"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "change",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "change"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 31,
+            "name": "change"
           },
           {
             "sampleUtterances": [],
@@ -461,7 +619,7 @@
           {
             "sampleUtterances": [],
             "slotType": "get",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -497,14 +655,14 @@
           {
             "sampleUtterances": [],
             "slotType": "itemNeedQuantity",
-            "slotTypeVersion": "31",
+            "slotTypeVersion": "18",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Required",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "welcome! what could I assist for you?"
+                  "content": "would you please repeat what you just said?"
                 }
               ],
               "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}",
@@ -516,7 +674,7 @@
           {
             "sampleUtterances": [],
             "slotType": "itemNeedQuantity",
-            "slotTypeVersion": "31",
+            "slotTypeVersion": "18",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -534,7 +692,7 @@
           {
             "sampleUtterances": [],
             "slotType": "lack",
-            "slotTypeVersion": "1",
+            "slotTypeVersion": "2",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -552,7 +710,7 @@
           {
             "sampleUtterances": [],
             "slotType": "let",
-            "slotTypeVersion": "1",
+            "slotTypeVersion": "2",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -624,7 +782,7 @@
           {
             "sampleUtterances": [],
             "slotType": "my",
-            "slotTypeVersion": "3",
+            "slotTypeVersion": "4",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -642,7 +800,7 @@
           {
             "sampleUtterances": [],
             "slotType": "need",
-            "slotTypeVersion": "4",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -656,6 +814,42 @@
             },
             "priority": 14,
             "name": "need"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "new",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "new"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 40,
+            "name": "new"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "newone",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "broken"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 39,
+            "name": "newone"
           },
           {
             "sampleUtterances": [],
@@ -678,17 +872,18 @@
           {
             "sampleUtterances": [],
             "slotType": "quantityList",
-            "slotTypeVersion": "6",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
-            "slotConstraint": "Optional",
+            "slotConstraint": "Required",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "welcome! what could I assist for y"
+                  "content": "would you please repeat what you just said?"
                 }
               ],
-              "maxAttempts": 2
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\"}",
+              "maxAttempts": 1
             },
             "priority": 4,
             "name": "quantityList"
@@ -696,7 +891,7 @@
           {
             "sampleUtterances": [],
             "slotType": "quantityList",
-            "slotTypeVersion": "6",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -708,26 +903,8 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 35,
+            "priority": 41,
             "name": "quantityListSpec"
-          },
-          {
-            "sampleUtterances": [],
-            "slotType": "replace",
-            "slotTypeVersion": "1",
-            "obfuscationSetting": "NONE",
-            "slotConstraint": "Optional",
-            "valueElicitationPrompt": {
-              "messages": [
-                {
-                  "contentType": "PlainText",
-                  "content": "replace"
-                }
-              ],
-              "maxAttempts": 2
-            },
-            "priority": 31,
-            "name": "replace"
           },
           {
             "sampleUtterances": [],
@@ -749,7 +926,7 @@
           {
             "sampleUtterances": [],
             "slotType": "send",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -767,7 +944,7 @@
           {
             "sampleUtterances": [],
             "slotType": "someone",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -803,7 +980,7 @@
           {
             "sampleUtterances": [],
             "slotType": "we",
-            "slotTypeVersion": "4",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -820,8 +997,26 @@
           },
           {
             "sampleUtterances": [],
+            "slotType": "WeAre",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "WeAre"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 37,
+            "name": "WeAre"
+          },
+          {
+            "sampleUtterances": [],
             "slotType": "whatToDo",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -839,7 +1034,7 @@
           {
             "sampleUtterances": [],
             "slotType": "wonder",
-            "slotTypeVersion": "4",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -855,62 +1050,54 @@
             "name": "wonder"
           }
         ],
-        "followUpPrompt": {
-          "prompt": {
-            "messages": [
-              {
-                "groupNumber": 1,
-                "contentType": "PlainText",
-                "content": "OK, we will bring you {quantityList} {itemNeedQuantity} to your room. Anything else I can help you with?"
-              }
-            ],
-            "maxAttempts": 3
-          },
-          "rejectionStatement": {
-            "messages": [
-              {
-                "groupNumber": 1,
-                "contentType": "PlainText",
-                "content": "Ok happy to help"
-              }
-            ]
-          }
-        },
         "dialogCodeHook": {
-          "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+          "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
           "messageVersion": "1.0"
+        },
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "OK, we will bring you {quantityList} {itemNeedQuantity} to your room. Anything else I can help you with?"
+            }
+          ]
         }
       },
       {
         "name": "requestInformation",
-        "version": "18",
+        "version": "4",
         "fulfillmentActivity": {
-          "type": "ReturnIntent"
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
         },
         "sampleUtterances": [
-          "What is {informaitonService} hours",
-          "What are the hours for {informaitonService}",
-          "When do you serve {informaitonService}",
-          "When does the {informaitonService}  open",
+          "What is {informationService} hours",
+          "What are the hours for {informationService}",
+          "When do you serve {informationService}",
+          "When does the  {informationService}  open",
           "When do you serve lunch",
           "What are restaurant hours for lunch",
           "Where can I eat in this hotel",
           "Where can I get food in this hotel",
           "Where can I drink in this hotel",
-          "where is the {informaitonService} located",
-          "what is the {location}  for {informaitonService}",
-          "Which floor is {informaitonService} on",
-          "How do I connect to {internet}",
+          "where is the {informationService} located",
+          "what is the {location}  for {informationService}",
+          "Which floor is {informationService} on",
           "How can I connect to {internet}",
           "What is the instructions for {internet}",
-          "What is {internet} password",
-          "{informaitonService}",
+          "What is {internet} {password}",
+          "How do I connect to {internet}",
+          "{informationService}",
           "{internet}"
         ],
         "slots": [
           {
             "sampleUtterances": [],
-            "slotType": "informaitonService",
+            "slotType": "informationService",
             "slotTypeVersion": "1",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
@@ -918,13 +1105,13 @@
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "informaitonservice"
+                  "content": "I'm sorry. I didn't quite understand. Can you please repeat your request?"
                 }
               ],
               "maxAttempts": 2
             },
             "priority": 1,
-            "name": "informaitonService"
+            "name": "informationService"
           },
           {
             "sampleUtterances": [],
@@ -941,7 +1128,7 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 3,
+            "priority": 2,
             "name": "internet"
           },
           {
@@ -959,43 +1146,44 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 2,
+            "priority": 3,
             "name": "location"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "password",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "password"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 4,
+            "name": "password"
           }
         ]
       },
       {
-        "name": "transferTo",
-        "version": "1",
-        "fulfillmentActivity": {
-          "type": "ReturnIntent"
-        },
-        "sampleUtterances": [
-          "I  want to talk to a human",
-          "Connect  me to a person",
-          "Transfer  me to Front Desk"
-        ],
-        "slots": [],
-        "conclusionStatement": {
-          "messages": [
-            {
-              "groupNumber": 1,
-              "contentType": "PlainText",
-              "content": "Please allow me to transfer your request to  Guest Service agent.Could you please hold for a minute? Thank you"
-            }
-          ]
-        }
-      },
-      {
         "name": "requestRepairItems",
-        "version": "16",
+        "version": "7",
         "fulfillmentActivity": {
-          "type": "ReturnIntent"
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
         },
         "sampleUtterances": [
-          "{WeAre} missing {itemNeedRepair}",
-          "{WeAre} missing {itemNeedRepair} {canYou} {send} {quantityList} {itemNeedRepairSnd} to {me}",
-          "{WeAre} missing {itemNeedRepair} {canYou} {send} {quantityList} {itemNeedRepairSnd} to room {roomnumber}",
+          "there's {itemNeedRepair}",
+          "{WeAre} {miss} {itemNeedRepair}",
+          "{WeAre} {miss} {itemNeedRepair} {canYou} {send} {quantityList} {itemNeedRepairSnd} to {me}",
+          "{WeAre} {miss} {itemNeedRepair} {canYou} {send} {quantityList} {itemNeedRepairSnd} to room {roomnumber}",
           "{my} {itemNeedRepair} is {broken} {canYou} {send} {quantityList} {new} {itemNeedRepairSnd} to {me}",
           "{my} {itemNeedRepair} is {broken} {canYou} {send} {quantityList} {new} {itemNeedRepairSnd} to room {roomnumber}",
           "{my} {itemNeedRepair} is {broken} {canYou} {send} {quantityList} {newone} to {me}",
@@ -1007,21 +1195,74 @@
           "{canYou} {send} {quantityList} {new} {itemNeedRepair} to {me} {my} {itemNeedRepairSnd} is {broken}",
           "{WE} {need} {new} {itemNeedRepair} {my} {itemNeedRepairSnd} is {broken}",
           "Do you have {new} {itemNeedRepair} {my} {itemNeedRepairSnd} is {broken}",
+          "Where can I get {new} {itemNeedRepair} {my} {itemNeedRepairSnd} is {broken}",
           "We are calling to get {new} {itemNeedRepair} {my} {itemNeedRepairSnd} is {broken}",
           "I'm calling to get {new} {itemNeedRepair} {my} {itemNeedRepairSnd} is {broken}",
           "Where can we get {new} {itemNeedRepair} {my} {itemNeedRepairSnd} is {broken}",
-          "Where can I get {new} {itemNeedRepair} {my} {itemNeedRepairSnd} is {broken}",
           "{canYou} {change} {itemNeedRepair} with a {newone} for {me}",
           "{canYou} {change} {itemNeedRepair} with a {newone} for  room {roomnumber}",
           "{my} {itemNeedRepair} is {broken} {canYou} have {someone} {check}",
           "{canYou} have {someone} {check}  {itemNeedRepair}",
-          "{itemNeedRepair}"
+          "{itemNeedRepair}",
+          "{my} {itemNeedRepair} is {broken}",
+          "Do you have {new}  {itemNeedRepair}",
+          "{itemNeedRepair} is {broken}",
+          "Lights are  {broken}   in the  {itemNeedRepair}",
+          "Do you have {itemInfo}  for this {itemNeedRepair}",
+          "We can't get  {itemNeedRepair} to work",
+          "{itemNeedRepair} in the handroom is {broken}",
+          "{itemNeedRepair} is not closing properly",
+          "{itemNeedRepair}  is {broken} needs to be tighten",
+          "{itemInfo} is  {itemNeedRepair} in the room",
+          "{itemNeedRepair} is dirty can you please {send} {newone}",
+          "{itemInfo} do I  use {itemNeedRepair}",
+          "Something  is wrong with the  {itemNeedRepair}",
+          "hot water in  the  {itemNeedRepair}  is {broken}",
+          "Water is running  out of  {itemNeedRepair}",
+          "{itemNeedRepair}  doesn't have any ice",
+          "{itemNeedRepair}  cracked",
+          "{WE} {need}  {itemNeedRepair} to {bechanged}",
+          "{WE} {need}  {itemNeedRepair}",
+          "{WE} {need} {quantityList} {itemNeedRepair}",
+          "there is  {itemNeedRepair}",
+          "please {change} {itemNeedRepair}",
+          "{WeAre} {miss} {itemNeedRepair} {canYou} {send} {quantityList}",
+          "{WeAre} {miss} {itemNeedRepair} {canYou} {let} {someone}  {send} {quantityList} for room {roomnumber}",
+          "{WeAre} {miss}  {itemNeedRepair} {mayI} {get}   {quantityList} {itemNeedRepairSnd} for our room",
+          "{my}  {itemNeedRepair} is {broken} {canYou}   {send} {newone}",
+          "{my}  {itemNeedRepair} is {broken} {canYou}   {change} it",
+          "{my}  {itemNeedRepair} is {broken} {mayI} have {someone} give us a new one",
+          "{my}  {itemNeedRepair} stopped running {mayI} {change} it",
+          "{my}  {itemNeedRepair} is {broken} {canYou} {let} {someone}  {send} {newone} to room {roomnumber}",
+          "{my}  {itemNeedRepair} is {broken} {canYou}   {change} it with {newone}",
+          "{my}  {itemNeedRepair} is {broken} {WE}   {need}  {someone} to {send}  {newone}",
+          "{my}  {itemNeedRepair} is {broken} {WE}   {need} {change} it with   {newone}",
+          "{my}  {itemNeedRepair} is {broken}   {newone}  should {besent} to our room",
+          "{my}  {itemNeedRepair} is {broken}   {newone}  needs  {besent} to my room",
+          "{my}  {itemNeedRepair} is {broken}   {newone}  should   {besent}",
+          "{my}  {itemNeedRepair} is {broken}   it needs  to serviced",
+          "{my}  {itemNeedRepair} is {broken}   it needs  to fixed",
+          "{my}  {itemNeedRepair} is {broken}   please  send {someone} to look at it",
+          "{my}  {itemNeedRepair} needs  {bechanged}  {toWhere}",
+          "{my}  {itemNeedRepair} should   {bechanged}",
+          "{canYou} {send}  {quantityList} {new} {itemNeedRepair}",
+          "{canYou} {send}  {quantityList}  {new} {itemNeedRepair}  for my room It's not working",
+          "{canYou} {send}  {quantityList} {itemNeedRepair} for room {roomnumber} the one we have is  {broken}",
+          "{WE} {need}  {quantityList} {new} {itemNeedRepair} for our room. Ours is {broken}",
+          "{WE} {need}  {quantityList} {new} {itemNeedRepair} for our room.  It's {broken}",
+          "{WE} has  {itemNeedRepair}  {canYou}  {let} {someone} {check} it",
+          "{WeAre} calling to  report that {my} {itemNeedRepair} is {broken}   {canYou}  {change} it with  {newone}",
+          "{WeAre} calling to  {change}  {itemNeedRepair}  {toWhere} it is {broken}",
+          "{WeAre} calling to  report  {my} {itemNeedRepair} is  {broken}   {canYou}  {let} {someone} {check} it",
+          "{WeAre} calling to  {get} {quantityList} {new} {itemNeedRepair}   This one is {broken}",
+          "{WeAre} calling to  report that {my} {itemNeedRepair} is {broken}   {newone} needs {besent} in our room",
+          "do you have  {quantityList} {new} {itemNeedRepair} for our room  It is {broken}"
         ],
         "slots": [
           {
             "sampleUtterances": [],
             "slotType": "bechanged",
-            "slotTypeVersion": "1",
+            "slotTypeVersion": "2",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1051,13 +1292,13 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 13,
+            "priority": 10,
             "name": "besent"
           },
           {
             "sampleUtterances": [],
             "slotType": "broken",
-            "slotTypeVersion": "1",
+            "slotTypeVersion": "2",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1069,31 +1310,31 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 9,
+            "priority": 7,
             "name": "broken"
           },
           {
             "sampleUtterances": [],
             "slotType": "canYou",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "canyou"
+                  "content": "canYou"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 3,
+            "priority": 2,
             "name": "canYou"
           },
           {
             "sampleUtterances": [],
             "slotType": "change",
-            "slotTypeVersion": "1",
+            "slotTypeVersion": "2",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1105,13 +1346,13 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 12,
+            "priority": 11,
             "name": "change"
           },
           {
             "sampleUtterances": [],
             "slotType": "check",
-            "slotTypeVersion": "1",
+            "slotTypeVersion": "2",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1123,44 +1364,116 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 19,
+            "priority": 20,
             "name": "check"
           },
           {
             "sampleUtterances": [],
-            "slotType": "itemNeedRepair",
-            "slotTypeVersion": "7",
+            "slotType": "get",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "itemneedrepair"
+                  "content": "get"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 2,
+            "priority": 23,
+            "name": "get"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemInfo",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "I'm sorry. I didn't quite understand"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 26,
+            "name": "itemInfo"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedRepair",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "I'm sorry. I didn't quite understand. Can you please repeat your request?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
             "name": "itemNeedRepair"
           },
           {
             "sampleUtterances": [],
             "slotType": "itemNeedRepair",
-            "slotTypeVersion": "7",
+            "slotTypeVersion": "2",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "itemneedrepairsnd"
+                  "content": "itemNeedRepairSnd"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 2,
+            "priority": 6,
             "name": "itemNeedRepairSnd"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "let",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "let"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 25,
+            "name": "let"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "MayI",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "mayI"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 24,
+            "name": "mayI"
           },
           {
             "sampleUtterances": [],
@@ -1177,13 +1490,31 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 6,
+            "priority": 12,
             "name": "me"
           },
           {
             "sampleUtterances": [],
+            "slotType": "miss",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "I'm sorry. I didn't quite understand. Can you please repeat your request?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 27,
+            "name": "miss"
+          },
+          {
+            "sampleUtterances": [],
             "slotType": "my",
-            "slotTypeVersion": "3",
+            "slotTypeVersion": "4",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1201,7 +1532,7 @@
           {
             "sampleUtterances": [],
             "slotType": "need",
-            "slotTypeVersion": "4",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1213,7 +1544,7 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 17,
+            "priority": 18,
             "name": "need"
           },
           {
@@ -1231,13 +1562,13 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 10,
+            "priority": 15,
             "name": "new"
           },
           {
             "sampleUtterances": [],
             "slotType": "newone",
-            "slotTypeVersion": "1",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1249,20 +1580,20 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 11,
+            "priority": 9,
             "name": "newone"
           },
           {
             "sampleUtterances": [],
             "slotType": "quantityList",
-            "slotTypeVersion": "6",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "quantitylist"
+                  "content": "quantityList"
                 }
               ],
               "maxAttempts": 2
@@ -1284,13 +1615,13 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 7,
+            "priority": 13,
             "name": "roomnumber"
           },
           {
             "sampleUtterances": [],
             "slotType": "send",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1308,7 +1639,7 @@
           {
             "sampleUtterances": [],
             "slotType": "someone",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1320,7 +1651,7 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 18,
+            "priority": 19,
             "name": "someone"
           },
           {
@@ -1333,30 +1664,30 @@
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "towhere"
+                  "content": "toWhere"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 15,
+            "priority": 16,
             "name": "toWhere"
           },
           {
             "sampleUtterances": [],
             "slotType": "we",
-            "slotTypeVersion": "4",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "we"
+                  "content": "WE"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 16,
+            "priority": 17,
             "name": "WE"
           },
           {
@@ -1369,19 +1700,28 @@
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "weare"
+                  "content": "WeAre"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 1,
+            "priority": 3,
             "name": "WeAre"
           }
-        ]
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "would you please repeat what you just said?"
+            }
+          ]
+        }
       },
       {
         "name": "thanks",
-        "version": "5",
+        "version": "2",
         "fulfillmentActivity": {
           "type": "ReturnIntent"
         },
@@ -1392,7 +1732,7 @@
           {
             "sampleUtterances": [],
             "slotType": "thanks",
-            "slotTypeVersion": "5",
+            "slotTypeVersion": "1",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1408,34 +1748,22 @@
             "name": "thank"
           }
         ],
-        "followUpPrompt": {
-          "prompt": {
-            "messages": [
-              {
-                "groupNumber": 1,
-                "contentType": "PlainText",
-                "content": "you are welcome. enjoy rest of your stay!"
-              }
-            ],
-            "maxAttempts": 3
-          },
-          "rejectionStatement": {
-            "messages": [
-              {
-                "groupNumber": 1,
-                "contentType": "PlainText",
-                "content": "ok happy to help"
-              }
-            ]
-          }
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "you are welcome. enjoy rest of your stay!"
+            }
+          ]
         }
       },
       {
         "name": "confirmYes",
-        "version": "10",
+        "version": "4",
         "fulfillmentActivity": {
           "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
+            "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
             "messageVersion": "1.0"
           },
           "type": "CodeHook"
@@ -1447,7 +1775,7 @@
           {
             "sampleUtterances": [],
             "slotType": "confirmyessentence",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Required",
             "valueElicitationPrompt": {
@@ -1462,182 +1790,64 @@
             "priority": 1,
             "name": "confirmyessentence"
           }
-        ]
-      },
-      {
-        "name": "confirmNoNeedQuantityClarify",
-        "version": "20",
-        "fulfillmentActivity": {
-          "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
-            "messageVersion": "1.0"
-          },
-          "type": "CodeHook"
-        },
-        "sampleUtterances": [
-          "{confirmno} I need {quantityList}"
         ],
-        "slots": [
-          {
-            "sampleUtterances": [],
-            "slotType": "confirmNo",
-            "slotTypeVersion": "2",
-            "obfuscationSetting": "NONE",
-            "slotConstraint": "Optional",
-            "valueElicitationPrompt": {
-              "messages": [
-                {
-                  "contentType": "PlainText",
-                  "content": "confirmno"
-                }
-              ],
-              "maxAttempts": 2
-            },
-            "priority": 1,
-            "name": "confirmno"
-          },
-          {
-            "sampleUtterances": [],
-            "slotType": "quantityList",
-            "slotTypeVersion": "6",
-            "obfuscationSetting": "NONE",
-            "slotConstraint": "Required",
-            "valueElicitationPrompt": {
-              "messages": [
-                {
-                  "contentType": "PlainText",
-                  "content": "how many would you like?"
-                }
-              ],
-              "maxAttempts": 2
-            },
-            "priority": 2,
-            "name": "quantityList"
-          }
-        ]
-      },
-      {
-        "name": "confirmNoOnly",
-        "version": "8",
-        "fulfillmentActivity": {
-          "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
-            "messageVersion": "1.0"
-          },
-          "type": "CodeHook"
-        },
-        "sampleUtterances": [
-          "{confirmno}"
-        ],
-        "slots": [
-          {
-            "sampleUtterances": [],
-            "slotType": "confirmNo",
-            "slotTypeVersion": "2",
-            "obfuscationSetting": "NONE",
-            "slotConstraint": "Optional",
-            "valueElicitationPrompt": {
-              "messages": [
-                {
-                  "contentType": "PlainText",
-                  "content": "confirmno"
-                }
-              ],
-              "maxAttempts": 2
-            },
-            "priority": 1,
-            "name": "confirmno"
-          }
-        ]
-      },
-      {
-        "name": "byebye",
-        "version": "5",
-        "fulfillmentActivity": {
-          "codeHook": {
-            "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
-            "messageVersion": "1.0"
-          },
-          "type": "CodeHook"
-        },
-        "sampleUtterances": [
-          "{bye}"
-        ],
-        "slots": [
-          {
-            "sampleUtterances": [],
-            "slotType": "bye",
-            "slotTypeVersion": "1",
-            "obfuscationSetting": "NONE",
-            "slotConstraint": "Optional",
-            "valueElicitationPrompt": {
-              "messages": [
-                {
-                  "contentType": "PlainText",
-                  "content": "bye"
-                }
-              ],
-              "maxAttempts": 2
-            },
-            "priority": 1,
-            "name": "bye"
-          }
-        ],
-        "followUpPrompt": {
-          "prompt": {
-            "messages": [
-              {
-                "groupNumber": 1,
-                "contentType": "PlainText",
-                "content": "byebye, have a great day"
-              }
-            ],
-            "maxAttempts": 3
-          },
-          "rejectionStatement": {
-            "messages": [
-              {
-                "groupNumber": 1,
-                "contentType": "PlainText",
-                "content": "OK, happly to help"
-              }
-            ]
-          }
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "would you please repeat what you just said?"
+            }
+          ]
         }
       },
       {
-        "name": "requestMessageDeliver",
-        "version": "13",
+        "name": "confirmNo_requestMessageDeliver",
+        "version": "3",
         "fulfillmentActivity": {
-          "type": "ReturnIntent"
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
         },
         "sampleUtterances": [
-          "{WE} {need} {serviceNeedMessage}",
-          "{WE} {need} {serviceNeedMessage} for my room",
-          "{MayI} have {serviceNeedMessage}",
-          "room {roomnumber}  {need} {serviceNeedMessage}",
-          "my room needs to {beserviced}",
-          "our room key does not work",
-          "our room needs sweeping",
-          "We need our bed turned down",
-          "{canYou} {serve} our room",
-          "{canYou} {serve}  room {roomnumber}",
-          "{canYou} {send} {serviceNeedMessage}",
-          "{WE} {need} {dirty} {itemNeedType} to {beremoved} from our room",
-          "{canYou} {remove} {dirty} {itemNeedType}",
-          "{canYou} have {someone} {remove} {dirty} {itemNeedType}",
-          "I would appreciate if   {someone} can  {remove} {dirty} {itemNeedType} from our room",
-          "I would love it if {someone} can  {remove} {dirty} {itemNeedType} from our room",
-          "We would appreciate if  {someone} can  {remove} {dirty} {itemNeedType} from our room",
-          "We would love it if  {someone} can  {remove} {dirty} {itemNeedType} from our room",
-          "It would be appreciated if  {someone} can  {remove} {dirty} {itemNeedType} from our room",
-          "{canYou} {arrange} {serviceNeedMessage}",
-          "{canYou} {pickup} our bags from our room",
-          "{canYou} {provide}  {serviceBaggage} for our bags",
-          "We need our bags {bepickup} from our room",
-          "I need my bags {bepickup} from  room {roomnumber}",
-          "{WE} {need} {serviceBaggage} for our room",
-          "{serviceNeedMessage}"
+          "{confirmno} {WE} {need} {serviceNeedMessage}",
+          "{confirmno} {WE} {need} {serviceNeedMessage} for my room",
+          "{confirmno} {MayI} have {serviceNeedMessage}",
+          "{confirmno} room {roomnumber}  {need} {serviceNeedMessage}",
+          "{confirmno} my room needs to {beserviced}",
+          "{confirmno} our room key does not work",
+          "{confirmno} our room needs sweeping",
+          "{confirmno} We need our bed turned down",
+          "{confirmno} {canYou} {serve} {me}",
+          "{confirmno} {canYou} {serve}  room {roomnumber}",
+          "{confirmno} {canYou} {send} {serviceNeedMessage}",
+          "{confirmno} {WE} {need} {dirty} {itemNeedQuantity} to {beremoved} from our room",
+          "{confirmno} {canYou} {remove} {dirty} {itemNeedQuantity}",
+          "{confirmno} {canYou} have {someone} {remove} {dirty} {itemNeedQuantity}",
+          "{confirmno} I would appreciate if   {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+          "{confirmno} I would love it if {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+          "{confirmno} We would appreciate if  {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+          "{confirmno} We would love it if  {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+          "{confirmno} It would be appreciated if  {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+          "{confirmno} {canYou} {arrange} {serviceNeedMessage}",
+          "{confirmno} {canYou} {pickup} our bags from our room",
+          "{confirmno} {canYou} {provide}  {serviceNeedMessage} for our bags",
+          "{confirmno} We need our bags {bepickup} from our room",
+          "{confirmno} I need my bags {bepickup} from  room {roomnumber}",
+          "{confirmno} {WE} {need} {serviceNeedMessage} for our room",
+          "{confirmno} {serviceNeedMessage}",
+          "{confirmno} {WE} {need} {quantityList} {serviceNeedMessage}",
+          "{confirmno} {WE} {need} {serviceNeedMessage} for tonight",
+          "{confirmno} Room Key  is not working",
+          "{confirmno} {remove} {dirty}  {itemNeedQuantity}",
+          "{confirmno} {WE} {get}  {quantityList} {dirty} {itemNeedQuantity} to {beremoved} from my room",
+          "{confirmno} Who can assist in  {remove} {quantityList} {dirty} {itemNeedQuantity}",
+          "{confirmno} Who can help in  {remove} {quantityList} {dirty} {itemNeedQuantity}",
+          "{confirmno} Who is responsible  for {remove} {quantityList} {dirty} {itemNeedQuantity}",
+          "{confirmno} What is the routine  for {remove} {quantityList} {dirty} {itemNeedQuantity}",
+          "{confirmno} {my}  {itemNeedQuantity} are {dirty} please {remove} from our room"
         ],
         "slots": [
           {
@@ -1655,7 +1865,7 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 15,
+            "priority": 17,
             "name": "arrange"
           },
           {
@@ -1673,7 +1883,7 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 19,
+            "priority": 6,
             "name": "bepickup"
           },
           {
@@ -1691,7 +1901,7 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 12,
+            "priority": 18,
             "name": "beremoved"
           },
           {
@@ -1709,26 +1919,44 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 6,
+            "priority": 8,
             "name": "beserviced"
           },
           {
             "sampleUtterances": [],
             "slotType": "canYou",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "canyou"
+                  "content": "canYou"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 7,
+            "priority": 9,
             "name": "canYou"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "confirmNo",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "confirmno"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "confirmno"
           },
           {
             "sampleUtterances": [],
@@ -1745,26 +1973,44 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 10,
+            "priority": 15,
             "name": "dirty"
           },
           {
             "sampleUtterances": [],
-            "slotType": "itemNeedType",
-            "slotTypeVersion": "13",
+            "slotType": "get",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "itemneedtype"
+                  "content": "get"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 11,
-            "name": "itemNeedType"
+            "priority": 22,
+            "name": "get"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedQuantity",
+            "slotTypeVersion": "18",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "itemNeedQuantity"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 12,
+            "name": "itemNeedQuantity"
           },
           {
             "sampleUtterances": [],
@@ -1776,7 +2022,7 @@
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "mayi"
+                  "content": "MayI"
                 }
               ],
               "maxAttempts": 2
@@ -1786,8 +2032,44 @@
           },
           {
             "sampleUtterances": [],
-            "slotType": "need",
+            "slotType": "me",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "me"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 20,
+            "name": "me"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "my",
             "slotTypeVersion": "4",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "my"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 21,
+            "name": "my"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "need",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1799,7 +2081,7 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 2,
+            "priority": 3,
             "name": "need"
           },
           {
@@ -1835,13 +2117,31 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 17,
+            "priority": 13,
             "name": "provide"
           },
           {
             "sampleUtterances": [],
+            "slotType": "quantityList",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "quantityList"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 19,
+            "name": "quantityList"
+          },
+          {
+            "sampleUtterances": [],
             "slotType": "remove",
-            "slotTypeVersion": "1",
+            "slotTypeVersion": "2",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1853,7 +2153,7 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 13,
+            "priority": 14,
             "name": "remove"
           },
           {
@@ -1876,7 +2176,7 @@
           {
             "sampleUtterances": [],
             "slotType": "send",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1888,7 +2188,7 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 9,
+            "priority": 10,
             "name": "send"
           },
           {
@@ -1906,49 +2206,31 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 8,
+            "priority": 7,
             "name": "serve"
           },
           {
             "sampleUtterances": [],
-            "slotType": "serviceBaggage",
-            "slotTypeVersion": "1",
-            "obfuscationSetting": "NONE",
-            "slotConstraint": "Optional",
-            "valueElicitationPrompt": {
-              "messages": [
-                {
-                  "contentType": "PlainText",
-                  "content": "servicebaggage"
-                }
-              ],
-              "maxAttempts": 2
-            },
-            "priority": 18,
-            "name": "serviceBaggage"
-          },
-          {
-            "sampleUtterances": [],
             "slotType": "serviceNeedMessage",
-            "slotTypeVersion": "5",
+            "slotTypeVersion": "2",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "serviceneedmessage"
+                  "content": "I'm sorry. I didn't quite understand. Can you please repeat your request?"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 3,
+            "priority": 1,
             "name": "serviceNeedMessage"
           },
           {
             "sampleUtterances": [],
             "slotType": "someone",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -1960,12 +2242,244 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 14,
+            "priority": 11,
             "name": "someone"
           },
           {
             "sampleUtterances": [],
             "slotType": "we",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "WE"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "WE"
+          }
+        ]
+      },
+      {
+        "name": "confirmNoNeedQuantityClarify",
+        "version": "7",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{confirmno} I need {quantityList}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "arrange",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "arrange"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 17,
+            "name": "arrange"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "bepickup",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "bepickup"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 6,
+            "name": "bepickup"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "beremoved",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "beremoved"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 18,
+            "name": "beremoved"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "beserviced",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "beserviced"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 8,
+            "name": "beserviced"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "canYou",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "canYou"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 9,
+            "name": "canYou"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "confirmNo",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "confirmno"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "confirmno"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "dirty",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "dirty"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 15,
+            "name": "dirty"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "get",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "get"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 22,
+            "name": "get"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedQuantity",
+            "slotTypeVersion": "18",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "itemNeedQuantity"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 12,
+            "name": "itemNeedQuantity"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "MayI",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "MayI"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 4,
+            "name": "MayI"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "me",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "me"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 20,
+            "name": "me"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "my",
             "slotTypeVersion": "4",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
@@ -1973,48 +2487,72 @@
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "we"
+                  "content": "my"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 1,
-            "name": "WE"
-          }
-        ]
-      },
-      {
-        "name": "changeIntent",
-        "version": "12",
-        "fulfillmentActivity": {
-          "type": "ReturnIntent"
-        },
-        "sampleUtterances": [
-          "never mind I need {quantityList} {itemNeedType}"
-        ],
-        "slots": [
+            "priority": 21,
+            "name": "my"
+          },
           {
             "sampleUtterances": [],
-            "slotType": "itemNeedType",
-            "slotTypeVersion": "13",
+            "slotType": "need",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "say again?"
+                  "content": "need"
                 }
               ],
               "maxAttempts": 2
             },
-            "priority": 1,
-            "name": "itemNeedType"
+            "priority": 3,
+            "name": "need"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "pickup",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "pickup"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 16,
+            "name": "pickup"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "provide",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "provide"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 13,
+            "name": "provide"
           },
           {
             "sampleUtterances": [],
             "slotType": "quantityList",
-            "slotTypeVersion": "6",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -2026,8 +2564,133 @@
               ],
               "maxAttempts": 2
             },
-            "priority": 2,
+            "priority": 19,
             "name": "quantityList"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "remove",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "remove"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 14,
+            "name": "remove"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.NUMBER",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "roomnumber"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 5,
+            "name": "roomnumber"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "send",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "send"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 10,
+            "name": "send"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "serve",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "serve"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 7,
+            "name": "serve"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "serviceNeedMessage",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "I'm sorry. I didn't quite understand. Can you please repeat your request?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "serviceNeedMessage"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "someone",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "someone"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 11,
+            "name": "someone"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "we",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "WE"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "WE"
           }
         ],
         "conclusionStatement": {
@@ -2035,14 +2698,594 @@
             {
               "groupNumber": 1,
               "contentType": "PlainText",
-              "content": "ok what else I can help you with today?"
+              "content": "would you please repeat what you just said?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "byebye",
+        "version": "12",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{bye}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "bye",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "bye"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "bye"
+          }
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "byebye, have a great day"
+            }
+          ]
+        }
+      },
+      {
+        "name": "confirmNoOnly",
+        "version": "4",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{confirmno}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "confirmNo",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "confirmno"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "confirmno"
+          }
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "would you please repeat what you just said?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "requestMessageDeliver",
+        "version": "5",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:874895062003:function:requestItems",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "{WE} {need}  {serviceNeedMessage}",
+          "{WE} {need} {serviceNeedMessage} for my room",
+          "{MayI} have {serviceNeedMessage}",
+          "room {roomnumber}  {need} {serviceNeedMessage}",
+          "my room needs to {beserviced}",
+          "our room key does not work",
+          "our room needs sweeping",
+          "We need our bed turned down",
+          "{canYou} {serve} {me}",
+          "{canYou} {serve}  room {roomnumber}",
+          "{canYou} {send} {serviceNeedMessage}",
+          "{WE} {need} {dirty} {itemNeedQuantity} to {beremoved} from our room",
+          "{canYou} {remove} {dirty} {itemNeedQuantity}",
+          "{canYou} have {someone} {remove} {dirty} {itemNeedQuantity}",
+          "I would appreciate if   {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+          "I would love it if {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+          "We would appreciate if  {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+          "We would love it if  {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+          "It would be appreciated if  {someone} can  {remove} {dirty} {itemNeedQuantity} from our room",
+          "{canYou} {arrange} {serviceNeedMessage}",
+          "{canYou} {pickup} our bags from our room",
+          "{canYou} {provide}  {serviceNeedMessage} for our bags",
+          "We need our bags {bepickup} from our room",
+          "I need my bags {bepickup} from  room {roomnumber}",
+          "{WE} {need} {serviceNeedMessage} for our room",
+          "{serviceNeedMessage}",
+          "{WE} {need} {quantityList} {serviceNeedMessage}",
+          "{WE} {need} {serviceNeedMessage} for tonight",
+          "Room Key  is not working",
+          "{remove} {dirty}  {itemNeedQuantity}",
+          "{WE} {get}  {quantityList} {dirty} {itemNeedQuantity} to {beremoved} from my room",
+          "Who can assist in  {remove} {quantityList} {dirty} {itemNeedQuantity}",
+          "Who can help in  {remove} {quantityList} {dirty} {itemNeedQuantity}",
+          "Who is responsible  for {remove} {quantityList} {dirty} {itemNeedQuantity}",
+          "What is the routine  for {remove} {quantityList} {dirty} {itemNeedQuantity}",
+          "{my}  {itemNeedQuantity} are {dirty} please {remove} from our room"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "arrange",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "arrange"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 17,
+            "name": "arrange"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "bepickup",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "bepickup"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 6,
+            "name": "bepickup"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "beremoved",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "beremoved"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 18,
+            "name": "beremoved"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "beserviced",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "beserviced"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 8,
+            "name": "beserviced"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "canYou",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "canYou"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 9,
+            "name": "canYou"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "dirty",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "dirty"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 15,
+            "name": "dirty"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "get",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "get"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 22,
+            "name": "get"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedQuantity",
+            "slotTypeVersion": "18",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "itemNeedQuantity"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 12,
+            "name": "itemNeedQuantity"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "MayI",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "MayI"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 4,
+            "name": "MayI"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "me",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "me"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 20,
+            "name": "me"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "my",
+            "slotTypeVersion": "4",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "my"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 21,
+            "name": "my"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "need",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "need"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 3,
+            "name": "need"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "pickup",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "pickup"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 16,
+            "name": "pickup"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "provide",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "provide"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 13,
+            "name": "provide"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "quantityList",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "quantityList"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 19,
+            "name": "quantityList"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "remove",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "remove"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 14,
+            "name": "remove"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "AMAZON.NUMBER",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "roomnumber"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 5,
+            "name": "roomnumber"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "send",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "send"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 10,
+            "name": "send"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "serve",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "serve"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 7,
+            "name": "serve"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "serviceNeedMessage",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "I'm sorry. I didn't quite understand. Can you please repeat your request?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "serviceNeedMessage"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "someone",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "someone"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 11,
+            "name": "someone"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "we",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "WE"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "WE"
+          }
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "would you please repeat what you just said?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "requestReplaceItems",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "{itemNeedReplace}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedReplace",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "itemNeedReplace"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "itemNeedReplace"
+          }
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "would you please repeat what you just said?"
             }
           ]
         }
       },
       {
         "name": "confirmNoNeedQuantity",
-        "version": "42",
+        "version": "13",
         "fulfillmentActivity": {
           "codeHook": {
             "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
@@ -2057,7 +3300,7 @@
           {
             "sampleUtterances": [],
             "slotType": "confirmNo",
-            "slotTypeVersion": "2",
+            "slotTypeVersion": "3",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Optional",
             "valueElicitationPrompt": {
@@ -2075,7 +3318,7 @@
           {
             "sampleUtterances": [],
             "slotType": "itemNeedQuantity",
-            "slotTypeVersion": "31",
+            "slotTypeVersion": "18",
             "obfuscationSetting": "NONE",
             "slotConstraint": "Required",
             "valueElicitationPrompt": {
@@ -2093,14 +3336,14 @@
           {
             "sampleUtterances": [],
             "slotType": "quantityList",
-            "slotTypeVersion": "6",
+            "slotTypeVersion": "7",
             "obfuscationSetting": "NONE",
-            "slotConstraint": "Required",
+            "slotConstraint": "Optional",
             "valueElicitationPrompt": {
               "messages": [
                 {
                   "contentType": "PlainText",
-                  "content": "how many would you like?"
+                  "content": "would you please repeat what you just said?"
                 }
               ],
               "maxAttempts": 2
@@ -2112,23 +3355,88 @@
         "dialogCodeHook": {
           "uri": "arn:aws:lambda:us-east-1:751078734245:function:requestItems",
           "messageVersion": "1.0"
-        }
-      },
-      {
-        "name": "fallback",
-        "version": "1",
-        "fulfillmentActivity": {
-          "type": "ReturnIntent"
         },
-        "sampleUtterances": [],
-        "slots": [],
-        "parentIntentSignature": "AMAZON.FallbackIntent",
         "conclusionStatement": {
           "messages": [
             {
               "groupNumber": 1,
               "contentType": "PlainText",
-              "content": "this fallback"
+              "content": "would you please repeat what you just said?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "confirmNoNeedQuantity_service",
+        "version": "3",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "{confirmno} I {quantityList} {itemNeedQuantity}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "confirmNo",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "confirmno"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "confirmno"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "itemNeedQuantity",
+            "slotTypeVersion": "33",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "sorry would you please repeat what item do  you like?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "itemNeedQuantity"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "quantityList",
+            "slotTypeVersion": "7",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "would you please repeat what you just said?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 3,
+            "name": "quantityList"
+          }
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "would you please repeat what you just said?"
             }
           ]
         }
@@ -2140,319 +3448,182 @@
         "version": "3",
         "enumerationValues": [
           {
-            "value": "Can we"
+            "value": "may I"
           },
           {
-            "value": "Could we please"
-          },
-          {
-            "value": "Could I please"
-          },
-          {
-            "value": "May I"
-          },
-          {
-            "value": "Can I"
-          },
-          {
-            "value": "Could I"
-          },
-          {
-            "value": "Could we"
-          },
-          {
-            "value": "May I please"
+            "value": "could we"
           },
           {
             "value": "can maid"
           },
           {
-            "value": "May we please"
+            "value": "can I please"
           },
           {
-            "value": "Can I please"
+            "value": "can we"
           },
           {
-            "value": "Can we please"
+            "value": "may we"
+          },
+          {
+            "value": "may we please"
+          },
+          {
+            "value": "may I please"
+          },
+          {
+            "value": "could we please"
+          },
+          {
+            "value": "can we please"
           },
           {
             "value": "do we"
           },
           {
-            "value": "May we"
+            "value": "can I"
+          },
+          {
+            "value": "could I please"
+          },
+          {
+            "value": "could I"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
-        "name": "informaitonService",
-        "version": "1",
-        "enumerationValues": [
-          {
-            "value": "Breakfast",
-            "synonyms": [
-              "brunch",
-              " early meal",
-              " morning meal "
-            ]
-          },
-          {
-            "value": "Coffee Shop",
-            "synonyms": [
-              "Sandwich shop",
-              " cake shop",
-              " coffee place",
-              " deli"
-            ]
-          },
-          {
-            "value": "In-Room dining",
-            "synonyms": [
-              "Room Service"
-            ]
-          },
-          {
-            "value": "Ballroom",
-            "synonyms": [
-              "Music hall",
-              "auditorium",
-              " concert hall",
-              " dance hall",
-              " hall",
-              " party room "
-            ]
-          },
-          {
-            "value": "Gift Shop",
-            "synonyms": [
-              "Boutique",
-              " store",
-              " market "
-            ]
-          },
-          {
-            "value": "Fitness Center",
-            "synonyms": [
-              "Gym",
-              " Fitness room",
-              " workout room",
-              " exercise rooms"
-            ]
-          },
-          {
-            "value": "Bar Lounge",
-            "synonyms": [
-              "Drink lounge",
-              " Bar service",
-              " night club",
-              " saloon",
-              " cocktail lounge",
-              " beverage lounge",
-              " parlor",
-              " pub",
-              " taproom",
-              " watering hole",
-              " drinkery"
-            ]
-          },
-          {
-            "value": "Restaurants",
-            "synonyms": [
-              "Dinign Room",
-              " Lunch Room",
-              " diner",
-              " lunchroom",
-              " cafeteria",
-              " outlet",
-              " joint",
-              " eating house",
-              " eating place "
-            ]
-          },
-          {
-            "value": "Lunch",
-            "synonyms": [
-              "luncheon",
-              " midday meal "
-            ]
-          },
-          {
-            "value": "Business Centre",
-            "synonyms": [
-              "work space",
-              " work area",
-              " internet room",
-              " printer room",
-              " copy room",
-              " computer room "
-            ]
-          },
-          {
-            "value": "Guest Laundry Room",
-            "synonyms": [
-              "Laundry room",
-              " laundry facilities",
-              "  laundry machines",
-              " washers",
-              " dryers",
-              " washing"
-            ]
-          },
-          {
-            "value": "Dinner",
-            "synonyms": [
-              "supper",
-              " evening meal "
-            ]
-          },
-          {
-            "value": "Room Key"
-          },
-          {
-            "value": "Room Service information",
-            "synonyms": [
-              "In-room eating",
-              " in-room food service",
-              " food delivery",
-              " drink delivery"
-            ]
-          },
-          {
-            "value": "Meeting Room",
-            "synonyms": [
-              "Gathering room",
-              " conference room",
-              " convention room",
-              " session room"
-            ]
-          },
-          {
-            "value": "Club Lounge",
-            "synonyms": [
-              "membership lounge",
-              " club room",
-              " membership room",
-              " members only room",
-              " members only lounge"
-            ]
-          }
-        ],
-        "valueSelectionStrategy": "TOP_RESOLUTION"
-      },
-      {
         "name": "serviceNeedMessage",
-        "version": "5",
+        "version": "2",
         "enumerationValues": [
           {
-            "value": "Turndown service",
+            "value": "wifi connections",
+            "synonyms": []
+          },
+          {
+            "value": "turndown service",
             "synonyms": [
-              "turned in",
-              "turned on",
-              "torn down",
-              "turned down",
-              "turn brown",
-              "turn crown",
-              "turn drown",
-              "turn frown",
-              "down",
-              "town",
-              "turn noun"
+              "turned down service",
+              "turn down service"
             ]
           },
           {
-            "value": "Valet Laundry Service",
+            "value": "wifi passwords",
+            "synonyms": []
+          },
+          {
+            "value": "valet laundry services",
+            "synonyms": []
+          },
+          {
+            "value": "wifi connection",
             "synonyms": [
-              "Steaming service",
-              "Wash",
-              "Clean clothes",
-              "Laundry Service",
-              "Dry Cleaning",
-              "laundry",
-              "vachel lindsay",
-              "violante",
-              "alejandro",
-              "villalpando",
-              "calliandra"
+              "internet access"
             ]
           },
           {
-            "value": "Dirty item pick up",
+            "value": "service the room",
             "synonyms": [
-              "old item pick up",
-              "used item pick up",
-              "stained item pick up",
-              "spoiled item pick up",
-              "thrty item",
-              "doherty itme",
-              "dougherty item",
-              "doughty item",
-              "dottie item",
-              "ditty item",
-              "dotty item",
-              "dirtier item",
-              "draughty",
-              "data item",
-              "dreamtime",
-              "dreamteam",
-              "dry ton",
-              "drayton"
-            ]
-          },
-          {
-            "value": "WIFI password",
-            "synonyms": [
-              "Internet access password"
-            ]
-          },
-          {
-            "value": "Bell Cart",
-            "synonyms": [
-              "Baggage carts",
-              "bags cart",
-              "uggage cart",
-              "suitcase cart",
-              "gear cart",
-              "trunk cart",
-              "case cart",
-              "tote bag",
-              "suit bag",
-              "satchel cart"
-            ]
-          },
-          {
-            "value": "Service the room",
-            "synonyms": [
-              "Cleaning service",
-              "Clean the room",
+              "cleaning service",
+              "clean the room",
               "change the room",
               "room cleaning",
               "servicing the room"
             ]
           },
           {
-            "value": "Wake up Call",
+            "value": "bell carts",
+            "synonyms": []
+          },
+          {
+            "value": "dirty item pick up",
             "synonyms": [
-              "Early-morning call",
-              "Alarm setup",
-              "wake up message",
-              "bugle call",
-              "morning alert call",
-              "walkable",
-              "wieghable",
-              "make a pile",
-              "wicopy",
-              "nikopol"
+              "old item pick up",
+              "used item pick up",
+              "stained item pick up",
+              "spoiled item pick up",
+              "old item pickup",
+              "used item pickup",
+              "stained item pickup",
+              "spoiled item pickup",
+              "dirty item pickup"
             ]
           },
           {
-            "value": "Baggage Porter",
+            "value": "previous request",
             "synonyms": [
-              "Bellhop",
+              "prior request",
+              "earlier request",
+              "prior call",
+              "earlier call",
+              "previous call"
+            ]
+          },
+          {
+            "value": "dirty items pick up",
+            "synonyms": []
+          },
+          {
+            "value": "valet laundry service",
+            "synonyms": [
+              "steaming service",
+              "wash",
+              "clean clothes",
+              "laundry service",
+              "dry cleaning",
+              "laundry",
+              "clean cloth",
+              "valet laundry"
+            ]
+          },
+          {
+            "value": "baggage porters",
+            "synonyms": []
+          },
+          {
+            "value": "wake up calls",
+            "synonyms": []
+          },
+          {
+            "value": "bell cart",
+            "synonyms": [
+              "baggage cart",
+              "bag cart",
+              "luggage cart",
+              "suitcase cart",
+              "gear cart",
+              "trunk cart",
+              "case cart",
+              "tote bag cart",
+              "suit bag cart",
+              "satchel cart"
+            ]
+          },
+          {
+            "value": "previous requests",
+            "synonyms": []
+          },
+          {
+            "value": "wake up call",
+            "synonyms": [
+              "early-morning call",
+              "alarm setup",
+              "wake up message",
+              "bugle call",
+              "morning alert call",
+              "early morning call",
+              "wake up call"
+            ]
+          },
+          {
+            "value": "baggage porter",
+            "synonyms": [
+              "bellhop",
               "concierge",
               "carrier",
               "baggage carrier",
               "doorperson",
-              "Carry baggages",
+              "carry baggages",
               "help with bags",
               "help with lugggage",
               "assistance with bags",
@@ -2467,29 +3638,13 @@
               "suit bag",
               "satchel",
               "porter service",
-              "porter",
-              "bitdgeport",
-              "backport",
-              "beach party",
-              "supporter",
-              "sally port",
-              "gagging order"
+              "porter"
             ]
           },
           {
-            "value": "Previous request",
+            "value": "wifi password",
             "synonyms": [
-              "Prior request",
-              "earlier request",
-              "prior call",
-              "earlier call",
-              "previous call"
-            ]
-          },
-          {
-            "value": "WIFI connection",
-            "synonyms": [
-              "Internet access"
+              "internet access password"
             ]
           }
         ],
@@ -2497,59 +3652,28 @@
       },
       {
         "name": "bechanged",
-        "version": "1",
+        "version": "2",
         "enumerationValues": [
           {
-            "value": "be replaced"
+            "value": "be swapped"
           },
           {
-            "value": "be swapped"
+            "value": "be refilled"
           },
           {
             "value": "be exchanged"
           },
           {
+            "value": "be restocked"
+          },
+          {
             "value": "be changed"
-          }
-        ],
-        "valueSelectionStrategy": "ORIGINAL_VALUE"
-      },
-      {
-        "name": "replace",
-        "version": "1",
-        "enumerationValues": [
-          {
-            "value": "pick up"
           },
           {
-            "value": "refill"
+            "value": "be replenished"
           },
           {
-            "value": "change"
-          },
-          {
-            "value": "replace"
-          },
-          {
-            "value": "restock"
-          },
-          {
-            "value": "refresh"
-          },
-          {
-            "value": "exchange"
-          },
-          {
-            "value": "replenish"
-          },
-          {
-            "value": "take away"
-          },
-          {
-            "value": "remove"
-          },
-          {
-            "value": "switch"
+            "value": "be switched"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
@@ -2581,8 +3705,14 @@
       },
       {
         "name": "whatToDo",
-        "version": "2",
+        "version": "3",
         "enumerationValues": [
+          {
+            "value": "how can we"
+          },
+          {
+            "value": "How can we get help on"
+          },
           {
             "value": "how to do"
           },
@@ -2608,6 +3738,9 @@
             "value": "what is the procedure"
           },
           {
+            "value": "what the process is for"
+          },
+          {
             "value": "what to do"
           },
           {
@@ -2623,6 +3756,9 @@
             "value": "what is the proper way"
           },
           {
+            "value": "how do we"
+          },
+          {
             "value": "what is  the routine"
           },
           {
@@ -2630,6 +3766,9 @@
           },
           {
             "value": "what is the method"
+          },
+          {
+            "value": "who to request from"
           },
           {
             "value": "who to contact"
@@ -2645,7 +3784,7 @@
       },
       {
         "name": "thanks",
-        "version": "5",
+        "version": "1",
         "enumerationValues": [
           {
             "value": "thanks"
@@ -2660,344 +3799,102 @@
         "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
-        "name": "itemNeedRepair",
-        "version": "7",
+        "description": "password",
+        "name": "password",
+        "version": "1",
         "enumerationValues": [
           {
-            "value": "Coffee machine",
+            "value": "password",
             "synonyms": [
-              "Kettle",
-              "coffee maker",
-              "caffeine machine",
-              "cappucciona machine",
-              "expresso machine",
-              "brew machine",
-              "cafe machine",
-              "mocha machine",
-              "coffee appliance",
-              "coffee  engine",
-              "copy machine",
-              "cash machine",
-              "coin machine",
-              "coffeeman",
-              "confirmation",
-              "conformation",
-              "cremation",
-              "collimation",
-              "coffee mug",
-              "cofunction"
+              "password"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "itemNeedRepair",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "bed",
+            "synonyms": [
+              "mattress",
+              "chaise",
+              "sleeping platform",
+              "divan",
+              "trundle",
+              "chase"
             ]
           },
           {
-            "value": "Make up mirror",
+            "value": "door",
             "synonyms": [
-              "Mirror",
-              "reflector",
-              "looking glass"
+              "main room door",
+              "room door",
+              "entrance door",
+              "entryway door",
+              "front gate",
+              "exit",
+              "sliding door"
             ]
           },
           {
             "value": "TV",
             "synonyms": [
-              "Television",
+              "television",
               "telly",
               "tube",
-              "TV box",
-              "Tovey",
-              "tevye",
-              "divid",
-              "stevie",
-              "tvs",
-              "truvy",
-              "atv",
-              "tivo",
-              "tfe",
-              "tufa",
-              "televising",
-              "telogen",
-              "daylogh vision",
-              "tunnelvision",
-              "division",
-              "elevation",
-              "cell division"
+              "TV box"
             ]
           },
           {
-            "value": "Chair",
-            "synonyms": [
-              "Desk Chair",
-              "workspace chair",
-              "secretary chair"
-            ]
+            "value": "lamps",
+            "synonyms": []
           },
           {
-            "value": "Microwave",
-            "synonyms": [
-              "food warmer",
-              "microwave",
-              "macrame",
-              "microarray",
-              "micro switch",
-              "microware",
-              "makeaway",
-              "mikey way",
-              "microgroove"
-            ]
-          },
-          {
-            "value": "Plug",
-            "synonyms": [
-              "Electric plug",
-              "electric connection",
-              "plaque",
-              "pluck",
-              "ploeg",
-              "plog",
-              "pug",
-              "plugged",
-              "plac"
-            ]
-          },
-          {
-            "value": "Toilet",
-            "synonyms": [
-              "Water leaking"
-            ]
-          },
-          {
-            "value": "Iron",
-            "synonyms": [
-              "ironing appliance",
-              "clothes iron",
-              "steam iron",
-              "flat iron",
-              "smoothing iron or iron box."
-            ]
-          },
-          {
-            "value": "Clock",
-            "synonyms": [
-              "time device",
-              "timekeeping device",
-              "timepiece",
-              "timer",
-              "alarm",
-              "timemarker",
-              "digital watch",
-              "timekeeper",
-              "Radio"
-            ]
+            "value": "towel bars",
+            "synonyms": []
           },
           {
             "value": "TV remote",
             "synonyms": [
-              "Remote Control",
+              "remote control",
               "clicker",
               "push-button control",
               "remote",
-              "telly control",
-              "terremot",
-              "tiaret",
-              "tv room",
-              "remote controller",
-              "remote controlled",
-              "rent control",
-              "riot control"
+              "telly control"
             ]
           },
           {
-            "value": "Luggage Rack",
+            "value": "bathroom door",
             "synonyms": [
-              "shoe rack",
-              "bag",
-              "suitcase",
-              "baggage",
-              "trunk",
-              "case",
-              "gear",
-              "carry-on",
-              "tote",
-              "Shoe rack"
+              "toilet door",
+              "lavatory door",
+              "washroom door",
+              "outhouse door",
+              "restroom door",
+              "ladies' room door",
+              "gentlemen's room door",
+              "women's room door",
+              "men's room door",
+              "little boy's room door",
+              "little girl's room door",
+              "the little boy's room door",
+              "the little girl's room door"
             ]
           },
           {
-            "value": "Light bulb",
+            "value": "retractable clothes drying line",
             "synonyms": [
-              "light tube",
-              "wet bulb",
-              "hot bulb",
-              "liable",
-              "litle",
-              "albe;",
-              "light up"
+              "drying line",
+              "clothes line",
+              "clothes hanging line",
+              "hanging mine"
             ]
           },
           {
-            "value": "Bathroom door",
-            "synonyms": [
-              "Toilet door",
-              "sliding door",
-              "barrymore",
-              "barn door",
-              "borrador",
-              "batten door",
-              "beam rider"
-            ]
-          },
-          {
-            "value": "Closet door",
-            "synonyms": [
-              "Sliding Door",
-              "wardrobe door",
-              "clothes room",
-              "storage door",
-              "closet auger",
-              "closed door",
-              "cazador",
-              "closet",
-              "closets",
-              "closeted",
-              "close the door",
-              "cost dear",
-              "lays at door"
-            ]
-          },
-          {
-            "value": "Faucet",
-            "synonyms": [
-              "Sink",
-              "Water leaking",
-              "water running",
-              "leakage"
-            ]
-          },
-          {
-            "value": "Desk",
-            "synonyms": [
-              "workspace",
-              "secretary",
-              "work counter"
-            ]
-          },
-          {
-            "value": "Shower",
-            "synonyms": [
-              "Shower head",
-              "Shower Sprinkler"
-            ]
-          },
-          {
-            "value": "Hair Dryer",
-            "synonyms": [
-              "Blow Dryer",
-              "hair blower"
-            ]
-          },
-          {
-            "value": "Lamp",
-            "synonyms": [
-              "Desk Lamp",
-              "workspace lamp",
-              "secretary lamp",
-              "desk lantern",
-              "workspace lantern",
-              "secretray lantern",
-              "desk  light",
-              "workspace light",
-              "secretray light",
-              "lampe",
-              "lump",
-              "limp",
-              "lap",
-              "lamb",
-              "lamps",
-              "clamp",
-              "lam",
-              "lapp",
-              "lappe"
-            ]
-          },
-          {
-            "value": "Night stand lamp",
-            "synonyms": [
-              "night light",
-              "bed table lamp",
-              "bedstand lamp",
-              "night table lamp"
-            ]
-          },
-          {
-            "value": "Window",
-            "synonyms": [
-              "windy",
-              "one day",
-              "wendy",
-              "widow",
-              "wind",
-              "winds",
-              "wanda",
-              "windowed",
-              "winnow",
-              "winde",
-              "wend",
-              "one two",
-              "hindu",
-              "wende"
-            ]
-          },
-          {
-            "value": "Bed",
-            "synonyms": [
-              "mattress",
-              "chaise",
-              "sleeping platform",
-              "cot",
-              "divan",
-              "trundle"
-            ]
-          },
-          {
-            "value": "Towel bar",
-            "synonyms": [
-              "towel pole",
-              "towel stake",
-              "towel rail",
-              "wall bar",
-              "towel hanger",
-              "towel hanging bar",
-              "hanging bar"
-            ]
-          },
-          {
-            "value": "Ice machine",
-            "synonyms": [
-              "ice motor",
-              "ice engine",
-              "ice appliance"
-            ]
-          },
-          {
-            "value": "Heater",
-            "synonyms": [
-              "warmer",
-              "radiator",
-              "hotter",
-              "hitter",
-              "hater",
-              "hautuer",
-              "hatter",
-              "hutter",
-              "hayter",
-              "headre",
-              "heat",
-              "heaters",
-              "hodder",
-              "haider",
-              "heider"
-            ]
-          },
-          {
-            "value": "Night stand",
+            "value": "night stand",
             "synonyms": [
               "bed table",
               "bedstand",
@@ -3005,131 +3902,305 @@
             ]
           },
           {
-            "value": "Shower door",
+            "value": "bathtub",
             "synonyms": [
-              "Shower glass"
+              "bath",
+              "shower tub"
             ]
           },
           {
-            "value": "Retractable Clothes drying line",
-            "synonyms": [
-              "Drying line",
-              "clothes line",
-              "clothes hanging line",
-              "hanging line"
-            ]
+            "value": "heaters",
+            "synonyms": []
           },
           {
-            "value": "Wall hook",
-            "synonyms": [
-              "wall peg",
-              "wall",
-              "hanger",
-              "wall holder",
-              "wall calsp"
-            ]
-          },
-          {
-            "value": "Door",
-            "synonyms": [
-              "Main room door",
-              "room door",
-              "entrance",
-              "entryway",
-              "front gate",
-              "exit",
-              "dore",
-              "dor",
-              "dorr",
-              "doerr",
-              "dar",
-              "dower",
-              "dour",
-              "dhar",
-              "daher",
-              "dauer",
-              "daar",
-              "dare",
-              "dire",
-              "dyer",
-              "doer",
-              "dewar",
-              "dur",
-              "duer",
-              "deare",
-              "dear"
-            ]
-          },
-          {
-            "value": "Air conditioner",
+            "value": "air conditioner",
             "synonyms": [
               "AC",
               "HVAC",
               "hot-cold",
-              "heater",
               "cooler",
               "climate control",
               "central air",
               "clima",
               "climatization",
               "thermostat",
-              "hair conditioner",
-              "air conditioned",
-              "power conditioner",
-              "air conduction",
-              "eye condition",
-              "weather"
+              "summer stat"
             ]
           },
           {
-            "value": "Light switch",
+            "value": "chairs",
+            "synonyms": []
+          },
+          {
+            "value": "light switch",
             "synonyms": [
-              "Electric switch",
-              "light plate",
-              "white witch",
-              "light weight",
-              "light touch",
-              "lights on",
-              "light wave",
-              "limit switch"
+              "electric switch",
+              "light plate"
             ]
           },
           {
-            "value": "Ironing Board",
+            "value": "faucets",
+            "synonyms": []
+          },
+          {
+            "value": "shower door",
             "synonyms": [
-              "pressing board"
+              "shower glass",
+              "washbasin door"
             ]
           },
           {
-            "value": "Bathtub",
+            "value": "water leak",
             "synonyms": [
-              "Bath",
-              "shower tub",
-              "shower",
-              "backed up",
-              "beat up",
-              "bathrobe",
-              "basta",
-              "beefed up",
-              "booked up",
-              "bust up",
-              "bucked up"
+              "leakage",
+              "water leakage",
+              "water leak",
+              "water overflow",
+              "runny water",
+              "waterflow",
+              "running water"
             ]
           },
           {
-            "value": "Water Leak",
+            "value": "mirrors",
+            "synonyms": []
+          },
+          {
+            "value": "light bulbs",
+            "synonyms": []
+          },
+          {
+            "value": "heater",
             "synonyms": [
-              "Water leaking",
-              "water running",
-              "leakage"
+              "warmer",
+              "radiator"
             ]
           },
           {
-            "value": "Mirror",
+            "value": "closet door",
+            "synonyms": [
+              "wardrobe door",
+              "clothes room",
+              "storage door"
+            ]
+          },
+          {
+            "value": "TVs",
+            "synonyms": []
+          },
+          {
+            "value": "doors",
+            "synonyms": []
+          },
+          {
+            "value": "toilets",
+            "synonyms": []
+          },
+          {
+            "value": "toilet",
+            "synonyms": [
+              "lavatory",
+              "potty",
+              "john",
+              "commode",
+              "can"
+            ]
+          },
+          {
+            "value": "desk",
+            "synonyms": [
+              "workspace",
+              "secretary",
+              "work counter",
+              "secretary shelf",
+              "desk drawer"
+            ]
+          },
+          {
+            "value": "wall hook",
+            "synonyms": [
+              "wall peg",
+              "wall hanger",
+              "wall holder",
+              "wall clasp"
+            ]
+          },
+          {
+            "value": "ice machine",
+            "synonyms": [
+              "ice motor",
+              "ice engine",
+              "ice appliance",
+              "ice box"
+            ]
+          },
+          {
+            "value": "plug",
+            "synonyms": [
+              "power plug",
+              "electric plug",
+              "electric connection"
+            ]
+          },
+          {
+            "value": "beds",
+            "synonyms": []
+          },
+          {
+            "value": "microwaves",
+            "synonyms": []
+          },
+          {
+            "value": "shower",
+            "synonyms": [
+              "shower head",
+              "shower sprinkler"
+            ]
+          },
+          {
+            "value": "light bulb",
+            "synonyms": [
+              "light tube"
+            ]
+          },
+          {
+            "value": "mirror",
             "synonyms": [
               "reflector",
               "looking glass"
             ]
+          },
+          {
+            "value": "shower doors",
+            "synonyms": []
+          },
+          {
+            "value": "desks",
+            "synonyms": []
+          },
+          {
+            "value": "ice machines",
+            "synonyms": []
+          },
+          {
+            "value": "bathtubs",
+            "synonyms": []
+          },
+          {
+            "value": "light switches",
+            "synonyms": []
+          },
+          {
+            "value": "microwave",
+            "synonyms": [
+              "food warmer"
+            ]
+          },
+          {
+            "value": "closet doors",
+            "synonyms": []
+          },
+          {
+            "value": "wall hooks",
+            "synonyms": []
+          },
+          {
+            "value": "faucet",
+            "synonyms": [
+              "sink",
+              "water faucet",
+              "water sink"
+            ]
+          },
+          {
+            "value": "chair",
+            "synonyms": [
+              "desk chair",
+              "workspace chair",
+              "secretary chair",
+              "chair leg"
+            ]
+          },
+          {
+            "value": "lamp",
+            "synonyms": [
+              "lantern",
+              "light",
+              "desk lamp",
+              "desk light",
+              "workspace lamp",
+              "workspace light",
+              "secretary lamp",
+              "secretary light"
+            ]
+          },
+          {
+            "value": "night stand lamps",
+            "synonyms": []
+          },
+          {
+            "value": "windows",
+            "synonyms": []
+          },
+          {
+            "value": "showers",
+            "synonyms": []
+          },
+          {
+            "value": "towel bar",
+            "synonyms": [
+              "towel pole",
+              "towel stake",
+              "towel rail",
+              "wall bar",
+              "towel hanger",
+              "towel hanging bar",
+              "hanging bar",
+              "towel poll"
+            ]
+          },
+          {
+            "value": "plugs",
+            "synonyms": []
+          },
+          {
+            "value": "window",
+            "synonyms": [
+              "casement"
+            ]
+          },
+          {
+            "value": "night stand lamp",
+            "synonyms": [
+              "night lamp",
+              "bed table lamp",
+              "bedstand lamp",
+              "bed stand lamp",
+              "night table lamp",
+              "bedside lamp",
+              "night lantern",
+              "bed table lantern",
+              "bedstand lantern",
+              "bed stand lantern",
+              "night table lantern",
+              "bedside lantern",
+              "night light",
+              "bed table light",
+              "bedstand light",
+              "bed stand light",
+              "night table light",
+              "bedside light",
+              "bastion lamp",
+              "bestand lamp"
+            ]
+          },
+          {
+            "value": "night stands",
+            "synonyms": []
+          },
+          {
+            "value": "bathroom doors",
+            "synonyms": []
           }
         ],
         "valueSelectionStrategy": "TOP_RESOLUTION"
@@ -3223,7 +4294,7 @@
       },
       {
         "name": "let",
-        "version": "1",
+        "version": "2",
         "enumerationValues": [
           {
             "value": "get"
@@ -3233,6 +4304,9 @@
           },
           {
             "value": "let"
+          },
+          {
+            "value": "require"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
@@ -3314,31 +4388,16 @@
       },
       {
         "name": "need",
-        "version": "4",
+        "version": "3",
         "enumerationValues": [
           {
-            "value": "require to have"
+            "value": "request"
           },
           {
             "value": "prefer to have"
           },
           {
-            "value": "desire"
-          },
-          {
-            "value": "like to have"
-          },
-          {
             "value": "prefer"
-          },
-          {
-            "value": "need"
-          },
-          {
-            "value": "want"
-          },
-          {
-            "value": "require"
           },
           {
             "value": "am in need of"
@@ -3347,16 +4406,64 @@
             "value": "are in need of"
           },
           {
-            "value": "desire to have"
+            "value": "is in need of"
           },
           {
-            "value": "would like to request"
+            "value": "ask for"
           },
           {
             "value": "ask to have"
           },
           {
             "value": "request to have"
+          },
+          {
+            "value": "am in need for"
+          },
+          {
+            "value": "'d like"
+          },
+          {
+            "value": "is in need for"
+          },
+          {
+            "value": "like to order"
+          },
+          {
+            "value": "would like to ask for"
+          },
+          {
+            "value": "would like to order"
+          },
+          {
+            "value": "order"
+          },
+          {
+            "value": "require to have"
+          },
+          {
+            "value": "desire"
+          },
+          {
+            "value": "like to have"
+          },
+          {
+            "value": "need"
+          },
+          {
+            "value": "like"
+          },
+          {
+            "value": "want"
+          },
+          {
+            "value": "require"
+          },
+          {
+            "value": "desire to have"
+          },
+          {
+            "value": "would like to request"
           },
           {
             "value": "would like to have"
@@ -3368,16 +4475,10 @@
             "value": "wish to have"
           },
           {
-            "value": "like to order"
+            "value": "would like"
           },
           {
-            "value": "need to have"
-          },
-          {
-            "value": "would like to ask for"
-          },
-          {
-            "value": "would like to order"
+            "value": "are in need for"
           },
           {
             "value": "want to have"
@@ -3387,7 +4488,7 @@
       },
       {
         "name": "quantityList",
-        "version": "6",
+        "version": "3",
         "enumerationValues": [
           {
             "value": "nine"
@@ -3417,12 +4518,6 @@
             "value": "another"
           },
           {
-            "value": "several"
-          },
-          {
-            "value": "seven"
-          },
-          {
             "value": "an additional"
           },
           {
@@ -3435,7 +4530,7 @@
             "value": "dozen"
           },
           {
-            "value": "eight"
+            "value": "a pair of"
           },
           {
             "value": "dual"
@@ -3451,9 +4546,6 @@
           },
           {
             "value": "extra"
-          },
-          {
-            "value": "ten"
           },
           {
             "value": "five"
@@ -3498,10 +4590,19 @@
             "value": "any"
           },
           {
+            "value": "an"
+          },
+          {
             "value": "pair"
           },
           {
             "value": "both"
+          },
+          {
+            "value": "a couple of "
+          },
+          {
+            "value": "the"
           },
           {
             "value": "the whole set"
@@ -3510,11 +4611,11 @@
             "value": "a few"
           }
         ],
-        "valueSelectionStrategy": "ORIGINAL_VALUE"
+        "valueSelectionStrategy": "TOP_RESOLUTION"
       },
       {
         "name": "itemNeedQuantity",
-        "version": "31",
+        "version": "18",
         "enumerationValues": [
           {
             "value": "pillow cases",
@@ -3724,7 +4825,7 @@
               "expresso packets",
               "mocha packets",
               "espresso package",
-              "espress so package"
+              "express so package"
             ]
           },
           {
@@ -3805,6 +4906,23 @@
           {
             "value": "ironing boards",
             "synonyms": []
+          },
+          {
+            "value": "clock radio",
+            "synonyms": [
+              "clock",
+              "alarm clock",
+              "time device",
+              "timekeeping device",
+              "timepiece",
+              "timer",
+              "alarm",
+              "timemarker",
+              "digital watch",
+              "timekeeper",
+              "radio",
+              "time maker"
+            ]
           },
           {
             "value": "nail polish remover  pad",
@@ -5222,7 +6340,7 @@
       },
       {
         "name": "check",
-        "version": "1",
+        "version": "2",
         "enumerationValues": [
           {
             "value": "patch"
@@ -5237,7 +6355,7 @@
             "value": "service"
           },
           {
-            "value": "replace"
+            "value": "change"
           },
           {
             "value": "look at"
@@ -5253,168 +6371,68 @@
       },
       {
         "name": "my",
-        "version": "3",
+        "version": "4",
         "enumerationValues": [
           {
-            "value": "This room's"
+            "value": "all"
+          },
+          {
+            "value": "this room's"
+          },
+          {
+            "value": "the room"
+          },
+          {
+            "value": "my room's"
+          },
+          {
+            "value": "my"
+          },
+          {
+            "value": "our"
+          },
+          {
+            "value": "room"
+          },
+          {
+            "value": "the"
           },
           {
             "value": "all of our"
           },
           {
-            "value": "My room's"
+            "value": "our room"
           },
           {
-            "value": "My"
+            "value": "my room"
           },
           {
-            "value": "Our"
+            "value": "all rooms"
           },
           {
-            "value": "Our room's"
+            "value": "our room's"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
-        "name": "itemNeedType",
-        "version": "13",
-        "enumerationValues": [
-          {
-            "value": "bed",
-            "synonyms": [
-              "bed, bad",
-              ",beds, bads"
-            ]
-          },
-          {
-            "value": "clean towels",
-            "synonyms": [
-              "new towels",
-              "fresh towels",
-              "clean taos",
-              "new taos",
-              "fresh taos",
-              "clean towers",
-              "new towers",
-              "fresh towers",
-              "clean house",
-              "new house",
-              "fresh house",
-              "claim towers",
-              "fresh power"
-            ]
-          },
-          {
-            "value": "towelette"
-          },
-          {
-            "value": "lotion",
-            "synonyms": [
-              "Hand lotion",
-              "body Lotion",
-              "cream",
-              "ointment",
-              "moisturizer",
-              "creme",
-              "body application",
-              "body grease",
-              "balsam",
-              "vaseline",
-              "pomade",
-              "cold cream",
-              "cosmetic creme"
-            ]
-          },
-          {
-            "value": "water"
-          },
-          {
-            "value": "dirty towel",
-            "synonyms": [
-              "old towel",
-              "dirty tower",
-              "old tower"
-            ]
-          },
-          {
-            "value": "gel"
-          },
-          {
-            "value": "clean towel",
-            "synonyms": [
-              "fresh towel",
-              "new towel",
-              "fresh tower",
-              "new tower",
-              "clean tower"
-            ]
-          },
-          {
-            "value": "towel",
-            "synonyms": [
-              "tower",
-              "tao",
-              "flower",
-              "town",
-              "power",
-              "powell",
-              "towle",
-              "toas",
-              "talk",
-              "tile",
-              "time"
-            ]
-          },
-          {
-            "value": "towels",
-            "synonyms": [
-              "towers",
-              "taos",
-              "flowers",
-              "policy",
-              "south",
-              "sometimes",
-              "toas",
-              "tell"
-            ]
-          },
-          {
-            "value": "pillow",
-            "synonyms": [
-              "pillows"
-            ]
-          },
-          {
-            "value": "dirty towels",
-            "synonyms": [
-              "old towels",
-              "dirty taos",
-              "old taos",
-              "dirty towers",
-              "old towers",
-              "dirty house",
-              "old house"
-            ]
-          },
-          {
-            "value": "soap",
-            "synonyms": [
-              "Hand soap"
-            ]
-          }
-        ],
-        "valueSelectionStrategy": "TOP_RESOLUTION"
-      },
-      {
         "name": "lack",
-        "version": "1",
+        "version": "2",
         "enumerationValues": [
+          {
+            "value": "is lack"
+          },
+          {
+            "value": "am lack"
+          },
           {
             "value": "am out of"
           },
           {
             "value": "are out of"
+          },
+          {
+            "value": "are lack"
           },
           {
             "value": "is out of"
@@ -5424,19 +6442,16 @@
       },
       {
         "name": "confirmNo",
-        "version": "2",
+        "version": "3",
         "enumerationValues": [
+          {
+            "value": "not see it"
+          },
           {
             "value": "no"
           },
           {
             "value": "wait"
-          },
-          {
-            "value": "nah"
-          },
-          {
-            "value": "incorrect"
           },
           {
             "value": "nope"
@@ -5445,22 +6460,70 @@
             "value": "noh"
           },
           {
-            "value": "change it"
+            "value": "No didn't see anything in there"
           },
           {
             "value": "never mind"
           },
           {
-            "value": "change that"
+            "value": "No I don't see one"
+          },
+          {
+            "value": "not find it"
+          },
+          {
+            "value": "there is nothing in there"
+          },
+          {
+            "value": "nah"
+          },
+          {
+            "value": "no i didn't see it"
+          },
+          {
+            "value": "not there"
           },
           {
             "value": "No wait"
           },
           {
+            "value": "no i didn't find it"
+          },
+          {
+            "value": "Too expensive"
+          },
+          {
+            "value": "incorrect"
+          },
+          {
+            "value": "change it"
+          },
+          {
+            "value": "No it's not there"
+          },
+          {
             "value": "wrong"
+          },
+          {
+            "value": "That's too much"
+          },
+          {
+            "value": "I don't need it anymore"
+          },
+          {
+            "value": "nothing there"
+          },
+          {
+            "value": "change that"
+          },
+          {
+            "value": "I don't want it anymore"
+          },
+          {
+            "value": "Don't have it"
           }
         ],
-        "valueSelectionStrategy": "TOP_RESOLUTION"
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
         "name": "provide",
@@ -5489,8 +6552,41 @@
       },
       {
         "name": "confirmyessentence",
-        "version": "2",
+        "version": "3",
         "enumerationValues": [
+          {
+            "value": "correct"
+          },
+          {
+            "value": "that's right"
+          },
+          {
+            "value": "you got it"
+          },
+          {
+            "value": "saw it"
+          },
+          {
+            "value": "yeah, they are there"
+          },
+          {
+            "value": "you are right"
+          },
+          {
+            "value": "yeah"
+          },
+          {
+            "value": "yes found it"
+          },
+          {
+            "value": "fine"
+          },
+          {
+            "value": "yes send to me"
+          },
+          {
+            "value": "that's fine"
+          },
           {
             "value": "yes you're right"
           },
@@ -5498,10 +6594,10 @@
             "value": "yes good"
           },
           {
-            "value": "correct"
+            "value": "ok for me"
           },
           {
-            "value": "that's right"
+            "value": "see it"
           },
           {
             "value": "yep"
@@ -5513,41 +6609,47 @@
             "value": "yes"
           },
           {
-            "value": "you got it"
-          },
-          {
-            "value": "you are right"
-          },
-          {
-            "value": "yeah"
+            "value": "found it"
           },
           {
             "value": "right"
           },
           {
+            "value": "got it"
+          },
+          {
             "value": "exactly"
           },
           {
-            "value": "fine"
+            "value": "no problem"
+          },
+          {
+            "value": "just send it"
+          },
+          {
+            "value": "yes they are there thank you"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
         "name": "newone",
-        "version": "1",
+        "version": "3",
         "enumerationValues": [
           {
+            "value": "a new one"
+          },
+          {
             "value": "new one"
+          },
+          {
+            "value": "changement"
           },
           {
             "value": "working one"
           },
           {
             "value": "another one"
-          },
-          {
-            "value": "replacement"
           },
           {
             "value": "functional one"
@@ -5560,34 +6662,37 @@
       },
       {
         "name": "send",
-        "version": "2",
+        "version": "3",
         "enumerationValues": [
           {
-            "value": "Fetch"
+            "value": "drop"
           },
           {
-            "value": "Give"
+            "value": "give"
           },
           {
-            "value": "Deliver"
+            "value": "send up"
           },
           {
-            "value": "Drop off"
+            "value": "provide"
           },
           {
-            "value": "Bring"
+            "value": "fetch"
           },
           {
-            "value": "Supply"
+            "value": "bring"
           },
           {
-            "value": "Send up"
+            "value": "deliver"
           },
           {
-            "value": "Send"
+            "value": "supply"
           },
           {
-            "value": "Provide"
+            "value": "send"
+          },
+          {
+            "value": "drop off"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
@@ -5637,85 +6742,23 @@
         "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
-        "name": "serviceBaggage",
+        "name": "itemInfo",
         "version": "1",
         "enumerationValues": [
           {
-            "value": "WIFI password",
-            "synonyms": [
-              "Internet access password"
-            ]
+            "value": "instructions"
           },
           {
-            "value": "Bell Cart",
-            "synonyms": [
-              "Baggage carts ",
-              "bags cart",
-              " uggage cart",
-              " suitcase cart",
-              " gear cart",
-              " trunk cart",
-              " case cart",
-              " tote bag",
-              " suit bag",
-              " satchel cart"
-            ]
+            "value": "How"
           },
           {
-            "value": "Wake up Call",
-            "synonyms": [
-              "Early-morning call",
-              " Alarm setup",
-              " wake up message",
-              " bugle call",
-              " morning alert call",
-              "walkable",
-              " wieghable",
-              " make a pile",
-              " wicopy",
-              " nikopol"
-            ]
+            "value": "instruction"
           },
           {
-            "value": "Baggage Porter",
-            "synonyms": [
-              "Bellhop",
-              " concierge",
-              " carrier",
-              " baggage carrier",
-              " doorperson",
-              " Carry baggages",
-              " help with bags",
-              " help with lugggage",
-              " assistance with bags",
-              " assistance with luggage",
-              "luggage",
-              " baggage",
-              " suitcase",
-              " gear",
-              " trunk",
-              " case",
-              " tote bag",
-              " suit bag",
-              " satchel",
-              " porter service",
-              " porter",
-              "bitdgeport",
-              " backport",
-              " beach party",
-              " supporter",
-              " sally port",
-              " gagging order"
-            ]
-          },
-          {
-            "value": "WIFI connection",
-            "synonyms": [
-              "Internet access"
-            ]
+            "value": "Where"
           }
         ],
-        "valueSelectionStrategy": "TOP_RESOLUTION"
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
         "name": "dosomething",
@@ -5754,16 +6797,16 @@
       },
       {
         "name": "we",
-        "version": "4",
+        "version": "3",
         "enumerationValues": [
           {
-            "value": "My son"
+            "value": "my father"
           },
           {
-            "value": "My husband"
+            "value": "my daughter"
           },
           {
-            "value": "My friend"
+            "value": "my son"
           },
           {
             "value": "the room"
@@ -5772,13 +6815,19 @@
             "value": "i"
           },
           {
-            "value": "My mother"
+            "value": "my friend"
           },
           {
             "value": "we"
           },
           {
-            "value": "My roommate"
+            "value": "room"
+          },
+          {
+            "value": "my roommate"
+          },
+          {
+            "value": "my husband"
           },
           {
             "value": "our room"
@@ -5787,38 +6836,180 @@
             "value": "my room"
           },
           {
-            "value": "My father"
-          },
-          {
             "value": "my wife"
           },
           {
-            "value": "My daughter"
+            "value": "my mother"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
         "name": "remove",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "pick up"
+          },
+          {
+            "value": "gather"
+          },
+          {
+            "value": "grab"
+          },
+          {
+            "value": "collect"
+          },
+          {
+            "value": "take away"
+          },
+          {
+            "value": "remove"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "itemNeedReplace",
         "version": "1",
         "enumerationValues": [
           {
-            "value": "Collect"
+            "value": "luggage racks",
+            "synonyms": []
           },
           {
-            "value": "Pick up"
+            "value": "hair dryers",
+            "synonyms": []
           },
           {
-            "value": "Remove"
+            "value": "hair dryer",
+            "synonyms": [
+              "blow dryer",
+              "hair blower",
+              "hair drive"
+            ]
           },
           {
-            "value": "Take away"
+            "value": "makeup mirror",
+            "synonyms": [
+              "cosmetics mirror",
+              "magnifying mirror"
+            ]
           },
           {
-            "value": "Grab"
+            "value": "water kettle",
+            "synonyms": [
+              "kettle",
+              "water boiler",
+              "water pot",
+              "tea kettle"
+            ]
           },
           {
-            "value": "Gather"
+            "value": "luggage rack",
+            "synonyms": [
+              "shoe rack",
+              "bag rack",
+              "suitcase rack",
+              "baggage rack",
+              "trunk rack",
+              "case rack",
+              "gear rack",
+              "carry-on rack",
+              "tote rack"
+            ]
+          },
+          {
+            "value": "irons",
+            "synonyms": []
+          },
+          {
+            "value": "makeup mirrors",
+            "synonyms": []
+          },
+          {
+            "value": "iron",
+            "synonyms": [
+              "ironing appliance",
+              "clothes iron",
+              "steam iron",
+              "flat iron",
+              "smoothing iron",
+              "iron box",
+              "cloth iron",
+              "close iron"
+            ]
+          },
+          {
+            "value": "coffee machines",
+            "synonyms": []
+          },
+          {
+            "value": "ironing board",
+            "synonyms": [
+              "pressing board",
+              "pressing bored"
+            ]
+          },
+          {
+            "value": "ironing boards",
+            "synonyms": []
+          },
+          {
+            "value": "clock radio",
+            "synonyms": [
+              "clock",
+              "alarm clock",
+              "time device",
+              "timekeeping device",
+              "timepiece",
+              "timer",
+              "alarm",
+              "timemarker",
+              "digital watch",
+              "timekeeper",
+              "radio",
+              "time maker"
+            ]
+          },
+          {
+            "value": "coffee machine",
+            "synonyms": [
+              "coffee kettle",
+              "coffee maker",
+              "caffeine machine",
+              "cappuccino machine",
+              "expresso machine",
+              "brew machine",
+              "cafe machine",
+              "mocha machine",
+              "coffee gadget",
+              "coffee tool",
+              "coffee widget",
+              "coffee instrument",
+              "coffee engine",
+              "coffee appliance",
+              "spresso machine"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "miss",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "missed"
+          },
+          {
+            "value": "misses"
+          },
+          {
+            "value": "missing"
+          },
+          {
+            "value": "miss"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
@@ -5844,34 +7035,31 @@
       },
       {
         "name": "canYou",
-        "version": "2",
+        "version": "3",
         "enumerationValues": [
           {
-            "value": "Could you"
+            "value": "will you please"
+          },
+          {
+            "value": "can you"
           },
           {
             "value": "would someone please"
           },
           {
+            "value": "does establishment"
+          },
+          {
             "value": "do you kindly"
-          },
-          {
-            "value": "Could you please"
-          },
-          {
-            "value": "Can you"
           },
           {
             "value": "can you kindly"
           },
           {
-            "value": "Can you please"
+            "value": "please"
           },
           {
-            "value": "Would you"
-          },
-          {
-            "value": "Please"
+            "value": "could you"
           },
           {
             "value": "kindly"
@@ -5880,19 +7068,28 @@
             "value": "would someone"
           },
           {
-            "value": "Would you please"
+            "value": "can you please"
           },
           {
-            "value": "Will you please"
+            "value": "could a room attendant"
           },
           {
-            "value": "Will you"
+            "value": "could you please"
+          },
+          {
+            "value": "would you please"
+          },
+          {
+            "value": "will you"
           },
           {
             "value": "would you kindly"
           },
           {
             "value": "will you kindly"
+          },
+          {
+            "value": "would you"
           },
           {
             "value": "could someone kindly"
@@ -5905,7 +7102,7 @@
       },
       {
         "name": "get",
-        "version": "2",
+        "version": "3",
         "enumerationValues": [
           {
             "value": "obtain"
@@ -5923,32 +7120,19 @@
             "value": "receive"
           },
           {
-            "value": "r"
-          },
-          {
             "value": "inquire about"
           },
           {
             "value": "assist with"
           },
           {
-            "value": "get"
-          },
-          {
             "value": "get help for"
           },
           {
-            "value": "help with"
-          }
-        ],
-        "valueSelectionStrategy": "ORIGINAL_VALUE"
-      },
-      {
-        "name": "have",
-        "version": "1",
-        "enumerationValues": [
+            "value": "request for"
+          },
           {
-            "value": "request"
+            "value": "ask for"
           },
           {
             "value": "get"
@@ -5957,35 +7141,10 @@
             "value": "have"
           },
           {
-            "value": "ask for"
+            "value": "help with"
           },
           {
             "value": "order"
-          }
-        ],
-        "valueSelectionStrategy": "ORIGINAL_VALUE"
-      },
-      {
-        "name": "wonder",
-        "version": "4",
-        "enumerationValues": [
-          {
-            "value": "were not able to"
-          },
-          {
-            "value": "wasn't able to"
-          },
-          {
-            "value": "don't know"
-          },
-          {
-            "value": "am not able to"
-          },
-          {
-            "value": "was not able to"
-          },
-          {
-            "value": "'m not able to"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
@@ -6013,39 +7172,60 @@
         "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
-        "name": "dirty",
-        "version": "2",
+        "name": "wonder",
+        "version": "3",
         "enumerationValues": [
           {
-            "value": "dirty"
+            "value": "don't seem to know"
           },
           {
-            "value": "stained"
+            "value": "are not sure"
           },
           {
-            "value": "old"
+            "value": "don't know"
           },
           {
-            "value": "used"
+            "value": "was not able to know"
           },
           {
-            "value": "spoiled"
+            "value": "wasn't able to know"
+          },
+          {
+            "value": "were not able to know"
+          },
+          {
+            "value": "am not able to know"
+          },
+          {
+            "value": "'m not able to know"
+          },
+          {
+            "value": "am not sure"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
         "name": "broken",
-        "version": "1",
+        "version": "2",
         "enumerationValues": [
           {
             "value": "not running"
+          },
+          {
+            "value": "not closing"
+          },
+          {
+            "value": "not functional"
           },
           {
             "value": "inoperative"
           },
           {
             "value": "bad"
+          },
+          {
+            "value": "overflowing"
           },
           {
             "value": "not working"
@@ -6058,6 +7238,9 @@
           },
           {
             "value": "out"
+          },
+          {
+            "value": "getting stuck"
           },
           {
             "value": "in need of repair"
@@ -6075,10 +7258,22 @@
             "value": "defective"
           },
           {
+            "value": "not turning on"
+          },
+          {
+            "value": "not strong"
+          },
+          {
             "value": "broken"
           },
           {
             "value": "out of kilter"
+          },
+          {
+            "value": "not shutting down"
+          },
+          {
+            "value": "jamming"
           },
           {
             "value": "kaput"
@@ -6087,7 +7282,16 @@
             "value": "stop running"
           },
           {
+            "value": "not adjusting"
+          },
+          {
             "value": "failed"
+          },
+          {
+            "value": "not stable"
+          },
+          {
+            "value": "not opening"
           },
           {
             "value": "busted"
@@ -6097,6 +7301,9 @@
           },
           {
             "value": "damaged"
+          },
+          {
+            "value": "loose"
           },
           {
             "value": "out of whack"
@@ -6126,6 +7333,28 @@
         "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
+        "name": "dirty",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "dirty"
+          },
+          {
+            "value": "stained"
+          },
+          {
+            "value": "old"
+          },
+          {
+            "value": "used"
+          },
+          {
+            "value": "spoiled"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
         "name": "bepickup",
         "version": "1",
         "enumerationValues": [
@@ -6149,31 +7378,40 @@
       },
       {
         "name": "change",
-        "version": "1",
+        "version": "2",
         "enumerationValues": [
           {
-            "value": "Restock"
+            "value": "refill"
           },
           {
-            "value": "Exchange"
+            "value": "fill up"
           },
           {
-            "value": "Replace"
+            "value": "change"
           },
           {
-            "value": "Switch"
+            "value": "replace"
           },
           {
-            "value": "Stock up"
+            "value": "restock"
           },
           {
-            "value": "Switch up"
+            "value": "refresh"
           },
           {
-            "value": "Change"
+            "value": "exchange"
           },
           {
-            "value": "Replenish"
+            "value": "switch up"
+          },
+          {
+            "value": "stock up"
+          },
+          {
+            "value": "replenish"
+          },
+          {
+            "value": "switch"
           }
         ],
         "valueSelectionStrategy": "ORIGINAL_VALUE"
@@ -6242,11 +7480,205 @@
         "valueSelectionStrategy": "ORIGINAL_VALUE"
       },
       {
+        "name": "informationService",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "lunch",
+            "synonyms": [
+              "luncheon",
+              "midday meal"
+            ]
+          },
+          {
+            "value": "coffee shop",
+            "synonyms": [
+              "sandwich shop",
+              "cake shop",
+              "coffee place",
+              "deli"
+            ]
+          },
+          {
+            "value": "restaurant",
+            "synonyms": [
+              "dinign room",
+              "lunch room",
+              "diner",
+              "lunchroom",
+              "cafeteria",
+              "outlet",
+              "joint",
+              "eating house",
+              "eating place"
+            ]
+          },
+          {
+            "value": "club lounge",
+            "synonyms": [
+              "membership lounge",
+              "club room",
+              "membership room",
+              "members only room",
+              "members only lounge"
+            ]
+          },
+          {
+            "value": "room key",
+            "synonyms": []
+          },
+          {
+            "value": "club lounges",
+            "synonyms": []
+          },
+          {
+            "value": "business centre",
+            "synonyms": [
+              "work space",
+              "work area",
+              "internet room",
+              "printer room",
+              "copy room",
+              "computer room",
+              "business center"
+            ]
+          },
+          {
+            "value": "gift shop",
+            "synonyms": [
+              "boutique",
+              "store",
+              "market",
+              "shop"
+            ]
+          },
+          {
+            "value": "dinner",
+            "synonyms": [
+              "supper",
+              "evening meal"
+            ]
+          },
+          {
+            "value": "bar lounge",
+            "synonyms": [
+              "drink lounge",
+              "bar service",
+              "night club",
+              "saloon",
+              "cocktail lounge",
+              "beverage lounge",
+              "parlor",
+              "pub",
+              "taproom",
+              "watering hole",
+              "drinkery"
+            ]
+          },
+          {
+            "value": "ballrooms",
+            "synonyms": []
+          },
+          {
+            "value": "breakfasts",
+            "synonyms": []
+          },
+          {
+            "value": "guest laundry room",
+            "synonyms": [
+              "laundry room",
+              "laundry facilities",
+              "laundry machines",
+              "washers",
+              "dryers",
+              "washing"
+            ]
+          },
+          {
+            "value": "fitness center",
+            "synonyms": [
+              "gym",
+              "fitness room",
+              "workout room",
+              "exercise rooms"
+            ]
+          },
+          {
+            "value": "in-room dining",
+            "synonyms": [
+              "room service",
+              "in-room eating",
+              "in room eating",
+              "in-room food service",
+              "in room food",
+              "food delivery",
+              "drink delivery"
+            ]
+          },
+          {
+            "value": "ballroom",
+            "synonyms": [
+              "music hall",
+              "auditorium",
+              "concert hall",
+              "dance hall",
+              "hall",
+              "party room"
+            ]
+          },
+          {
+            "value": "restaurants",
+            "synonyms": []
+          },
+          {
+            "value": "fitness centers",
+            "synonyms": []
+          },
+          {
+            "value": "breakfast",
+            "synonyms": [
+              "brunch",
+              "early meal",
+              "morning meal"
+            ]
+          },
+          {
+            "value": "lunches",
+            "synonyms": []
+          },
+          {
+            "value": "dinners",
+            "synonyms": []
+          },
+          {
+            "value": "room keys",
+            "synonyms": []
+          },
+          {
+            "value": "meeting room",
+            "synonyms": [
+              "gathering room",
+              "conference room",
+              "convention room",
+              "session room"
+            ]
+          },
+          {
+            "value": "meeting rooms",
+            "synonyms": []
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
         "name": "someone",
-        "version": "2",
+        "version": "3",
         "enumerationValues": [
           {
             "value": "room attendant"
+          },
+          {
+            "value": "the maid"
           },
           {
             "value": "someone"
@@ -6256,9 +7688,6 @@
           },
           {
             "value": "housekeeper"
-          },
-          {
-            "value": "maid"
           },
           {
             "value": "housekeeping"
@@ -6271,52 +7700,28 @@
       },
       {
         "name": "serviceNeedCallBack",
-        "version": "4",
+        "version": "2",
         "enumerationValues": [
           {
-            "value": "Late check out",
+            "value": "late check outs",
+            "synonyms": []
+          },
+          {
+            "value": "valet parking",
             "synonyms": [
-              "Delayed check out",
-              "low ticket",
-              "litigate",
-              "light legged"
+              "parking service"
             ]
           },
           {
-            "value": "Transportation Service",
+            "value": "late check out",
             "synonyms": [
-              "Car service",
-              "Uber service",
-              "Lyft service",
-              "airport shuttle",
-              "shuttle",
-              "car rental",
-              "taxi",
-              "limo",
-              "courier service",
-              "wire service",
-              "choral service",
-              "courses",
-              "coarseness",
-              "car seats"
+              "delayed check out"
             ]
           },
           {
-            "value": "Valet Parking",
+            "value": "complaint",
             "synonyms": [
-              "Parking service",
-              "villa park",
-              "evil speaking",
-              "sparking",
-              "bulwarking",
-              "skylarking",
-              "sleepmarken"
-            ]
-          },
-          {
-            "value": "Complaints",
-            "synonyms": [
-              "Dissatisfaction",
+              "dissatisfaction",
               "objection",
               "criticsm",
               "trouble",
@@ -6329,28 +7734,43 @@
               "hindrance",
               "bother",
               "turmoil",
-              "complete",
               "complains",
-              "comletes",
-              "compunds",
               "compiance",
-              "complaining",
-              "completeness"
+              "complaining"
             ]
           },
           {
-            "value": "Room Change",
+            "value": "transportation service",
             "synonyms": [
-              "Room Change",
-              "different room",
-              "move to another room",
-              "roumain",
-              "some change",
-              "name change",
-              "remain",
-              "the change",
-              "rumen change"
+              "car service",
+              "uber service",
+              "lyft service",
+              "airport shuttle",
+              "shuttle",
+              "car rental",
+              "taxi",
+              "limo"
             ]
+          },
+          {
+            "value": "transportation services",
+            "synonyms": []
+          },
+          {
+            "value": "complaints",
+            "synonyms": []
+          },
+          {
+            "value": "room change",
+            "synonyms": [
+              "room swap",
+              "different room",
+              "move to another room"
+            ]
+          },
+          {
+            "value": "room changes",
+            "synonyms": []
           }
         ],
         "valueSelectionStrategy": "TOP_RESOLUTION"
@@ -6458,21 +7878,21 @@
     "voiceId": "Joanna",
     "childDirected": false,
     "locale": "en-US",
-    "idleSessionTTLInSeconds": 60,
+    "idleSessionTTLInSeconds": 300,
     "clarificationPrompt": {
       "messages": [
         {
           "contentType": "PlainText",
-          "content": "My apologies.  Would you kindly repeat your request again?"
+          "content": "My apologies Would you kindly repeat you just said?"
         }
       ],
-      "maxAttempts": 2
+      "maxAttempts": 1
     },
     "abortStatement": {
       "messages": [
         {
           "contentType": "PlainText",
-          "content": "I am not sure. I need someone at Front Desk to assist you on this. please Hold on for a second."
+          "content": "Could you please hold for a minute while I transfer your request to Guest Service agent? Thank you"
         }
       ]
     },
